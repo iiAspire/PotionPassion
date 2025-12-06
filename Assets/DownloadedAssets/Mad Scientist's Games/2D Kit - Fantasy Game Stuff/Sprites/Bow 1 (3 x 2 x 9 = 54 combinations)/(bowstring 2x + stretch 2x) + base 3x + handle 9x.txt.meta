@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d6304b0638ee2de499fa121015b9851a
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248412
+  packageName: 2D Kit - Fantasy Game Stuff
+  packageVersion: 1.0
+  assetPath: Assets/Mad Scientist's Games/2D Kit - Fantasy Game Stuff/Sprites/Bow
+    1 (3 x 2 x 9 = 54 combinations)/(bowstring 2x + stretch 2x) + base 3x + handle
+    9x.txt
+  uploadId: 566860

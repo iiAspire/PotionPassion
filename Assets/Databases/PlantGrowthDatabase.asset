@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcdecd12b8f74f41840abe0026e75ad, type: 3}
+  m_Name: PlantGrowthDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::PlantGrowthDatabase
+  entries:
+  - seedName: Yellow Cap Spores
+    grownPlant: {fileID: 11400000, guid: 3bcc923691506e1428992ccf47c88430, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 2483306966567229303, guid: cef6d32c95b06454ca9ce14eb0027ca4, type: 3}
+    stageFinal: {fileID: 416108193225289861, guid: d21023c9469677f4584057965e21ffae, type: 3}
+  - seedName: Black Morel Seed
+    grownPlant: {fileID: 11400000, guid: 3593133c580db384cb107b86e8f942a1, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: -7536361845523389645, guid: 6b4a3c0caa61eb647b3841b963040bc0, type: 3}
+    stageFinal: {fileID: 2874553604008312633, guid: 0d89af569473fa245b1c2472fe21383c, type: 3}
+  - seedName: Angels Bonnet Seed
+    grownPlant: {fileID: 11400000, guid: 621dee0cbf36cad4389ce2e3e21ec307, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: -4147418874523535931, guid: e28e22a28e61b684a88942d7e6c24336, type: 3}
+    stageFinal: {fileID: 8285360293852847466, guid: e2c9ec151d19c784ba62a45e16ecd7e5, type: 3}
+  - seedName: Sesame Seed
+    grownPlant: {fileID: 11400000, guid: 241dce3121e21e4438ca415a7c9d5403, type: 2}
+    growTime: 1440
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: 8237938003761519342, guid: 871a2906e74a62e4ead553e84856c6f1, type: 3}
+    stageFinal: {fileID: 5191976434400241704, guid: 1d40958e74fff4d44947531a16ce226b, type: 3}
+  - seedName: Rose Seed
+    grownPlant: {fileID: 11400000, guid: d274991f0cc6f2d4cb7f73b7236ba3d4, type: 2}
+    growTime: 1440
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: 8237938003761519342, guid: 871a2906e74a62e4ead553e84856c6f1, type: 3}
+    stageFinal: {fileID: 6333838923973458128, guid: 352b5f05a09da88408cfff6f316a2321, type: 3}
+  - seedName: Rockrose Seed
+    grownPlant: {fileID: 11400000, guid: 1b0c41a5b5d60e74586b1558a7cb59fa, type: 2}
+    growTime: 720
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: -8892146687962726134, guid: 5da033f529d6da741bf5b2ab89c41e7e, type: 3}
+    stageFinal: {fileID: -6029735775877443856, guid: 93927809878fd374c8be7158e39986e4, type: 3}
+  - seedName: Foxglove Seed
+    grownPlant: {fileID: 11400000, guid: 53dbb91ce927e3c4480702b94ece4073, type: 2}
+    growTime: 1440
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: 8237938003761519342, guid: 871a2906e74a62e4ead553e84856c6f1, type: 3}
+    stageFinal: {fileID: 4200680389313115086, guid: 8fc8e0b40dab0374682320ba77dda20e, type: 3}
+  - seedName: Chia Seed
+    grownPlant: {fileID: 11400000, guid: 5279af5c9583d14448d21eae0bd20549, type: 2}
+    growTime: 1440
+    outputQuantity: 1
+    stage1: {fileID: 0}
+    stage2: {fileID: 6553298333988512432, guid: f81d6084d57c6884d90aa8d372f5ba95, type: 3}
+    stageFinal: {fileID: -3308568669249145394, guid: 6f8af1fe696baa24890cd01da7508ff4, type: 3}
+  - seedName: Common Puffball Spores
+    grownPlant: {fileID: 11400000, guid: 1f63a3a4f263a924f87e7bb4a292dccd, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 5554045052709685548, guid: 55fc457b0d382f6439383bade4745add, type: 3}
+    stageFinal: {fileID: 2209446221800226391, guid: 388c391c4cdf6914fa9e62bd25fdb650, type: 3}
+  - seedName: Death Cap Spores
+    grownPlant: {fileID: 11400000, guid: 9709eaca57a740147a8379acf48e4857, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 6068610668722608471, guid: 0be4b06cef402924ab7ec7286bb50d4a, type: 3}
+    stageFinal: {fileID: -3087925363264492855, guid: 8f434d32d4ab30e40bd1bd34dda08df1, type: 3}
+  - seedName: Daisy Seed
+    grownPlant: {fileID: 11400000, guid: 11bdc64c10f8e92409c0cb2f49b5c35d, type: 2}
+    growTime: 720
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: -8892146687962726134, guid: 5da033f529d6da741bf5b2ab89c41e7e, type: 3}
+    stageFinal: {fileID: 123339456316768792, guid: ae50e8b4e21e15e4e86b856fdb056351, type: 3}
+  - seedName: Forget Me Not Seed
+    grownPlant: {fileID: 11400000, guid: 5979225f61f1ea64c839e85946693e21, type: 2}
+    growTime: 720
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: -8892146687962726134, guid: 5da033f529d6da741bf5b2ab89c41e7e, type: 3}
+    stageFinal: {fileID: 3658172611191443793, guid: 92a50ed269545414d95ae3df1a83afda, type: 3}
+  - seedName: Musk Mallow Seed
+    grownPlant: {fileID: 11400000, guid: bb7b88ef3d2d57942a93671178829f3f, type: 2}
+    growTime: 720
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: -8892146687962726134, guid: 5da033f529d6da741bf5b2ab89c41e7e, type: 3}
+    stageFinal: {fileID: -8781381776291651806, guid: 93b2d1b681313a64eb948e3acaf21906, type: 3}
+  - seedName: Shaggy Ink Cap Spores
+    grownPlant: {fileID: 11400000, guid: 1f425e61a3eccc94b87da88b98cf0e71, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 5530416045025570629, guid: d8c5b268e09c7dc449dbf6fc04474b0e, type: 3}
+    stageFinal: {fileID: 3782824961411054376, guid: 34911e58d340c5e4ebee486ef07c0eca, type: 3}
+  - seedName: Pleated Ink Cap Spores
+    grownPlant: {fileID: 11400000, guid: e23ccf384a9fa98468c956a1893e77da, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: -547679363346997976, guid: af06c2925e1c4db4b9bf52f1186a4ef2, type: 3}
+    stageFinal: {fileID: -5714710196221806946, guid: 764ddce5241ec8640824a8affe2da8ad, type: 3}
+  - seedName: Yellow Morel Spores
+    grownPlant: {fileID: 11400000, guid: 87c3e984751a71d4cb85b1e031b4eb78, type: 2}
+    growTime: 720
+    outputQuantity: 3
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 3038859603288087157, guid: 22b2ecb5ea96c824ab77a28e6724cc8d, type: 3}
+    stageFinal: {fileID: -8581033631286825133, guid: e1926cbcdbf64104093c62ad953d7988, type: 3}
+  - seedName: Sunflower Seed
+    grownPlant: {fileID: 11400000, guid: 1c0e7a0f71c375b46b936c680c3b5ed6, type: 2}
+    growTime: 1440
+    outputQuantity: 1
+    stage1: {fileID: 1466760612685381774, guid: 3a326003663aeac43aa771a94c2c15c8, type: 3}
+    stage2: {fileID: 8237938003761519342, guid: 871a2906e74a62e4ead553e84856c6f1, type: 3}
+    stageFinal: {fileID: 5844128916009861837, guid: ef3f336054dc5964fa6487af392e3ec9, type: 3}
+  - seedName: Giant Puffball Spores
+    grownPlant: {fileID: 11400000, guid: b8f20e7c4c2e88647a85b1cd1d298fec, type: 2}
+    growTime: 720
+    outputQuantity: 1
+    stage1: {fileID: 3281924012027191199, guid: 3518d3da657a8674fbda10e66d690db2, type: 3}
+    stage2: {fileID: 7874599274631270089, guid: 6626574166dcaf446b4b932b832f4320, type: 3}
+    stageFinal: {fileID: 7623816501952138688, guid: faf900afdf71df44082b3e4f00be477e, type: 3}

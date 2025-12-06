@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6d83c5189dff42449899d4b59da538c0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248412
+  packageName: 2D Kit - Fantasy Game Stuff
+  packageVersion: 1.0
+  assetPath: Assets/Mad Scientist's Games/2D Kit - Fantasy Game Stuff/Sprites/Obelisk
+    1 (7 x 7 x 7 x 7 x 14 = 33 614 combinations)/base 7x + obelisk 7x + edge 7x +
+    tablet 7x + rune 14x.txt
+  uploadId: 566860

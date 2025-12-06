@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9615605fc8c45da468af717328c3603e
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248412
+  packageName: 2D Kit - Fantasy Game Stuff
+  packageVersion: 1.0
+  assetPath: Assets/Mad Scientist's Games/2D Kit - Fantasy Game Stuff/Sprites/Halberd
+    (7 x 7 x 3 = 147 combinations)/(tip_down 7x + tip_up 7x) + blade 7x + lever 3x.txt
+  uploadId: 566860

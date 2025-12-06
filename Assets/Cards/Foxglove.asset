@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11605aec2b016e746bb49793d2732d74, type: 3}
+  m_Name: Foxglove
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: Foxglove
+  baseName: Foxglove
+  Icon: {fileID: 3939388231041069923, guid: 93acaf11e49e7594097efe260bc3a910, type: 3}
+  typeIcon: {fileID: 0}
+  cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
+  description: 
+  cardPrefab: {fileID: 5039315531124794835, guid: eab833ad463727a42a50662a8e3d3e97, type: 3}
+  processedIcon: {fileID: 0}
+  itemType: 0
+  processedType: 0
+  partType: 0
+  partIcon: {fileID: 0}
+  quantityType: 0
+  quantityIcon: {fileID: 0}
+  Toxin: 0
+  Neutral: 0
+  Antidote: 0
+  Sweet: 0
+  Bitter: 0
+  Salty: 0
+  Spicy: 0
+  Flowery: 0
+  Umami: 0
+  Edible: 0
+  Incinerates: 0
+  Smoulders: 1
+  topHalfSprite: {fileID: 0}
+  bottomHalfSprite: {fileID: 0}
+  processingRecipes:
+  - foldout: 0
+    tool: 1
+    resultCard: {fileID: 11400000}
+    processingTime: 480
+    processedResultType: 8
+    needsFire: 1
+    processingTimeWithFire: 15
+    visualOutputs: []
+  - foldout: 0
+    tool: 3
+    resultCard: {fileID: 11400000}
+    processingTime: 720
+    processedResultType: 6
+    needsFire: 0
+    processingTimeWithFire: 0
+    visualOutputs: []
+  - foldout: 0
+    tool: 2
+    resultCard: {fileID: 11400000}
+    processingTime: 1
+    processedResultType: 0
+    needsFire: 0
+    processingTimeWithFire: 0
+    visualOutputs:
+    - name: Foxglove Leaf
+      icon: {fileID: 21300000, guid: 2c541aa4b89997d48b5e46055fc7f0be, type: 3}
+      quantity: 4
+      note: 
+    - name: Foxglove Petal
+      icon: {fileID: 21300000, guid: 51857a42e5544c54caccaca7b1b743ac, type: 3}
+      quantity: 8
+      note: 
+    - name: Foxglove Stem
+      icon: {fileID: 21300000, guid: 25162e1558481d24c9fdb2af65c305fc, type: 3}
+      quantity: 1
+      note: 
+  - foldout: 0
+    tool: 1
+    resultCard: {fileID: 11400000}
+    processingTime: 480
+    processedResultType: 7
+    needsFire: 0
+    processingTimeWithFire: 0
+    visualOutputs: []

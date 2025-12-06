@@ -1,0 +1,545 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af040bd0ca8f5ca40bc0e5101482282d, type: 3}
+  m_Name: IngredientDatabase
+  m_EditorClassIdentifier: 
+  Waters:
+  - Unknown Water
+  - Spring Water
+  - Sea Water
+  - Well Water
+  - Infused Water
+  - Blessed Water
+  - Angelic Water
+  - Lunar Water
+  - Dark Water
+  - Light Water
+  Craftings:
+  - Unknown Crafting
+  - Straw
+  - Gold Thread
+  - Wool
+  - Vine
+  - String
+  - Spider Silk
+  - Silver Thread
+  - Copper Thread
+  - Reed
+  Intimates:
+  - Unknown Intimate
+  - Hair
+  - Nail
+  - Phlegm
+  - Saliva
+  - Sweat
+  - Oils
+  - Skin
+  - Blood
+  Spirituals:
+  - Unknown Spiritual
+  - Spirit
+  - Heart
+  - Soul
+  - Ether
+  - Mind
+  - Aura
+  Astrologicals:
+  - Unknown Astrological
+  - Moon
+  - Sun
+  - Star
+  - Mercury
+  - Venus
+  - Earth
+  - Mars
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
+  - Pluto
+  - Asteroid
+  - Comet
+  Elements:
+  - Unknown Element
+  - Wind
+  - Rain
+  - Mist
+  - Fire
+  - Soil
+  - Water
+  - Wax
+  - Clay
+  - Dew
+  Tools:
+  - Unknown Tool
+  - Mirror
+  - Bell
+  - Candle
+  - Broomstick
+  - Book
+  - Amulet
+  - Paper
+  - Crystal Ball
+  - Doll
+  - Charm Bag
+  - Ring
+  - Horseshoe
+  - Pendant
+  - Pentacle
+  MetalIngredients:
+  - MetalName: Unknown Metal
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Gold
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Silver
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Copper
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Brass
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Bronze
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Zinc
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Aluminium
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Platinum
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Titanium
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Lead
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Tin
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MetalName: Iron
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  AnimalIngredients:
+  - AnimalName: Toad
+    Parts:
+    - Oil
+    - Eye
+    - Leg
+    - Blood
+  - AnimalName: Newt
+    Parts:
+    - Oil
+    - Skin
+    - Eye
+    - Leg
+    - Blood
+    - Tail
+  - AnimalName: Crow
+    Parts:
+    - Oil
+    - Skin
+    - Eye
+    - Leg
+    - Blood
+    - Tail
+    - Feather
+    - Wing
+    - Talon
+    - Beak
+  - AnimalName: Cat
+    Parts:
+    - Oil
+    - Skin
+    - Eye
+    - Leg
+    - Blood
+    - Tail
+    - Fur
+    - Talon
+    - Tooth
+  - AnimalName: Mouse
+    Parts:
+    - Oil
+    - Skin
+    - Eye
+    - Leg
+    - Blood
+    - Tail
+    - Fur
+    - Talon
+    - Tooth
+  - AnimalName: Bat
+    Parts:
+    - Oil
+    - Skin
+    - Eye
+    - Leg
+    - Blood
+    - Wing
+    - Fur
+    - Talon
+    - Tooth
+  - AnimalName: Beetle
+    Parts:
+    - Oil
+    - Eye
+    - Leg
+    - Blood
+    - Wing
+    - Shell
+  - AnimalName: Worm
+    Parts:
+    - Oil
+    - Blood
+  - AnimalName: Fly
+    Parts:
+    - Oil
+    - Blood
+    - Leg
+    - Wing
+    - Eye
+  - AnimalName: Rat
+    Parts:
+    - Oil
+    - Blood
+    - Leg
+    - Eye
+    - Talon
+    - Skin
+    - Tail
+    - Fur
+    - Tooth
+  - AnimalName: Snail
+    Parts:
+    - Oil
+    - Blood
+    - Eye
+    - Shell
+  - AnimalName: Rabbit
+    Parts:
+    - Oil
+    - Blood
+    - Leg
+    - Skin
+    - Talon
+    - Eye
+    - Tail
+    - Fur
+  MineralIngredients:
+  - MineralName: Dirt
+    Parts:
+    - Crossroad
+    - Graveyard
+    - Footprint
+    - Farm
+  - MineralName: Coral
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Sandstone
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Quartz
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Granite
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Marble
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Limestone
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Lodestone
+    Parts:
+    - Lump
+    - Hunk
+  - MineralName: Sapphire
+    Parts:
+    - Dust
+    - Chips
+  - MineralName: Diamond
+    Parts:
+    - Dust
+    - Chips
+  - MineralName: Ruby
+    Parts:
+    - Dust
+    - Chips
+  - MineralName: Haematite
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  - MineralName: Emerald
+    Parts:
+    - Dust
+    - Chips
+  - MineralName: Amethyst
+    Parts:
+    - Dust
+    - Chips
+    - Lump
+    - Hunk
+  BotanicalIngredients:
+  - BotanicalName: Unknown Wood
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+  - BotanicalName: Beech
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Leaf
+    - Bark
+  - BotanicalName: Birch
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Leaf
+    - Bark
+  - BotanicalName: Oak
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Leaf
+    - Bark
+  - BotanicalName: Pine
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Needle
+    - Bark
+  - BotanicalName: Redwood
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Leaf
+    - Bark
+  - BotanicalName: Hawthorn
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Leaf
+    - Berry
+    - Thorn
+    - Bark
+  - BotanicalName: Bamboo
+    Parts:
+    - Shavings
+    - Woodchips
+    - Leaf
+    - Bark
+  - BotanicalName: Cherry Blossom
+    Parts:
+    - Shavings
+    - Woodchips
+    - Branch
+    - Petal
+    - Nectar
+    - Pollen
+    - Leaf
+    - Bark
+  - BotanicalName: Grass
+    Parts: []
+  - BotanicalName: Vervain
+    Parts:
+    - Petal
+    - Leaf
+  - BotanicalName: Rose
+    Parts:
+    - Thorn
+    - Petal
+    - Leaf
+    - Nectar
+    - Pollen
+  - BotanicalName: Moss
+    Parts: []
+  - BotanicalName: Sunflower
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Bullwort
+    Parts:
+    - Stem
+    - Head
+    - Leaf
+  - BotanicalName: Angels Bonnet
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Daisy
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Fly Agaric
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Musk Mallow
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Shaggy Ink Cap
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Corn
+    Parts:
+    - Stem
+    - Head
+    - Kernels
+    - Leaf
+  - BotanicalName: Death Cap
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Nightshade
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Foxglove
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Forget Me Not
+    Parts:
+    - Stem
+    - Petal
+    - Leaf
+    - Pollen
+  - BotanicalName: Chia
+    Parts:
+    - Seed
+    - Oil
+  - BotanicalName: Labdanum
+    Parts:
+    - Petal
+    - Leaf
+    - Oil
+  - BotanicalName: Pleated Ink Cap
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Sesame
+    Parts:
+    - Seed
+    - Oil
+  - BotanicalName: Yellow Cap
+    Parts:
+    - Stem
+    - Cap
+    - Gills
+  - BotanicalName: Giant Puffball
+    Parts:
+    - Stem
+    - Cap
+  - BotanicalName: Common Puffball
+    Parts:
+    - Stem
+    - Cap
+    - Wart
+  - BotanicalName: Yellow Morel
+    Parts:
+    - Stem
+    - Cap
+  - BotanicalName: Black Morel
+    Parts:
+    - Stem
+    - Cap

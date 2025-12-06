@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3fc484147614bb14ca232904d1ae84eb
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248412
+  packageName: 2D Kit - Fantasy Game Stuff
+  packageVersion: 1.0
+  assetPath: Assets/Mad Scientist's Games/2D Kit - Fantasy Game Stuff/Sprites/Arrow
+    1 (3 x 36 x 45 = 4860 combinations)/base 3x + plumage 36x + tip 45x.txt
+  uploadId: 566860

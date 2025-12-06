@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11605aec2b016e746bb49793d2732d74, type: 3}
+  m_Name: Spirit Summoning
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: Spirit Summoning
+  baseName: 
+  Icon: {fileID: -8684834629733891227, guid: 70ee6e667d7a4924da8e86469eb6738c, type: 3}
+  cauldronContentsSprite: {fileID: 21300000, guid: a2d40062f136ac343b1e1d9f6c24cdd3, type: 3}
+  typeIcon: {fileID: 0}
+  cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
+  description: 
+  cardPrefab: {fileID: 5541781292661126199, guid: d3ddf483f1a0a7e49812e417623e8c3a, type: 3}
+  processedIcon: {fileID: 0}
+  itemType: 0
+  processedType: 0
+  partType: 0
+  partIcon: {fileID: 0}
+  quantityType: 0
+  quantityIcon: {fileID: 0}
+  Toxin: 1
+  Neutral: 0
+  Antidote: 0
+  Sweet: 0
+  Bitter: 1
+  Salty: 0
+  Spicy: 0
+  Flowery: 0
+  Umami: 0
+  Edible: 1
+  Incinerates: 0
+  Smoulders: 0
+  topHalfSprite: {fileID: 0}
+  bottomHalfSprite: {fileID: 0}
+  processingRecipes: []

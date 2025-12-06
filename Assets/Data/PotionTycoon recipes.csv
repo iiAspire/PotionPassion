@@ -1,0 +1,387 @@
+CardName,IconPath,Description,CardPrefab,ItemType,Incinerates,Smoulders,Edible,Toxin,Neutral,Antidote,Umami,Sweet,Bitter,Salty,Spicy,Flowery,Tool,ResultCard,ProcessingTime,ProcessedResultType,NeedsFire,ProcessingTimeWithFire,OutputIcon,Output1,Output2,Output3,Output4,Output5,Output6,Output7,Output8,Output9,Output10,Output1Count,Output2Count,Output3Count,Output4Count,Output5Count,Output6Count,Output7Count,Output8Count,Output9Count,Output10Count,PartIcon,BaseName
+Amethyst,Assets/Sprites/tileAmethyst,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Amethyst,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Amethyst
+Amethyst Dust,Assets/Sprites/tileAmethyst,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Amethyst
+Angels Bonnet,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Angels Bonnet,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Angels Bonnet
+Angels Bonnet,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,DryingRack,Angels Bonnet,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Angels Bonnet
+Angels Bonnet,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Angels Bonnet,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Angels Bonnet
+Angels Bonnet,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Angels Bonnet,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Angels Bonnet
+Angels Bonnet,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Angels Bonnet,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Angels Bonnet
+Angels Bonnet Cap,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Angels Bonnet Cap,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Cap,Angels Bonnet
+Angels Bonnet Cap,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Angels Bonnet Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Angels Bonnet
+Angels Bonnet Gills,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Angels Bonnet
+Angels Bonnet Stem,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Angels Bonnet Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Angels Bonnet
+Angels Bonnet Stem,Assets/Sprites/tileAngelsbonnet,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Angels Bonnet Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Angels Bonnet
+Bamboo,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Bamboo,30,Outputs,,,,Leaf,Bark,,,,,,,,,8,3,,,,,,,,,,Bamboo
+Bamboo Bark,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Bamboo Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Bamboo
+Bamboo Leaf,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Bamboo Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Bamboo
+Bamboo Shavings,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Bamboo Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Bamboo
+Bamboo Woodchips,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Bamboo Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Bamboo
+Bamboo Woodchips,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Bamboo Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Bamboo
+Bamboo Woodchips,Assets/Sprites/tileBamboo,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Bamboo Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Bamboo
+Bat,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Bat,15,Outputs,,,,Eye,Oil,Leg,Blood,Wing,Skin,Fur,Talon,Tooth,,2,1,2,1,2,1,1,2,2,,,Bat
+Bat Blood,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Bat
+Bat Eye,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Bat
+Bat Fur,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fur,Bat
+Bat Leg,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Bat
+Bat Oil,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Bat
+Bat Skin,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Bat
+Bat Talon,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Bat
+Bat Tooth,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tooth,Bat
+Bat Wing,Assets/Sprites/tileBat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wing,Bat 
+Beech,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Beech,30,Outputs,,,,Branch,Leaf,Bark,,,,,,,,3,4,3,,,,,,,,,Beech
+Beech Bark,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Beech Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Beech
+Beech Branch,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Beech Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Beech
+Beech Leaf,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Beech Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Beech
+Beech Shavings,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Beech Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Beech
+Beech Woodchips,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Beech Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Beech
+Beech Woodchips,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Beech Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Beech
+Beech Woodchips,Assets/Sprites/tileBeech,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Beech Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Beech
+Beetle,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Beetle,15,Outputs,,,,Eye,Oil,Leg,Blood,Shell,Wing,,,,,2,1,6,1,1,2,,,,,,Beetle
+Beetle Blood,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Beetle
+Beetle Eye,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Beetle
+Beetle Leg,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Beetle
+Beetle Oil,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Beetle
+Beetle Shell,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Shell,Beetle
+Beetle Wing,Assets/Sprites/tileBeetle,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wing,Beetle 
+Birch,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Birch,30,Outputs,,,,Branch,Leaf,Bark,,,,,,,,3,4,3,,,,,,,,,Birch
+Birch Bark,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Birch Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Birch
+Birch Branch,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Birch Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Birch
+Birch Leaf,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Birch Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Birch
+Birch Shavings,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Birch Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Birch
+Birch Woodchips,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Birch Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Birch
+Birch Woodchips,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Birch Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Birch
+Birch Woodchips,Assets/Sprites/tileBirch,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Birch Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Birch
+Black Morel,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Black Morel,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Black Morel
+Black Morel,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,DryingRack,Black Morel,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Black Morel
+Black Morel,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Black Morel,1,Outputs,,,,Cap,Stem,,,,,,,,,1,1,,,,,,,,,,Black Morel
+Black Morel,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Black Morel,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Black Morel
+Black Morel,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Black Morel,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Black Morel
+Black Morel Cap,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Black Morel Cap,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Cap,Black Morel
+Black Morel Cap,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Black Morel Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Black Morel
+Black Morel Stem,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Black Morel Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Black Morel
+Black Morel Stem,Assets/Sprites/tileBlackmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Black Morel Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Black Morel
+Bulrush,Assets/Sprites/tileBulrush,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Bulrush,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Bulrush
+Bulrush,Assets/Sprites/tileBulrush,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Bulrush,3,Outputs,,,,Head,Leaf,Stem,,,,,,,,1,2,1,,,,,,,,,Bulrush
+Bulrush Head,Assets/Sprites/tileBulrush,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Bulrush Head,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Head,Bulrush
+Bulrush Leaf,Assets/Sprites/tileBulrush,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Bulrush Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Bulrush
+Bulrush Stem,Assets/Sprites/tileBulrush,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,ChoppingBoard,Bulrush Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Bulrush
+Cat,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Cat,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,Fur,Talon,Tooth,,2,1,4,1,1,1,1,8,2,,,Cat
+Cat Blood,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Cat
+Cat Eye,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Cat
+Cat Fur,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fur,Cat
+Cat Leg,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Cat
+Cat Oil,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Cat
+Cat Skin,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Cat
+Cat Tail,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Cat
+Cat Talon,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Cat
+Cat Tooth,Assets/Sprites/tileCat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tooth,Cat
+Cherry Blossom,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Cherry Blossom,30,Outputs,,,,Branch,Leaf,Bark,Petal,,,,,,,3,4,3,8,,,,,,,,Cherry Blossom
+Cherry Blossom Bark,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Cherry Blossom Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Cherry Blossom
+Cherry Blossom Branch,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Cherry Blossom Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Cherry Blossom
+Cherry Blossom Leaf,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,1,,,MortarandPestle,Cherry Blossom Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Cherry Blossom
+Cherry Blossom Nectar,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Nectar,Cherry Blossom
+Cherry Blossom Petal,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,1,,,MortarandPestle,Cherry Blossom Petal,5,Outputs,,,,Pollen,Nectar,,,,,,,,,0.1,0.1,,,,,,,,,Petal,Cherry Blossom
+Cherry Blossom Pollen,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Cherry Blossom
+Cherry Blossom Shavings,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Cherry Blossom Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Cherry Blossom
+Cherry Blossom Woodchips,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Cherry Blossom Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Cherry Blossom
+Cherry Blossom Woodchips,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Cherry Blossom Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Cherry Blossom
+Cherry Blossom Woodchips,Assets/Sprites/tileCherryblossom,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Cherry Blossom Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Cherry Blossom
+Chia,Assets/Sprites/tileChia,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Chia,720,Outputs,,480,,,Seed,,,,,,,,,,3,,,,,,,,,,Chia
+Chia,Assets/Sprites/tileChia,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Chia,5,Outputs,,,,Oil,,,,,,,,,,0.1,,,,,,,,,,,Chia
+Chia Oil,Assets/Sprites/tileChia,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Chia
+Chia Seed,Assets/Sprites/tileChia,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Seed,Chia
+Common Puffball,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Common Puffball,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Common Puffball
+Common Puffball,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,DryingRack,Common Puffball,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Common Puffball
+Common Puffball,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Common Puffball,3,Outputs,,,,Cap,Stem,Wart,,,,,,,,1,1,8,,,,,,,,,Common Puffball
+Common Puffball,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Common Puffball,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Common Puffball
+Common Puffball,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Common Puffball,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Common Puffball
+Common Puffball Cap,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Common Puffball Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Common Puffball
+Common Puffball Stem,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Common Puffball Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Common Puffball
+Common Puffball Wart,Assets/Sprites/tileCommonpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,0,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wart,Common Puffball
+Coral,Assets/Sprites/tileCoral,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Coral,10,Outputs,,,,Chips,,,,,,,,,,4,,,,,,,,,,Lump,Coral
+Coral Chips,Assets/Sprites/tileCoral,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Coral Chips,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Chips,Coral
+Coral Dust,Assets/Sprites/tileCoral,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Coral
+Corn,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Corn,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Corn
+Corn,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Corn,3,Outputs,,,,Head,Leaf,Stem,,,,,,,,1,2,1,,,,,,,,,Corn
+Corn Head,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Corn Head,5,Outputs,,,,Kernels,,,,,,,,,,8,,,,,,,,,,Head,Corn
+Corn Kernels,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Kernels,Corn
+Corn Leaf,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Corn Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Corn
+Corn Stem,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Corn Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Corn
+Corn Stem,Assets/Sprites/tileCorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Corn Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Corn
+Crow,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Crow,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,Feather,Wing,Talon,Beak,2,1,2,1,1,1,4,2,2,1,,Crow
+Crow Beak,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Beak,Crow
+Crow Blood,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Crow
+Crow Eye,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Crow
+Crow Feather,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Feather,Crow
+Crow Leg,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Crow
+Crow Oil,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Crow
+Crow Skin,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Crow
+Crow Tail,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Crow
+Crow Talon,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Crow
+Crow Wing,Assets/Sprites/tileCrow,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wing,Crow 
+Daisy,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,DryingRack,Daisy,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Daisy
+Daisy,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,ChoppingBoard,Daisy,1,Outputs,,,,Leaf,Petal,Stem,,,,,,,,2,8,1,,,,,,,,,Daisy
+Daisy,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,MortarandPestle,Daisy,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Daisy
+Daisy Leaf,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Daisy
+Daisy Petal,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,MortarandPestle,Daisy Petal,5,Outputs,,,,Pollen,,,,,,,,,,0.1,,,,,,,,,,Petal,Daisy
+Daisy Pollen,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Daisy
+Daisy Stem,Assets/Sprites/tileDaisy,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stem,Daisy
+Death Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Death Cap,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Death Cap
+Death Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,DryingRack,Death Cap,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Death Cap
+Death Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Death Cap,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Death Cap
+Death Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Death Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Death Cap
+Death Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Death Cap,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Death Cap
+Death Cap Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Death Cap Cap,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Cap,Death Cap
+Death Cap Cap,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Death Cap Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Death Cap
+Death Cap Gills,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Death Cap
+Death Cap Stem,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Death Cap Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Death Cap
+Death Cap Stem,Assets/Sprites/tileDeathcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Death Cap Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Death Cap
+Diamond,Assets/Sprites/tileDiamond,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Diamond,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Diamond
+Diamond Dust,Assets/Sprites/tileDiamond,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Diamond
+Dirt,Assets/Sprites/tileDirt,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,MortarandPestle,Dirt,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,,Dirt
+Emerald,Assets/Sprites/tileEmerald,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Emerald,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Emerald
+Emerald Dust,Assets/Sprites/tileEmerald,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Emerald
+Fly,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Fly,15,Outputs,,,,Eye,Oil,Leg,Blood,Wing,,,,,,2,1,6,1,2,,,,,,,Fly
+Fly Agaric,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Fly Agaric,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Fly Agaric
+Fly Agaric,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,DryingRack,Fly Agaric,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Fly Agaric
+Fly Agaric,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Fly Agaric,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Fly Agaric
+Fly Agaric,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Fly Agaric,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Fly Agaric
+Fly Agaric,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Fly Agaric,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Fly Agaric
+Fly Agaric Cap,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Fly Agaric Cap,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Cap,Fly Agaric
+Fly Agaric Cap,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Fly Agaric Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Fly Agaric
+Fly Agaric Gills,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Fly Agaric
+Fly Agaric Stem,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Fly Agaric Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Fly Agaric
+Fly Agaric Stem,Assets/Sprites/tileFlyagaric,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Fly Agaric Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Fly Agaric
+Fly Blood,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Fly
+Fly Eye,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Fly
+Fly Leg,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Fly
+Fly Oil,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Fly
+Fly Wing,Assets/Sprites/tileFly,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wing,Fly 
+Forget Me Not,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Forget Me Not,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Forget Me Not
+Forget Me Not,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,DryingRack,Forget Me Not,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Forget Me Not
+Forget Me Not,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,ChoppingBoard,Forget Me Not,1,Outputs,,,,Leaf,Petal,Stem,,,,,,,,4,8,1,,,,,,,,,Forget Me Not
+Forget Me Not,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Forget Me Not,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Forget Me Not
+Forget Me Not,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Forget Me Not,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Forget Me Not
+Forget Me Not Leaf,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Forget Me Not
+Forget Me Not Petal,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,MortarandPestle,Forget Me Not Petal,5,Outputs,,,,Pollen,,,,,,,,,,0.1,,,,,,,,,,Petal,Forget Me Not
+Forget Me Not Pollen,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Forget Me Not
+Forget Me Not Stem,Assets/Sprites/tileForgetmenot,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stem,Forget Me Not
+Foxglove,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Foxglove,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Foxglove
+Foxglove,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Foxglove,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Foxglove
+Foxglove,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Foxglove,1,Outputs,,,,Leaf,Petal,Stem,,,,,,,,4,8,1,,,,,,,,,Foxglove
+Foxglove,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Foxglove,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Foxglove
+Foxglove Leaf,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,MortarandPestle,Foxglove Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Foxglove
+Foxglove Petal,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,MortarandPestle,Foxglove Petal,5,Outputs,,,,Pollen,,,,,,,,,,0.1,,,,,,,,,,Petal,Foxglove
+Foxglove Pollen,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Foxglove
+Foxglove Stem,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Foxglove Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Foxglove
+Foxglove Stem,Assets/Sprites/tileFoxglove,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Foxglove Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Foxglove
+Giant Puffball,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Giant Puffball,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Giant Puffball
+Giant Puffball,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,DryingRack,Giant Puffball,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Giant Puffball
+Giant Puffball,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Giant Puffball,1,Outputs,,,,Cap,Stem,,,,,,,,,1,1,,,,,,,,,,Giant Puffball
+Giant Puffball,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Giant Puffball,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Giant Puffball
+Giant Puffball,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Giant Puffball,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Giant Puffball
+Giant Puffball Cap,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Giant Puffball Cap,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Cap,Giant Puffball
+Giant Puffball Cap,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Giant Puffball Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Giant Puffball
+Giant Puffball Stem,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Giant Puffball Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Giant Puffball
+Giant Puffball Stem,Assets/Sprites/tileGiantpuffball,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Giant Puffball Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Giant Puffball
+Granite,Assets/Sprites/tileGranite,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Granite
+Grass,Assets/Sprites/tileGrass,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Grass,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Grass
+Grass,Assets/Sprites/tileGrass,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,ChoppingBoard,Grass,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,,Grass
+Grass,Assets/Sprites/tileGrass,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,DryingRack,Grass,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Grass
+Grass,Assets/Sprites/tileGrass,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Grass,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Grass
+Grass,Assets/Sprites/tileGrass,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Grass,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Grass
+Haematite,Assets/Sprites/tileHaematite,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Haematite
+Hawthorn,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Hawthorn,30,Outputs,,,,Branch,Leaf,Thorn,Bark,,,,,,,3,4,4,3,,,,,,,,Hawthorn
+Hawthorn Bark,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Hawthorn Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Hawthorn
+Hawthorn Berry,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,Cauldron,Hawthorn Berry,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Hawthorn
+Hawthorn Berry,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,DryingRack,Hawthorn Berry,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Hawthorn
+Hawthorn Berry,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,MortarandPestle,Hawthorn Berry,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Hawthorn
+Hawthorn Berry,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,Cauldron,Hawthorn Berry,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Hawthorn
+Hawthorn Branch,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Hawthorn Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Hawthorn
+Hawthorn Leaf,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Hawthorn
+Hawthorn Shavings,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Hawthorn Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Hawthorn
+Hawthorn Thorn,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Thorn,Hawthorn
+Hawthorn Woodchips,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Hawthorn Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Hawthorn
+Hawthorn Woodchips,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Hawthorn Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Hawthorn
+Hawthorn Woodchips,Assets/Sprites/tileHawthorn,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Hawthorn Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Hawthorn
+Limestone,Assets/Sprites/tileLimestone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Limestone,10,Outputs,,,,Lump,,,,,,,,,,2,,,,,,,,,,Lump,Limestone
+Limestone Dust,Assets/Sprites/tileLimestone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Limestone
+Limestone Lump,Assets/Sprites/tileLimestone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Limestone Lump,30,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Limestone
+Lodestone,Assets/Sprites/tileLodestone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Lodestone
+Marble,Assets/Sprites/tileMarble,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Marble,10,Outputs,,,,Lump,,,,,,,,,,2,,,,,,,,,,Lump,Marble
+Marble Dust,Assets/Sprites/tileMarble,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Marble
+Marble Lump,Assets/Sprites/tileMarble,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Marble Lump,60,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Marble
+Moss,Assets/Sprites/tileMoss,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,Cauldron,Moss,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Moss
+Moss,Assets/Sprites/tileMoss,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,ChoppingBoard,Moss,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,,Moss
+Moss,Assets/Sprites/tileMoss,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,DryingRack,Moss,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Moss
+Moss,Assets/Sprites/tileMoss,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,MortarandPestle,Moss,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Moss
+Moss,Assets/Sprites/tileMoss,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,Cauldron,Moss,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Moss
+Mouse,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Mouse,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,Fur,Talon,Tooth,,2,1,4,1,1,1,1,4,2,,,Mouse
+Mouse Blood,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Mouse
+Mouse Eye,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Mouse
+Mouse Fur,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fur,Mouse
+Mouse Leg,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Mouse
+Mouse Oil,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Mouse
+Mouse Skin,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Mouse
+Mouse Tail,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Mouse
+Mouse Talon,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Mouse
+Mouse Tooth,Assets/Sprites/tileMouse,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tooth,Mouse
+Musk Mallow,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,Cauldron,Musk Mallow,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Musk Mallow
+Musk Mallow,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,DryingRack,Musk Mallow,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Musk Mallow
+Musk Mallow,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,ChoppingBoard,Musk Mallow,1,Outputs,,,,Leaf,Petal,Stem,,,,,,,,3,4,1,,,,,,,,,Musk Mallow
+Musk Mallow,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,MortarandPestle,Musk Mallow,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Musk Mallow
+Musk Mallow,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,Cauldron,Musk Mallow,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Musk Mallow
+Musk Mallow Leaf,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Musk Mallow
+Musk Mallow Petal,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,MortarandPestle,Musk Mallow Petal,5,Outputs,,,,Pollen,,,,,,,,,,0.1,,,,,,,,,,Petal,Musk Mallow
+Musk Mallow Pollen,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Musk Mallow
+Musk Mallow Stem,Assets/Sprites/tileMuskmallow,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stem,Musk Mallow
+Newt,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Newt,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,,,,,2,1,4,1,1,1,,,,,,Newt
+Newt Blood,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Newt
+Newt Eye,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Newt
+Newt Leg,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Newt
+Newt Oil,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Newt
+Newt Skin,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Newt
+Newt Tail,Assets/Sprites/tileNewt,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Newt
+Nightshade,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,Cauldron,Nightshade,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Nightshade
+Nightshade,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,DryingRack,Nightshade,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Nightshade
+Nightshade,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,ChoppingBoard,Nightshade,1,Outputs,,,,Leaf,Petal,Stem,,,,,,,,3,4,1,,,,,,,,,Nightshade
+Nightshade,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,MortarandPestle,Nightshade,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Nightshade
+Nightshade,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,Cauldron,Nightshade,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Nightshade
+Nightshade Leaf,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Nightshade
+Nightshade Petal,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,MortarandPestle,Nightshade Petal,5,Outputs,,,,Pollen,,,,,,,,,,0.1,,,,,,,,,,Petal,Nightshade
+Nightshade Pollen,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Nightshade
+Nightshade Stem,Assets/Sprites/tileNightshade,,Prefabs/Interactables,Botanical,1,0,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stem,Nightshade
+Oak,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Oak,30,Outputs,,,,Branch,Leaf,Bark,,,,,,,,3,4,3,,,,,,,,,Oak
+Oak Bark,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Oak Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Oak
+Oak Branch,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Oak Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Oak
+Oak Leaf,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Oak
+Oak Shavings,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Oak Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Oak
+Oak Woodchips,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Oak Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Oak
+Oak Woodchips,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Oak Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Oak
+Oak Woodchips,Assets/Sprites/tileOak,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Oak Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Oak
+Pine,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Pine,30,Outputs,,,,Branch,Needle,Bark,,,,,,,,3,8,3,,,,,,,,,Pine
+Pine Bark,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Pine Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Pine
+Pine Needle,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Pine Needle,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Needle,Pine
+Pine Needle,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,Cauldron,Pine Needle,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Needle,Pine
+Pine Shavings,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Pine Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Pine
+Pine Woodchips,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Pine Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Pine
+Pine Woodchips,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Pine Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Pine
+Pine Woodchips,Assets/Sprites/tilePine,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Pine Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Pine
+Pleated Ink Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Pleated Ink Cap,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Pleated Ink Cap
+Pleated Ink Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,DryingRack,Pleated Ink Cap,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Pleated Ink Cap
+Pleated Ink Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Pleated Ink Cap,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Pleated Ink Cap
+Pleated Ink Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Pleated Ink Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Pleated Ink Cap
+Pleated Ink Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Pleated Ink Cap,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Pleated Ink Cap
+Pleated Ink Cap Cap,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Pleated Ink Cap Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Pleated Ink Cap
+Pleated Ink Cap Gills,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Pleated Ink Cap
+Pleated Ink Cap Stem,Assets/Sprites/tilePleatedinkcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Pleated Ink Cap Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Pleated Ink Cap
+Quartz,Assets/Sprites/tileQuartz,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Quartz,10,Outputs,,,,Chips,,,,,,,,,,4,,,,,,,,,,Lump,Quartz
+Quartz Chips,Assets/Sprites/tileQuartz,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Quartz Chips,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Chips,Quartz
+Quartz Dust,Assets/Sprites/tileQuartz,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Quartz
+Rabbit,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Rabbit,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,Fur,Talon,Tooth,,2,1,4,1,1,1,1,4,2,,,Rabbit
+Rabbit Blood,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Rabbit
+Rabbit Eye,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Rabbit
+Rabbit Fur,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fur,Rabbit
+Rabbit Leg,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Rabbit
+Rabbit Oil,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Rabbit
+Rabbit Skin,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Rabbit
+Rabbit Tail,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Rabbit
+Rabbit Talon,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Rabbit
+Rabbit Tooth,Assets/Sprites/tileRabbit,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tooth,Rabbit
+Rat,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Rat,15,Outputs,,,,Eye,Oil,Leg,Blood,Tail,Skin,Fur,Talon,Tooth,,2,1,4,1,1,1,1,4,2,,,Rat
+Rat Blood,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Rat
+Rat Eye,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Rat
+Rat Fur,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fur,Rat
+Rat Leg,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Rat
+Rat Oil,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Rat
+Rat Skin,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skin,Rat
+Rat Tail,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tail,Rat
+Rat Talon,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Talon,Rat
+Rat Tooth,Assets/Sprites/tileRat,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tooth,Rat
+Redwood,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,BruteForce,Redwood,30,Outputs,,,,Branch,Leaf,Bark,,,,,,,,3,1,3,,,,,,,,,Redwood
+Redwood Bark,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Redwood Bark,10,Outputs,,,,Woodchips,,,,,,,,,,1,,,,,,,,,,Bark,Redwood
+Redwood Branch,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Redwood Branch,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Branch,Redwood
+Redwood Leaf,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Redwood
+Redwood Shavings,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Redwood Shavings,3,Powder,,,Assets/Sprites/pouch,,,,,,,,,,,,,,,,,,,,,Shavings,Redwood
+Redwood Woodchips,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Redwood Woodchips,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Woodchips,Redwood
+Redwood Woodchips,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Redwood Woodchips,30,Outputs,,,,Shavings,,,,,,,,,,1,,,,,,,,,,Woodchips,Redwood
+Redwood Woodchips,Assets/Sprites/tileRedwood,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,Cauldron,Redwood Woodchips,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Woodchips,Redwood
+Rockrose,Assets/Sprites/tileRockrose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,ChoppingBoard,Labdanum,1,Outputs,,,,Leaf,Petal,,,,,,,,,1,4,,,,,,,,,,Rockrose
+Rockrose Leaf,Assets/Sprites/tileRockrose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Labdanum Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Rockrose
+Rockrose Oil,Assets/Sprites/tileRockrose,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Rockrose
+Rockrose Petal,Assets/Sprites/tileRockrose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Labdanum Petal,5,Outputs,,,,Oil,,,,,,,,,,0.1,,,,,,,,,,Petal,Rockrose
+Rose,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Rose,3,Outputs,,,,Leaf,Petal,Thorn,,,,,,,,4,8,4,,,,,,,,,Rose
+Rose Leaf,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,MortarandPestle,Rose Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Rose
+Rose Nectar,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Nectar,Rose
+Rose Petal,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,Cauldron,Rose Petal,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Petal,Rose
+Rose Petal,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,DryingRack,Rose Petal,720,Dried,,480,Assets/Sprites/inferno,Nectar,Pollen,,,,,,,,,0.1,0.1,,,,,,,,,Petal,Rose
+Rose Petal,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,MortarandPestle,Rose Petal,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Petal,Rose
+Rose Petal,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,Cauldron,Rose Petal,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Petal,Rose
+Rose Pollen,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Rose
+Rose Thorn,Assets/Sprites/tileRose,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Thorn,Rose
+Ruby,Assets/Sprites/tileRuby,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Ruby,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Ruby
+Ruby Dust,Assets/Sprites/tileRuby,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Ruby
+Sandstone,Assets/Sprites/tileSandstone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Sandstone,10,Outputs,,,,Lump,,,,,,,,,,2,,,,,,,,,,Lump,Sandstone
+Sandstone Dust,Assets/Sprites/tileSandstone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Sandstone
+Sandstone Lump,Assets/Sprites/tileSandstone,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Sandstone Lump,30,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Sandstone
+Sapphire,Assets/Sprites/tileSapphire,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,BruteForce,Sapphire,10,Outputs,,,,Dust,,,,,,,,,,1,,,,,,,,,,Lump,Sapphire
+Sapphire Dust,Assets/Sprites/tileSapphire,,Prefabs/Interactables,Mineral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dust,Sapphire
+Sesame,Assets/Sprites/tileSesame,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Sesame,720,Outputs,,480,,,Seed,,,,,,,,,,3,,,,,,,,,,Sesame
+Sesame,Assets/Sprites/tileSesame,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Sesame,5,Outputs,,,,Oil,,,,,,,,,,0.1,,,,,,,,,,,Sesame
+Sesame Oil,Assets/Sprites/tileSesame,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Sesame
+Sesame Seed,Assets/Sprites/tileSesame,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Seed,Sesame
+Shaggy Ink Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Shaggy Ink Cap,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Shaggy Ink Cap
+Shaggy Ink Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,DryingRack,Shaggy Ink Cap,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Shaggy Ink Cap
+Shaggy Ink Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Shaggy Ink Cap,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Shaggy Ink Cap
+Shaggy Ink Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Shaggy Ink Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Shaggy Ink Cap
+Shaggy Ink Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Shaggy Ink Cap,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Shaggy Ink Cap
+Shaggy Ink Cap Cap,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Shaggy Ink Cap Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Shaggy Ink Cap
+Shaggy Ink Cap Gills,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Shaggy Ink Cap
+Shaggy Ink Cap Stem,Assets/Sprites/tileShaggyinkcap,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Shaggy Ink Cap Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Shaggy Ink Cap
+Snail,Assets/Sprites/tileSnail,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Snail,15,Outputs,,,,Oil,Blood,Eye,Shell,,,,,,,1,1,2,1,,,,,,,,Snail
+Spider,Assets/Sprites/tileSpider,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Spider,15,Outputs,,,,Eye,Leg,Oil,,,,,,,,8,8,1,,,,,,,,,Spider
+Spider Eye,Assets/Sprites/tileSpider,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Spider
+Spider Leg,Assets/Sprites/tileSpider,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Spider
+Spider Oil,Assets/Sprites/tileSpider,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Spider
+Sunflower,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Sunflower,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Sunflower
+Sunflower,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Sunflower,3,Outputs,,,,Leaf,Petal,Stem,,,,,,,,2,8,1,,,,,,,,,Sunflower
+Sunflower Leaf,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,MortarandPestle,Sunflower Leaf,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Leaf,Sunflower
+Sunflower Oil,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Sunflower
+Sunflower Petal,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,Cauldron,Sunflower Petal,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,Petal,Sunflower
+Sunflower Petal,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,ChoppingBoard,Sunflower Petal,3,Outputs,,,,,Pollen,,,,,,,,,,0.5,,,,,,,,,Petal,Sunflower
+Sunflower Petal,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,DryingRack,Sunflower Petal,720,Outputs,,480,,,,Seed,,,,,,,,,,3,,,,,,,,Petal,Sunflower
+Sunflower Petal,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,MortarandPestle,Sunflower Petal,5,Outputs,,,,Oil,,,,,,,,,,0.5,,,,,,,,,,Petal,Sunflower
+Sunflower Petal,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,,,,,Cauldron,Sunflower Petal,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,Petal,Sunflower
+Sunflower Pollen,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pollen,Sunflower
+Sunflower Seed,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,1,0,1,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Seed,Sunflower
+Sunflower Stem,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,ChoppingBoard,Sunflower Stem,3,Chopped,,,Assets/Sprites/battle,,,,,,,,,,,,,,,,,,,,,Stem,Sunflower
+Sunflower Stem,Assets/Sprites/tileSunflower,,Prefabs/Interactables,Botanical,0,1,0,,,,,,,,,,DryingRack,Sunflower Stem,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,Stem,Sunflower
+Toad,Assets/Sprites/tileToad,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Toad,15,Outputs,,,,Eye,Oil,Leg,Blood,,,,,,,2,1,4,1,,,,,,,,Toad
+Toad Blood,Assets/Sprites/tileToad,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Toad
+Toad Eye,Assets/Sprites/tileToad,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eye,Toad
+Toad Leg,Assets/Sprites/tileToad,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leg,Toad
+Toad Oil,Assets/Sprites/tileToad,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Toad
+Vervain,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,Cauldron,Vervain,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Vervain
+Vervain,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,DryingRack,Vervain,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Vervain
+Vervain,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,ChoppingBoard,Vervain,1,Outputs,,,,Leaf,Petal,,,,,,,,,2,8,,,,,,,,,,Vervain
+Vervain,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,Cauldron,Vervain,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Vervain
+Vervain Leaf,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leaf,Vervain
+Vervain Petal,Assets/Sprites/tileVervain,,Prefabs/Interactables,Botanical,1,0,1,0,0,1,,,1,,,,MortarandPestle,Vervain Petal,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Petal,Vervain
+Worm,Assets/Sprites/tileWorm,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,ChoppingBoard,Worm,15,Outputs,,,,Oil,Blood,,,,,,,,,1,1,,,,,,,,,,Worm
+Worm Blood,Assets/Sprites/tileWorm,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blood,Worm
+Worm Oil,Assets/Sprites/tileWorm,,Prefabs/Interactables,Animal,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oil,Worm
+Yellow Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Yellow Cap,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Yellow Cap
+Yellow Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,DryingRack,Yellow Cap,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Yellow Cap
+Yellow Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,ChoppingBoard,Yellow Cap,1,Outputs,,,,Cap,Gills,Stem,,,,,,,,1,1,1,,,,,,,,,Yellow Cap
+Yellow Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Yellow Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Yellow Cap
+Yellow Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,Cauldron,Yellow Cap,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Yellow Cap
+Yellow Cap Cap,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Yellow Cap Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Yellow Cap
+Yellow Cap Gills,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gills,Yellow Cap
+Yellow Cap Stem,Assets/Sprites/tileYellowcap,,Prefabs/Interactables,Botanical,0,1,1,1,0,0,,,,,,,MortarandPestle,Yellow Cap Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Yellow Cap
+Yellow Morel,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Yellow Morel,480,Brewed,Yes,15,Assets/Sprites/spiral,,,,,,,,,,,,,,,,,,,,,,Yellow Morel
+Yellow Morel,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,DryingRack,Yellow Morel,720,Dried,,480,Assets/Sprites/inferno,,,,,,,,,,,,,,,,,,,,,,Yellow Morel
+Yellow Morel,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,ChoppingBoard,Yellow Morel,1,Outputs,,,,Cap,Stem,,,,,,,,,1,1,,,,,,,,,,Yellow Morel
+Yellow Morel,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Yellow Morel,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,,Yellow Morel
+Yellow Morel,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,Cauldron,Yellow Morel,480,Steeped,,,Assets/Sprites/portal,,,,,,,,,,,,,,,,,,,,,,Yellow Morel
+Yellow Morel Cap,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Yellow Morel Cap,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Cap,Yellow Morel
+Yellow Morel Stem,Assets/Sprites/tileYellowmorel,,Prefabs/Interactables,Botanical,0,1,1,0,1,0,,,,,,,MortarandPestle,Yellow Morel Stem,3,Paste,,,Assets/Sprites/potion2,,,,,,,,,,,,,,,,,,,,,Stem,Yellow Morel

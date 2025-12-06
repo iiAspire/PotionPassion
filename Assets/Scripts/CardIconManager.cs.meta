@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1f967b9083848c94fad925a98552e45c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - botanicalSprite: {instanceID: 0}
+  - animalSprite: {instanceID: 0}
+  - waterSprite: {instanceID: 0}
+  - mineralSprite: {instanceID: 0}
+  - metalSprite: {instanceID: 0}
+  - intimateSprite: {instanceID: 0}
+  - astrologicalSprite: {instanceID: 0}
+  - spiritualSprite: {instanceID: 0}
+  - elementSprite: {instanceID: 0}
+  - toolSprite: {instanceID: 0}
+  - craftingSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
