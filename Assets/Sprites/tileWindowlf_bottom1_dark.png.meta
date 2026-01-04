@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64eeb082ead87944c97967225fd268d9
+guid: 4b3823287142267489cbc6195f661bee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7068358843443613515
-    second: vialYellow_0
+      213: 8559342798961345674
+    second: tileWindowlf_bottom1_dark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vialYellow_0
+      name: tileWindowlf_bottom1_dark_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 58
-        height: 85
+        width: 108
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b07d87e41528ed90800000000000000
-      internalID: -7068358843443613515
+      spriteID: a8483e22de4e8c670800000000000000
+      internalID: 8559342798961345674
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vialYellow_0: -7068358843443613515
+      tileWindowlf_bottom1_dark_0: 8559342798961345674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

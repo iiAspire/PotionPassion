@@ -93,56 +93,39 @@ public class WorkbenchStation : MonoBehaviour
 
     IEnumerator TryRestoreAfterLoad()
     {
-        Debug.Log($"[{tool}] TryRestoreAfterLoad starting...");
+        //Debug.Log($"[{tool}] TryRestoreAfterLoad starting...");
 
-        // Wait until cards have been restored
-        yield return null; // one frame after LoadAllCards
-        yield return null; // extra safety frame
+        yield return null;
+        yield return null;
 
-        if (!ManualProcessPersistence.Instance.HasSavedProcess)
+        if (!ManualProcessPersistence.Instance.HasSavedProcess(tool)) // 👈 Pass tool
         {
-            Debug.Log($"[{tool}] No saved process found");
+            //Debug.Log($"[{tool}] No saved process found");
             yield break;
         }
 
-        // 👇 PEEK instead of consuming
-        var state = ManualProcessPersistence.Instance.Peek();
+        var state = ManualProcessPersistence.Instance.Peek(tool); // 👈 Pass tool
 
-        Debug.Log($"[{tool}] Peeked at saved state: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
+        //Debug.Log($"[{tool}] Peeked at saved state: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
 
-        // 👇 Check if this is OUR tool
-        if (state.tool != tool)
-        {
-            Debug.Log($"[{tool}] Saved tool ({state.tool}) doesn't match this tool ({tool}), ignoring");
-            yield break; // Don't consume, let the right workbench find it
-        }
+        // No need to check if tool matches - we already filtered by tool
 
-        Debug.Log($"[{tool}] This is our tool! Looking for card with runtimeID: {state.cardRuntimeID}");
+        //Debug.Log($"[{tool}] Looking for card with runtimeID: {state.cardRuntimeID}");
 
         CardComponent card = FindCardInSceneByRuntimeID(state.cardRuntimeID);
 
         if (card == null)
         {
-            Debug.LogWarning($"[{tool}] Card {state.cardRuntimeID} not found after load. Checking all cards in scene:");
-
-            // Debug: list all cards in the scene
-            foreach (var c in FindObjectsOfType<CardComponent>())
-            {
-                Debug.LogWarning($"  Found card: {c.CardData?.cardName} with runtimeID={c.RuntimeID}");
-            }
-
-            // Don't consume - maybe the card will appear later?
+            Debug.LogWarning($"[{tool}] Card {state.cardRuntimeID} not found after load.");
             yield break;
         }
 
-        Debug.Log($"✅ Found card '{card.CardData.cardName}' at position {card.transform.position}, parent={card.transform.parent?.name}");
+        //Debug.Log($"✅ Found card '{card.CardData.cardName}'");
 
-        // 👇 NOW consume since we're using it
-        ManualProcessPersistence.Instance.Consume();
+        ManualProcessPersistence.Instance.Consume(tool); // 👈 Pass tool
 
-        Debug.Log($"✅ Restoring paused {tool} with {state.remainingTime:F2}s");
+        //Debug.Log($"✅ Restoring paused {tool} with {state.remainingTime:F2}s");
 
-        // Snap card back onto bench
         card.transform.SetParent(transform, false);
         card.transform.localPosition = Vector3.zero;
 
@@ -152,8 +135,8 @@ public class WorkbenchStation : MonoBehaviour
     IEnumerator ResumeProcess(CardComponent card, ManualProcessState state)
     {
         toolTimerRoot.SetActive(true);
-        toolTimerSlider.maxValue = state.recipe.processingTime;
-        toolTimerSlider.value = state.remainingTime;
+        //toolTimerSlider.maxValue = state.recipe.processingTime;
+        //toolTimerSlider.value = state.remainingTime;
 
         currentCard = card;
         currentRecipe = state.recipe;
@@ -161,6 +144,13 @@ public class WorkbenchStation : MonoBehaviour
 
         isBusy = true;
         isPaused = true;
+
+        if (toolTimerSlider != null)
+        {
+            toolTimerSlider.maxValue = state.recipe.processingTime;
+            toolTimerSlider.value = state.remainingTime; // 👈 Should be remainingTime, not elapsed
+            toolTimerSlider.gameObject.SetActive(true);
+        }
 
         ShowPauseButton();
         pauseLabel.text = "Resume";
@@ -178,8 +168,8 @@ public class WorkbenchStation : MonoBehaviour
             return;
 
         // Debug: see exactly what this card thinks it is
-        Debug.Log($"[StartProcessing] Card = {card.CardData.cardName}, " +
-                  $"recipes = {card.CardData.processingRecipes?.Count ?? 0}, tool = {tool}");
+        //Debug.Log($"[StartProcessing] Card = {card.CardData.cardName}, " +
+        //          $"recipes = {card.CardData.processingRecipes?.Count ?? 0}, tool = {tool}");
 
         CardData runtimeData = card.CardData;   // ← use the instance attached to this card
 
@@ -210,9 +200,9 @@ public class WorkbenchStation : MonoBehaviour
 
         isBusy = true;
 
-        Debug.Log($"[StartProcessing] Using recipe on {card.CardData.cardName}: " +
-                  $"tool={recipe.tool}, processedType={recipe.processedResultType}, " +
-                  $"outputs={recipe.visualOutputs?.Count ?? 0}");
+        //Debug.Log($"[StartProcessing] Using recipe on {card.CardData.cardName}: " +
+        //          $"tool={recipe.tool}, processedType={recipe.processedResultType}, " +
+        //          $"outputs={recipe.visualOutputs?.Count ?? 0}");
 
         // Snap onto tool visually
         card.transform.SetParent(transform, false);
@@ -278,21 +268,33 @@ public class WorkbenchStation : MonoBehaviour
     {
         float totalTime = recipe.processingTime; // real-time seconds
 
-        toolTimerSlider.maxValue = totalTime;
-        toolTimerSlider.value = totalTime - currentElapsed;
+
+        if (slider != null)
+        {
+            slider.maxValue = totalTime;
+            slider.value = totalTime - currentElapsed;
+        }
 
         while (currentElapsed < totalTime)
         {
-            if (!isPaused) // Instead of ManualToolState.IsPaused
+            if (!isPaused)
             {
                 currentElapsed += timerSpeedMultiplier * Time.deltaTime;
-                // ...
+
+                if (currentElapsed > totalTime)
+                    currentElapsed = totalTime;
+
+                if (slider != null)
+                    slider.value = totalTime - currentElapsed;
             }
+
             yield return null;
         }
 
-        if (slider != null) slider.gameObject.SetActive(false);
-        if (toolTimerRoot != null) toolTimerRoot.SetActive(false);
+        if (slider != null)
+            slider.gameObject.SetActive(false);
+        if (toolTimerRoot != null)
+            toolTimerRoot.SetActive(false);
 
         // Processing complete
         card.CardData.processedType = recipe.processedResultType;
@@ -313,7 +315,7 @@ public class WorkbenchStation : MonoBehaviour
                 card.CardData.cardName = currentName + " " + processedSuffix;
             }
 
-            Debug.Log($"[Processed Rename] '{currentName}' → '{card.CardData.cardName}'");
+            //Debug.Log($"[Processed Rename] '{currentName}' → '{card.CardData.cardName}'");
 
             // Apply immediately to the visuals
             card.SetCardData(card.CardData, true);
@@ -321,6 +323,8 @@ public class WorkbenchStation : MonoBehaviour
 
         isBusy = false;
         HidePauseButton();
+
+        RemoveSavedCard();
 
         // Spawn outputs
         if (recipe.visualOutputs != null && recipe.visualOutputs.Count > 0)
@@ -335,6 +339,33 @@ public class WorkbenchStation : MonoBehaviour
                 card.transform.SetParent(playerInventoryParent, false);
                 card.transform.localPosition = Vector3.zero;
             }
+        }
+    }
+
+    private void RemoveSavedCard()
+    {
+        if (currentCard == null)
+            return;
+
+        // Remove from CardPersistenceManager's saved cards list
+        if (GameData.Instance != null && GameData.Instance.savedCards != null)
+        {
+            var toRemove = GameData.Instance.savedCards
+                .FindAll(s => s.container == CardContainer.Workbench &&
+                              s.workbenchTool == tool.ToString());
+
+            foreach (var card in toRemove)
+            {
+                GameData.Instance.savedCards.Remove(card);
+                //Debug.Log($"🗑️ Removed completed card from save: {card.cardName}");
+            }
+        }
+
+        // Remove from ManualProcessPersistence
+        if (ManualProcessPersistence.Instance.HasSavedProcess(tool))
+        {
+            ManualProcessPersistence.Instance.Consume(tool);
+            //Debug.Log($"🗑️ Removed completed process from persistence: {tool}");
         }
     }
 
@@ -392,7 +423,7 @@ public class WorkbenchStation : MonoBehaviour
                 outputName = baseName + " " + outputName;
         }
 
-        Debug.Log($"[Output Naming] {sourceCardData.cardName} + '{output.name}' => '{outputName}'");
+        //Debug.Log($"[Output Naming] {sourceCardData.cardName} + '{output.name}' => '{outputName}'");
 
 
         //-----------------------------------------------------
@@ -406,7 +437,7 @@ public class WorkbenchStation : MonoBehaviour
             if (stack != null && stack.stackName == outputName)
             {
                 existingStack = stack;
-                Debug.Log($"Found existing stack: {stack.stackName}");
+                //Debug.Log($"Found existing stack: {stack.stackName}");
                 break;
             }
         }
@@ -423,7 +454,7 @@ public class WorkbenchStation : MonoBehaviour
 
         if (template == null)
         {
-            Debug.LogWarning($"No CardData asset found for '{outputName}', cloning from {sourceCardData.cardName}");
+            //Debug.LogWarning($"No CardData asset found for '{outputName}', cloning from {sourceCardData.cardName}");
             template = sourceCardData;
         }
 
@@ -505,7 +536,7 @@ public class WorkbenchStation : MonoBehaviour
 
         newStack.Initialize(newCard);
 
-        Debug.Log($"Created new stack for '{outputName}'");
+        //Debug.Log($"Created new stack for '{outputName}'");
     }
 
     public bool TryStartProcessing(CardComponent card)
@@ -586,7 +617,7 @@ public class WorkbenchStation : MonoBehaviour
 
     void ShowPauseButton()
     {
-        Debug.Log($"PauseButton activeSelf={pauseButton.gameObject.activeSelf}, activeInHierarchy={pauseButton.gameObject.activeInHierarchy}");
+        //Debug.Log($"PauseButton activeSelf={pauseButton.gameObject.activeSelf}, activeInHierarchy={pauseButton.gameObject.activeInHierarchy}");
         pauseButton.gameObject.SetActive(true);
 
         if (pauseButton != null)
@@ -620,6 +651,17 @@ public class WorkbenchStation : MonoBehaviour
         // 👇 SAVE THE CARD to CardPersistenceManager FIRST
         if (CardPersistenceManager.Instance != null && currentCard != null)
         {
+            // Remove any existing saved card for this workbench first
+            var existing = GameData.Instance.savedCards
+                .FindAll(s => s.container == CardContainer.Workbench &&
+                             s.workbenchTool == tool.ToString());
+
+            foreach (var old in existing)
+            {
+                GameData.Instance.savedCards.Remove(old);
+                //Debug.Log($"🗑️ Removed old workbench card before re-saving: {old.cardName}");
+            }
+
             CardData data = currentCard.CardData;
 
             var savedCard = new SavedCardState
@@ -657,7 +699,7 @@ public class WorkbenchStation : MonoBehaviour
 
             // Add directly to the saved cards list
             GameData.Instance.savedCards.Add(savedCard);
-            Debug.Log($"💾 Saved workbench card: {data.cardName}, runtimeID={currentCard.runtimeID}");
+            //Debug.Log($"💾 Saved workbench card: {data.cardName}, runtimeID={currentCard.runtimeID}");
         }
 
         ManualProcessPersistence.Instance.Save(
@@ -670,23 +712,23 @@ public class WorkbenchStation : MonoBehaviour
             }
         );
 
-        Debug.Log($"💾 Persisted paused {tool} with {remaining:F2}s remaining");
+        //Debug.Log($"💾 Persisted paused {tool} with {remaining:F2}s remaining");
     }
 
     CardComponent FindCardInSceneByRuntimeID(string runtimeID)
     {
-        Debug.Log($"[{tool}] Searching for card with runtimeID: {runtimeID}");
+        //Debug.Log($"[{tool}] Searching for card with runtimeID: {runtimeID}");
 
         var allCards = FindObjectsOfType<CardComponent>();
-        Debug.Log($"[{tool}] Found {allCards.Length} total cards in scene");
+        //Debug.Log($"[{tool}] Found {allCards.Length} total cards in scene");
 
         foreach (var card in allCards)
         {
-            Debug.Log($"[{tool}]   Checking card: name={card.CardData?.cardName}, runtimeID={card.RuntimeID}, parent={card.transform.parent?.name}");
+            //Debug.Log($"[{tool}]   Checking card: name={card.CardData?.cardName}, runtimeID={card.RuntimeID}, parent={card.transform.parent?.name}");
 
             if (card.RuntimeID == runtimeID)
             {
-                Debug.Log($"[{tool}] ✅ MATCH FOUND!");
+                //Debug.Log($"[{tool}] ✅ MATCH FOUND!");
                 return card;
             }
         }

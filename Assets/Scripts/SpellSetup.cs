@@ -128,9 +128,9 @@ public class SpellSetup : MonoBehaviour
 
         //Debug.Log($"SpellSetup: generated {generatedCombos.Count} combos. RecipeDB spells: {recipeDatabase?.SpellCombos?.Count ?? 0}");
 
-        Debug.Log(
-            $"🧪 SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
-        );
+        //Debug.Log(
+        //    $"🧪 SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
+        //);
     }
 
     public List<SpellCombo> GetAllCombos()
@@ -320,18 +320,18 @@ public class SpellSetup : MonoBehaviour
         return filtered[UnityEngine.Random.Range(0, filtered.Count)];
     }
 
-    public void SpawnTestCards()
-    {
-        Debug.Log("⚠ Spawning test spells");
+    //public void SpawnTestCards()
+    //{
+    //    //Debug.Log("⚠ Spawning test spells");
 
-        // Example: ensure database exists
-        if (recipeDatabase == null)
-        {
-            Debug.LogError("RecipeDatabase missing in SpellSetup");
-            return;
-        }
+    //    // Example: ensure database exists
+    //    if (recipeDatabase == null)
+    //    {
+    //        Debug.LogError("RecipeDatabase missing in SpellSetup");
+    //        return;
+    //    }
 
-        // Add whatever test combos you want here
-        // (or call GenerateAllSpells if that's your intention)
-    }
+    //    // Add whatever test combos you want here
+    //    // (or call GenerateAllSpells if that's your intention)
+    //}
 }

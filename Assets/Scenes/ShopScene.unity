@@ -596,6 +596,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57661505}
   m_CullTransparentMesh: 1
+--- !u!1 &67801112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67801113}
+  - component: {fileID: 67801115}
+  - component: {fileID: 67801114}
+  m_Layer: 5
+  m_Name: AstrologicalImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &67801113
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67801112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 188601993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &67801114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67801112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &67801115
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67801112}
+  m_CullTransparentMesh: 1
 --- !u!1 &68431432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1738,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 67801113}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1684,7 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2142,7 +2218,7 @@ GameObject:
   - component: {fileID: 228724863}
   - component: {fileID: 228724865}
   m_Layer: 5
-  m_Name: ExitBruteForce
+  m_Name: ExitPlanters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2264,7 +2340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 228724863}
         m_TargetAssemblyTypeName: SceneLoaderButton, Assembly-CSharp
-        m_MethodName: LoadBruteRoom
+        m_MethodName: LoadPlanterRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2672,7 +2748,7 @@ GameObject:
   - component: {fileID: 311254672}
   - component: {fileID: 311254671}
   m_Layer: 5
-  m_Name: ExitBruteForceImage
+  m_Name: ExitPlantersImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2717,7 +2793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4622841298893625978, guid: dd5ec0808da92754e9425048a6885488, type: 3}
+  m_Sprite: {fileID: -3106249553400471088, guid: 4e17e2b5f2319fb408cb31b68c4b9d8b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3663,8 +3739,20 @@ MonoBehaviour:
   - Comet
   cosmicDay: 1
   daysPerCosmicBody: 2
-  cosmicIcon: {fileID: 188601994}
-  cosmicSprites: []
+  cosmicIcon: {fileID: 67801114}
+  cosmicSprites:
+  - {fileID: 9120531108291533393, guid: 6e2a2892bf074a64cb7de435ad540388, type: 3}
+  - {fileID: 8076081152995592803, guid: 034f4318ba1460a409011bd171da30d3, type: 3}
+  - {fileID: 6213461945658188595, guid: 6ab3b390d9d88a9478e3b67eaa7b9ee0, type: 3}
+  - {fileID: -2959983406167689813, guid: caaa7773d0a236642a5bdd7a4c110822, type: 3}
+  - {fileID: 4452548436395095875, guid: 8bf8c1f9761ac6e4c8ba975b1df01116, type: 3}
+  - {fileID: -2871805982694865656, guid: e77cdfc9acc02b847adb8bfa22b82671, type: 3}
+  - {fileID: 3702532018444934719, guid: 8c43c4b7a7c3b2b448ac03fc15645994, type: 3}
+  - {fileID: -5109058630478334503, guid: 710335d7ccb039445b32dda821c410e7, type: 3}
+  - {fileID: -4073250097742926874, guid: 9f1a826eaa44f6c4999d0822597b9126, type: 3}
+  - {fileID: -2735552557973281814, guid: 6a8aeaa3b484e5c42a0f5c915db0337f, type: 3}
+  - {fileID: -8555646794560406606, guid: d33e0021354c5f2478fb643583f9823b, type: 3}
+  - {fileID: 300894721054950527, guid: 33f3d38184f3a294f9ddcd9f8219a57a, type: 3}
   winterSunrise: 7
   winterSunset: 16
   summerSunrise: 4

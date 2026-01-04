@@ -1926,7 +1926,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1390657934}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1947,7 +1948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2330,7 +2331,7 @@ GameObject:
   - component: {fileID: 228724863}
   - component: {fileID: 228724865}
   m_Layer: 5
-  m_Name: ExitBruteForce
+  m_Name: ExitShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2633,6 +2634,7 @@ GameObject:
   - component: {fileID: 267305481}
   - component: {fileID: 267305484}
   - component: {fileID: 267305483}
+  - component: {fileID: 267305485}
   m_Layer: 5
   m_Name: WindowSpace
   m_TagString: Untagged
@@ -2698,6 +2700,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267305480}
   m_CullTransparentMesh: 1
+--- !u!114 &267305485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267305480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46eb990e4ea6ea24c9b4076c3679fd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowNightFadeController
+  panes:
+  - {fileID: 533175606}
+  - {fileID: 869823708}
+  - {fileID: 1459500596}
+  - {fileID: 1770580939}
+  fadeSpeed: 1.5
 --- !u!1 &275892843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,7 +3006,7 @@ GameObject:
   - component: {fileID: 311254672}
   - component: {fileID: 311254671}
   m_Layer: 5
-  m_Name: ExitBruteForceImage
+  m_Name: ExitShopImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3024,14 +3044,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.3921569, b: 0.14117648, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4622841298893625978, guid: dd5ec0808da92754e9425048a6885488, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e37c6e1828878b645a9dee94121de318, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4292,8 +4312,20 @@ MonoBehaviour:
   - Comet
   cosmicDay: 1
   daysPerCosmicBody: 2
-  cosmicIcon: {fileID: 188601994}
-  cosmicSprites: []
+  cosmicIcon: {fileID: 1390657935}
+  cosmicSprites:
+  - {fileID: 9120531108291533393, guid: 6e2a2892bf074a64cb7de435ad540388, type: 3}
+  - {fileID: 8076081152995592803, guid: 034f4318ba1460a409011bd171da30d3, type: 3}
+  - {fileID: 6213461945658188595, guid: 6ab3b390d9d88a9478e3b67eaa7b9ee0, type: 3}
+  - {fileID: -2959983406167689813, guid: caaa7773d0a236642a5bdd7a4c110822, type: 3}
+  - {fileID: 4452548436395095875, guid: 8bf8c1f9761ac6e4c8ba975b1df01116, type: 3}
+  - {fileID: -2871805982694865656, guid: e77cdfc9acc02b847adb8bfa22b82671, type: 3}
+  - {fileID: 3702532018444934719, guid: 8c43c4b7a7c3b2b448ac03fc15645994, type: 3}
+  - {fileID: -5109058630478334503, guid: 710335d7ccb039445b32dda821c410e7, type: 3}
+  - {fileID: -4073250097742926874, guid: 9f1a826eaa44f6c4999d0822597b9126, type: 3}
+  - {fileID: -2735552557973281814, guid: 6a8aeaa3b484e5c42a0f5c915db0337f, type: 3}
+  - {fileID: -8555646794560406606, guid: d33e0021354c5f2478fb643583f9823b, type: 3}
+  - {fileID: 300894721054950527, guid: 33f3d38184f3a294f9ddcd9f8219a57a, type: 3}
   winterSunrise: 7
   winterSunset: 16
   summerSunrise: 4
@@ -4604,6 +4636,7 @@ GameObject:
   - component: {fileID: 533175603}
   - component: {fileID: 533175605}
   - component: {fileID: 533175604}
+  - component: {fileID: 533175606}
   m_Layer: 5
   m_Name: TLPaneImage
   m_TagString: Untagged
@@ -4650,7 +4683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6496222276537939279, guid: 0ebe201d4fde7d24cbadd8ec5c2784d4, type: 3}
+  m_Sprite: {fileID: 1239055645564507244, guid: 08c8efa79621b4445a283c9a497ff3ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4668,6 +4701,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533175602}
   m_CullTransparentMesh: 1
+--- !u!225 &533175606
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533175602}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &536528677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,7 +4982,7 @@ MonoBehaviour:
   growthImage: {fileID: 1322915630}
   seedLabelParent: {fileID: 28232495}
   seedLabelSprite: {fileID: 357438102}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 560410254}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &560410256
@@ -7345,6 +7390,7 @@ GameObject:
   - component: {fileID: 869823705}
   - component: {fileID: 869823707}
   - component: {fileID: 869823706}
+  - component: {fileID: 869823708}
   m_Layer: 5
   m_Name: TRPaneImage
   m_TagString: Untagged
@@ -7391,7 +7437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3611131510382928820, guid: 9182931539728e04a894a438d1ba66de, type: 3}
+  m_Sprite: {fileID: -7217148364358510312, guid: ffff5e1e1254de744b3987ec743fbcef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7409,6 +7455,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869823704}
   m_CullTransparentMesh: 1
+--- !u!225 &869823708
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869823704}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &891960802
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,7 +8998,7 @@ MonoBehaviour:
   growthImage: {fileID: 787841137}
   seedLabelParent: {fileID: 402498310}
   seedLabelSprite: {fileID: 1307633786}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 1117041769}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &1117041775
@@ -10886,6 +10944,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368423952}
   m_CullTransparentMesh: 1
+--- !u!1 &1390657933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390657934}
+  - component: {fileID: 1390657936}
+  - component: {fileID: 1390657935}
+  m_Layer: 5
+  m_Name: AstrologicalImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1390657934
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390657933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 188601993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1390657935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390657933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1390657936
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390657933}
+  m_CullTransparentMesh: 1
 --- !u!1 &1400635268
 GameObject:
   m_ObjectHideFlags: 0
@@ -11872,7 +12005,7 @@ MonoBehaviour:
   growthImage: {fileID: 1222823529}
   seedLabelParent: {fileID: 1171583409}
   seedLabelSprite: {fileID: 400981413}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 1456822589}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &1456822593
@@ -11902,6 +12035,7 @@ GameObject:
   - component: {fileID: 1459500593}
   - component: {fileID: 1459500595}
   - component: {fileID: 1459500594}
+  - component: {fileID: 1459500596}
   m_Layer: 5
   m_Name: BRPaneImage
   m_TagString: Untagged
@@ -11948,7 +12082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6626911357782270628, guid: d2e4b867b5888e84d946acecefc491b6, type: 3}
+  m_Sprite: {fileID: 501234020913811800, guid: c7e08599d390d984888c9cd9ffa31863, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11966,6 +12100,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459500592}
   m_CullTransparentMesh: 1
+--- !u!225 &1459500596
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459500592}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1479732001
 GameObject:
   m_ObjectHideFlags: 0
@@ -12632,7 +12778,7 @@ MonoBehaviour:
   growthImage: {fileID: 774617280}
   seedLabelParent: {fileID: 1905588604}
   seedLabelSprite: {fileID: 1981588724}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 1562922207}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &1562922213
@@ -14821,6 +14967,7 @@ GameObject:
   - component: {fileID: 1770580936}
   - component: {fileID: 1770580938}
   - component: {fileID: 1770580937}
+  - component: {fileID: 1770580939}
   m_Layer: 5
   m_Name: BLPaneImage
   m_TagString: Untagged
@@ -14867,7 +15014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1050479025407559884, guid: 37c20842e6b1f3644ba09c06bbc1dab5, type: 3}
+  m_Sprite: {fileID: 8559342798961345674, guid: 4b3823287142267489cbc6195f661bee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14885,6 +15032,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770580935}
   m_CullTransparentMesh: 1
+--- !u!225 &1770580939
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770580935}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1789360903
 GameObject:
   m_ObjectHideFlags: 0
@@ -16918,7 +17077,7 @@ MonoBehaviour:
   growthImage: {fileID: 1087624091}
   seedLabelParent: {fileID: 328726811}
   seedLabelSprite: {fileID: 1705438489}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 1997263668}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &1997263672
@@ -17912,7 +18071,7 @@ MonoBehaviour:
   growthImage: {fileID: 1882913275}
   seedLabelParent: {fileID: 2100249601}
   seedLabelSprite: {fileID: 521434925}
-  playerInventoryParent: {fileID: 0}
+  playerInventoryParent: {fileID: 173398408}
   outputAnchor: {fileID: 2133283223}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &2133283227

@@ -17,7 +17,7 @@ public class Cauldron : MonoBehaviour, IDropHandler
     public GameObject cardPrefab;
 
     public ToolTimer toolTimer;
-    public CardData testSpellCard;          // to permit adding test receipe 'Spell Test' to the RecipeDatabase
+    //public CardData testSpellCard;          // to permit adding test receipe 'Spell Test' to the RecipeDatabase
 
     public CauldronWorkbench cauldronWorkbench;
 
@@ -40,30 +40,30 @@ public class Cauldron : MonoBehaviour, IDropHandler
     }
 
     // test code start - TESTSPELL
-    public void SpawnTestCards()  // for adding a test recipe to the database
-    {
-        if (Recipes == null)
-        {
-            Debug.LogError("RecipeDatabase not assigned!");
-            return;
-        }
+    //public void SpawnTestCards()  // for adding a test recipe to the database
+    //{
+    //    if (Recipes == null)
+    //    {
+    //        Debug.LogError("RecipeDatabase not assigned!");
+    //        return;
+    //    }
 
-        // Example test ingredients
-        string[] testIngredients = { "Corn", "Chia", "Sandstone" };
+    //    // Example test ingredients
+    //    string[] testIngredients = { "Corn", "Chia", "Sandstone" };
 
-        // Create a test SpellCombo for these ingredients
-        SpellCombo testCombo = new SpellCombo
-        {
-            SpellName = "Spell Test",
-            Ingredients = new List<string>(testIngredients),
-            ResultCard = testSpellCard   // ✅ this line links the sprite
-        };
+    //    // Create a test SpellCombo for these ingredients
+    //    SpellCombo testCombo = new SpellCombo
+    //    {
+    //        SpellName = "Spell Test",
+    //        Ingredients = new List<string>(testIngredients),
+    //        ResultCard = testSpellCard   // ✅ this line links the sprite
+    //    };
 
-        // Register it in the runtime RecipeDatabase
-        Recipes.AddCombo(testCombo);
+    //    // Register it in the runtime RecipeDatabase
+    //    Recipes.AddCombo(testCombo);
 
-        Debug.Log($"✅ Test combo '{testCombo.SpellName}' registered with ResultCard '{testSpellCard?.name ?? "null"}'.");
-    }
+    //    Debug.Log($"✅ Test combo '{testCombo.SpellName}' registered with ResultCard '{testSpellCard?.name ?? "null"}'.");
+    //}
     // testing code end
 
     public void OnDrop(PointerEventData eventData)
@@ -117,10 +117,10 @@ public class Cauldron : MonoBehaviour, IDropHandler
         SpellCombo combo =
             Recipes.GetComboByIngredients(ingredientNames);
 
-        Debug.Log(
-            $"Cauldron DB instance: {Recipes.GetInstanceID()}, " +
-            $"combos: {Recipes.SpellCombos.Count}"
-        );
+        //Debug.Log(
+        //    $"Cauldron DB instance: {Recipes.GetInstanceID()}, " +
+        //    $"combos: {Recipes.SpellCombos.Count}"
+        //);
 
         if (cauldronWorkbench != null)
         {

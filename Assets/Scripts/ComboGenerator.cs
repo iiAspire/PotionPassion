@@ -74,7 +74,7 @@ public class ComboGenerator : MonoBehaviour
     {
         if (recipeDatabase.SpellCombos.Exists(c => c.SpellName == spellName))
         {
-            Debug.Log($"Spell '{spellName}' already exists, skipping generation.");
+            //Debug.Log($"Spell '{spellName}' already exists, skipping generation.");
             return recipeDatabase.GetComboByName(spellName); // optional: return the existing combo
         }
 
@@ -125,9 +125,9 @@ public class ComboGenerator : MonoBehaviour
                 : GetRandomItem(FilterOutUnknowns(ingredientDatabase.Tools));
         }
 
-        Debug.Log(
-            $"SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
-        );
+        //Debug.Log(
+        //    $"SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
+        //);
 
         // Add generated combo to runtime database
         //recipeDatabase.AddCombo(combo);   // removed to avoid duplication with action in cauldron.start()

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6310be0fe86bf6f40a2069dc3315120a, type: 3}
   m_Name: Test Spell
   m_EditorClassIdentifier: Assembly-CSharp::ShelfVisualData
-  containerSprite: {fileID: 21300000, guid: 046add1465b83b04d867cd567d9ef0a9, type: 3}
+  containerSprite: {fileID: -7714879699798518212, guid: 763b6b43a897f444fb5e286da03a0fda, type: 3}
+  contentsSprite: {fileID: 0}
+  contentsColor: {r: 1, g: 1, b: 1, a: 1}

@@ -40,7 +40,7 @@ public class PlanterSlot : MonoBehaviour
 
     public void PlantSeed(CardComponent seed)
     {
-        Debug.Log($"{name} planted seed {plantedSeedName}");
+        //Debug.Log($"{name} planted seed {plantedSeedName}");
 
         if (isGrowing)
         {
@@ -49,18 +49,33 @@ public class PlanterSlot : MonoBehaviour
         }
 
         plantedSeedName = seed.CardData.cardName;
-        seed.gameObject.SetActive(false);
-        Debug.Log($"[{name}] Seed {plantedSeedName} deactivated");
 
         currentEntry = growthDatabase.GetEntry(seed.CardData.cardName);
+
         if (currentEntry == null)
         {
             Debug.LogError($"[{name}] ❌ NO GROWTH ENTRY FOUND for '{seed.CardData.cardName}' in database!");
             Debug.LogError($"[{name}] Database has {growthDatabase?.entries?.Count ?? 0} entries");
+            if (playerInventoryParent != null)
+            {
+                seed.transform.SetParent(playerInventoryParent, false);
+                seed.transform.localPosition = Vector3.zero;
+                seed.gameObject.SetActive(true); // Make sure it's visible
+                Debug.Log($"[{name}] Returned invalid seed to player inventory");
+            }
+            else
+            {
+                Debug.LogError($"[{name}] No playerInventoryParent assigned!");
+                seed.gameObject.SetActive(true); // At least make it visible again
+            }
+
             return;
         }
 
-        Debug.Log($"[{name}] ✅ Found growth entry: {currentEntry.grownPlant.cardName}, growTime={currentEntry.growTime}");
+        seed.gameObject.SetActive(false);
+        Debug.Log($"[{name}] Seed {plantedSeedName} deactivated");
+
+        //Debug.Log($"[{name}] ✅ Found growth entry: {currentEntry.grownPlant.cardName}, growTime={currentEntry.growTime}");
 
         elapsedMinutes = 0f;
         isGrowing = true;
@@ -69,12 +84,12 @@ public class PlanterSlot : MonoBehaviour
         // visuals on
         growthImage.gameObject.SetActive(true);
         radialTimer.gameObject.SetActive(true);
-        Debug.Log($"[{name}] Growth visuals activated");
+        //Debug.Log($"[{name}] Growth visuals activated");
 
         // label
         seedLabelParent.SetActive(true);
         seedLabelSprite.sprite = currentEntry.grownPlant.Icon;
-        Debug.Log($"[{name}] Seed label set");
+        //Debug.Log($"[{name}] Seed label set");
     }
 
     public void TickByMinutes(float minutes)
@@ -108,7 +123,7 @@ public class PlanterSlot : MonoBehaviour
 
     public void RestoreFromSave(string seedName, float remainingTime)
     {
-        Debug.Log($"{name} restored: growing={isGrowing}");
+        //Debug.Log($"{name} restored: growing={isGrowing}");
 
         // 1️⃣ Remember the planted seed (NO CardComponent exists)
         plantedSeedName = seedName;

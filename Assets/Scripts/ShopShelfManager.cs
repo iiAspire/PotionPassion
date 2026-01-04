@@ -34,7 +34,7 @@ public class ShopShelfManager : MonoBehaviour
             shelfGridRoots.Add(itemsGrid);
         }
 
-        Debug.Log($"[SHOP] Cached {shelfGridRoots.Count} shelf item grids");
+        //Debug.Log($"[SHOP] Cached {shelfGridRoots.Count} shelf item grids");
     }
 
     private IEnumerator WaitAndPopulate()
@@ -49,7 +49,7 @@ public class ShopShelfManager : MonoBehaviour
     public void PopulateShelves()
     {
         Debug.Log(
-            $"[SHOP] SaleInventory children = {saleInventoryRoot.childCount}",
+            //$"[SHOP] SaleInventory children = {saleInventoryRoot.childCount}",
             saleInventoryRoot
         );
 
@@ -72,7 +72,7 @@ public class ShopShelfManager : MonoBehaviour
             if (card.CardData == null)
                 continue;
 
-            Debug.Log($"[SHOP] Attempting to display card: {card.CardData.cardName}");
+            //Debug.Log($"[SHOP] Attempting to display card: {card.CardData.cardName}");
 
             Transform targetShelf = shelfGridRoots[shelfIndex];
 

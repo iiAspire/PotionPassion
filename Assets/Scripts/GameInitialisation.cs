@@ -29,6 +29,6 @@ public class GameInitialization : MonoBehaviour
         spellSetup.GenerateAllSpells();
         RecipesReady = true;
 
-        Debug.Log($"✅ Game initialized. Recipes: {Recipes.SpellCombos.Count}");
+        //Debug.Log($"✅ Game initialized. Recipes: {Recipes.SpellCombos.Count}");
     }
 }

@@ -86,13 +86,13 @@ public class CardPersistenceManager : MonoBehaviour
         canSave = true;
         IsLoaded = true;
 
-        Debug.Log("✅ Persistence ready — saving allowed");
+        //Debug.Log("✅ Persistence ready — saving allowed");
     }
     private void LogParent(string label, Transform t)
     {
         if (t == null)
         {
-            Debug.Log($"[BIND] {label}: NULL");
+            //Debug.Log($"[BIND] {label}: NULL");
             return;
         }
 
@@ -100,7 +100,7 @@ public class CardPersistenceManager : MonoBehaviour
         bool alive = t.gameObject != null;
         bool active = alive && t.gameObject.activeInHierarchy;
 
-        Debug.Log($"[BIND] {label}: alive={alive}, active={active}");
+        //Debug.Log($"[BIND] {label}: alive={alive}, active={active}");
     }
 
     public void BindSceneParents(
@@ -115,7 +115,7 @@ public class CardPersistenceManager : MonoBehaviour
         static bool IsAlive(Transform t) => t != null && t.gameObject != null;
 
         // Log without touching unsafe properties
-        Debug.Log("[BindSceneParents] BEGIN");
+        //Debug.Log("[BindSceneParents] BEGIN");
 
         LogParent("PlayerInventory", player);
         LogParent("IngredientsInventory", ingredients);
@@ -140,17 +140,17 @@ public class CardPersistenceManager : MonoBehaviour
         if (!saleInventoryParent)
             Debug.LogError("❌ SaleInventory missing or destroyed before binding");
 
-        Debug.Log("[BindSceneParents] END");
+        //Debug.Log("[BindSceneParents] END");
     }
 
     // Call this BEFORE changing scenes
     public void SaveAllCards()
     {
-        Debug.Log($"[SAVE] Ingredients parent instanceID = {ingredientsInventoryParent.GetInstanceID()}");
-        foreach (Transform child in ingredientsInventoryParent)
-        {
-            Debug.Log($"  child: {child.name}");
-        }
+        //Debug.Log($"[SAVE] Ingredients parent instanceID = {ingredientsInventoryParent.GetInstanceID()}");
+        //foreach (Transform child in ingredientsInventoryParent)
+        //{
+        //    Debug.Log($"  child: {child.name}");
+        //}
 
         if (!SceneLoadManager.Instance ||
             SceneLoadManager.Instance.IsTransitioning &&
@@ -177,16 +177,29 @@ public class CardPersistenceManager : MonoBehaviour
                 .FindAll(s => s.container == CardContainer.CauldronOutput);
         }
 
+        List<SavedCardState> preservedPlanterOutputs = null;
+        var plantersInScene = FindObjectsOfType<PlanterSlot>();
+        if (plantersInScene.Length == 0)
+        {
+            preservedPlanterOutputs = GameData.Instance.savedCards
+                .FindAll(s => s.container == CardContainer.PlanterOutput);
+
+            if (preservedPlanterOutputs.Count > 0)
+            {
+                Debug.Log($"[SAVE] Preserving {preservedPlanterOutputs.Count} planter output cards");
+            }
+        }
+
         List<SavedCardState> preservedWorkbenchCards = null;
         if (GameData.Instance.savedCards != null)
         {
             preservedWorkbenchCards = GameData.Instance.savedCards
                 .FindAll(s => s.container == CardContainer.Workbench);
 
-            if (preservedWorkbenchCards.Count > 0)
-            {
-                Debug.Log($"[SAVE] Preserving {preservedWorkbenchCards.Count} workbench cards from PersistIfPaused");
-            }
+            //if (preservedWorkbenchCards.Count > 0)
+            //{
+            //    Debug.Log($"[SAVE] Preserving {preservedWorkbenchCards.Count} workbench cards from PersistIfPaused");
+            //}
         }
 
         GameData.Instance.savedCards.Clear();
@@ -212,28 +225,28 @@ public class CardPersistenceManager : MonoBehaviour
                     fireWasOn = cauldron.FireWasOn,
                     totalBrewTime = cauldron.TotalBrewTime
                 };
-                Debug.Log($"[SAVE] Cauldron brewing '{cauldron.ActiveSpellName}' until OA={cauldron.FinishTimeUtcOa}");
+                //Debug.Log($"[SAVE] Cauldron brewing '{cauldron.ActiveSpellName}' until OA={cauldron.FinishTimeUtcOa}");
             }
             else
             {
                 // Cauldron exists but isn’t brewing → nothing to resume
                 GameData.Instance.savedCauldron = null;
-                Debug.Log("[SAVE] Cauldron present but not brewing — cleared savedCauldron");
+                //Debug.Log("[SAVE] Cauldron present but not brewing — cleared savedCauldron");
             }
         }
         else
         {
             // ❗ No cauldron in this scene (e.g. PlanterScene)
             // DO NOT touch savedCauldron – we’re just passing through another room.
-            Debug.Log("[SAVE] No cauldron in this scene — keeping existing savedCauldron as-is");
+            //Debug.Log("[SAVE] No cauldron in this scene — keeping existing savedCauldron as-is");
         }
 
-        var plantersInScene = FindObjectsOfType<PlanterSlot>();
+        //var plantersInScene = FindObjectsOfType<PlanterSlot>();
 
         // Only update planter saves if this scene actually HAS planters
         if (plantersInScene.Length > 0)
         {
-            Debug.Log($"[SAVE] Scene has {plantersInScene.Length} planters, updating planter saves");
+            //Debug.Log($"[SAVE] Scene has {plantersInScene.Length} planters, updating planter saves");
 
             // Save planter outputs
             foreach (var planter in plantersInScene)
@@ -249,7 +262,7 @@ public class CardPersistenceManager : MonoBehaviour
                 if (!planter.IsActive)
                     continue;
 
-                Debug.Log($"💾 Saving planter '{planter.planterID}': seed={planter.CurrentSeedName}, remaining={planter.RemainingTime}");
+                //Debug.Log($"💾 Saving planter '{planter.planterID}': seed={planter.CurrentSeedName}, remaining={planter.RemainingTime}");
 
                 GameData.Instance.savedPlanters.Add(new SavedPlanterState
                 {
@@ -263,7 +276,7 @@ public class CardPersistenceManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("[SAVE] No planters in this scene, keeping existing planter saves");
+            //Debug.Log("[SAVE] No planters in this scene, keeping existing planter saves");
         }
 
         // Re-add preserved cauldron outputs if this scene had none
@@ -272,10 +285,16 @@ public class CardPersistenceManager : MonoBehaviour
             GameData.Instance.savedCards.AddRange(preservedCauldron);
         }
 
+        if (preservedPlanterOutputs != null && preservedPlanterOutputs.Count > 0)
+        {
+            GameData.Instance.savedCards.AddRange(preservedPlanterOutputs);
+            Debug.Log($"[SAVE] Re-added {preservedPlanterOutputs.Count} planter output cards");
+        }
+
         if (preservedWorkbenchCards != null && preservedWorkbenchCards.Count > 0)
         {
             GameData.Instance.savedCards.AddRange(preservedWorkbenchCards);
-            Debug.Log($"[SAVE] Re-added {preservedWorkbenchCards.Count} workbench cards");
+            //Debug.Log($"[SAVE] Re-added {preservedWorkbenchCards.Count} workbench cards");
         }
     }
 
@@ -448,7 +467,7 @@ public class CardPersistenceManager : MonoBehaviour
 
     public void LoadAllCards()
     {
-        Debug.Log("🔥 LoadAllCards START");
+        //Debug.Log("🔥 LoadAllCards START");
 
         if (GameData.Instance == null || cardManager == null)
             return;
@@ -523,28 +542,28 @@ public class CardPersistenceManager : MonoBehaviour
         }
 
         // 3) Restore workbench cards
-        Debug.Log($"[LoadAllCards] Checking for workbench cards to restore...");
+        //Debug.Log($"[LoadAllCards] Checking for workbench cards to restore...");
 
         foreach (var state in savedCards)
         {
             if (state.container != CardContainer.Workbench)
                 continue;
 
-            Debug.Log($"[LoadAllCards] Found workbench card to restore: {state.cardName}, tool={state.workbenchTool}, runtimeID={state.runtimeID}");
+            //Debug.Log($"[LoadAllCards] Found workbench card to restore: {state.cardName}, tool={state.workbenchTool}, runtimeID={state.runtimeID}");
 
             var station = FindWorkbenchByTool(state.workbenchTool);
             if (station == null)
             {
-                Debug.LogWarning($"[LoadAllCards] No WorkbenchStation found for tool '{state.workbenchTool}'");
+                //Debug.LogWarning($"[LoadAllCards] No WorkbenchStation found for tool '{state.workbenchTool}'");
                 continue;
             }
 
-            Debug.Log($"[LoadAllCards] Spawning card on {state.workbenchTool}...");
+            //Debug.Log($"[LoadAllCards] Spawning card on {state.workbenchTool}...");
             SpawnCardFromState(state, station.transform);
-            Debug.Log($"[LoadAllCards] ✅ Card spawned successfully");
+            //Debug.Log($"[LoadAllCards] ✅ Card spawned successfully");
         }
 
-        Debug.Log($"[LoadAllCards] Finished restoring workbench cards");
+        //Debug.Log($"[LoadAllCards] Finished restoring workbench cards");
 
         InventoryDebug.Dump(
             "AFTER LoadAllCards",
@@ -554,14 +573,14 @@ public class CardPersistenceManager : MonoBehaviour
             cauldronOutputParent
         );
 
-        Debug.Log("🔥 Starting cauldron restore coroutine");
+        //Debug.Log("🔥 Starting cauldron restore coroutine");
         StartCoroutine(RestoreCauldronWhenReady());
 
         IsLoaded = true;
         RestorePlanters();
 
         CardsRestored = true;
-        Debug.Log("✅ Cards fully restored");
+        //Debug.Log("✅ Cards fully restored");
     }
 
     private IEnumerator RestoreCauldronWhenReady()
@@ -605,12 +624,12 @@ public class CardPersistenceManager : MonoBehaviour
                         );
         }
 
-        Debug.Log($"🔥 Cauldron restored — remaining={remaining:0.00}s");
+        //Debug.Log($"🔥 Cauldron restored — remaining={remaining:0.00}s");
     }
 
     void RestorePlanters()
     {
-        Debug.Log($"📦 Restoring {GameData.Instance.savedPlanters.Count} planters");
+        //Debug.Log($"📦 Restoring {GameData.Instance.savedPlanters.Count} planters");
 
         foreach (var planter in FindObjectsOfType<PlanterSlot>())
         {
@@ -619,7 +638,7 @@ public class CardPersistenceManager : MonoBehaviour
 
             if (state == null || !state.isActive)
             {
-                Debug.Log($"⏭ Planter '{planter.planterID}' has no save state");
+                //Debug.Log($"⏭ Planter '{planter.planterID}' has no save state");
                 continue;
             }
 
@@ -628,9 +647,9 @@ public class CardPersistenceManager : MonoBehaviour
             float newRemainingTime = state.remainingGrowTime - (float)elapsedGameMinutes;
             newRemainingTime = Mathf.Max(0f, newRemainingTime); // Clamp to 0
 
-            Debug.Log($"🔄 Restoring planter '{planter.planterID}': seed={state.plantedCardName}, " +
-                      $"was={state.remainingGrowTime:F2}min, elapsed={elapsedGameMinutes:F2}min, " +
-                      $"now={newRemainingTime:F2}min");
+            //Debug.Log($"🔄 Restoring planter '{planter.planterID}': seed={state.plantedCardName}, " +
+            //          $"was={state.remainingGrowTime:F2}min, elapsed={elapsedGameMinutes:F2}min, " +
+            //          $"now={newRemainingTime:F2}min");
 
             planter.RestoreFromSave(
                 state.plantedCardName,

@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 68867781}
   - component: {fileID: 68867780}
   m_Layer: 5
-  m_Name: ExitBruteForceImage
+  m_Name: ExitShopImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,14 +536,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6156863, g: 0.40000004, b: 0.13725491, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4622841298893625978, guid: dd5ec0808da92754e9425048a6885488, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e37c6e1828878b645a9dee94121de318, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2081,7 +2081,7 @@ GameObject:
   - component: {fileID: 228724863}
   - component: {fileID: 228724865}
   m_Layer: 5
-  m_Name: ExitBruteForce
+  m_Name: ExitShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15541,7 +15541,6 @@ MonoBehaviour:
   outputParent: {fileID: 1997263668}
   cardPrefab: {fileID: 0}
   toolTimer: {fileID: 0}
-  testSpellCard: {fileID: 11400000, guid: 6deb4d7563203ef46b952cfc5950daa4, type: 2}
   cauldronWorkbench: {fileID: 1997263673}
 --- !u!114 &1997263673
 MonoBehaviour:

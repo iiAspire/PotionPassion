@@ -5,6 +5,7 @@ using TMPro;
 public class TimeUIController : MonoBehaviour
 {
     public static TimeUIController Instance { get; private set; }
+    CalendarState Cal => TimeManager.Instance.Calendar;
 
     [Header("Day / Night Bar")]
     public RectTransform dayBar;
@@ -80,6 +81,7 @@ public class TimeUIController : MonoBehaviour
     void Awake()
     {
         //Debug.Log("✅ TimeUIController bound: " + gameObject.scene.name);
+        //Debug.Log($"⏰ TimeUIController Awake in scene {gameObject.scene.name}", this);
         Instance = this;
     }
 
@@ -93,6 +95,13 @@ public class TimeUIController : MonoBehaviour
         UpdateDayBarGradient();
     }
 
+    void Update()
+    {
+        UpdateDayArrow();
+        UpdateSeasonArrow();
+        UpdateCosmicUI();
+    }
+
     // =========================================================
     // PUBLIC API – called by TimeManager / gameplay
     // =========================================================
@@ -100,67 +109,66 @@ public class TimeUIController : MonoBehaviour
     /// <summary>
     /// Set absolute time of day (0–24) and update UI.
     /// </summary>
-    public void SetTime(float newTime)
-    {
-        timeOfDay = Mathf.Clamp(newTime, 0f, 24f);
-        UpdateDayArrow();
-    }
+    //public void SetTime(float newTime)
+    //{
+    //    timeOfDay = Mathf.Clamp(newTime, 0f, 24f);
+    //    UpdateDayArrow();
+    //}
 
     /// <summary>
     /// Set absolute year progress (0–1) and move season arrow.
     /// </summary>
-    public void SetYearProgress(float progress)
-    {
-        yearProgress = Mathf.Repeat(progress, 1f);
-        UpdateSeasonArrow();
-        UpdateDayIcon();
-        UpdateDayBarGradient();
-    }
+    //public void SetYearProgress(float progress)
+    //{
+    //    yearProgress = Mathf.Repeat(progress, 1f);
+    //    UpdateSeasonArrow();
+    //    UpdateDayIcon();
+    //    UpdateDayBarGradient();
+    //}
 
     /// <summary>
     /// Add a fraction of the full year and update season bar.
     /// </summary>
-    public void AddYearFraction(float fractionOfYear)
-    {
-        yearProgress = Mathf.Repeat(yearProgress + fractionOfYear, 1f);
-        UpdateSeasonArrow();
-        UpdateDayIcon();
-        UpdateDayBarGradient();
-    }
+    //public void AddYearFraction(float fractionOfYear)
+    //{
+    //    yearProgress = Mathf.Repeat(yearProgress + fractionOfYear, 1f);
+    //    UpdateSeasonArrow();
+    //    UpdateDayIcon();
+    //    UpdateDayBarGradient();
+    //}
 
     /// <summary>
     /// Should be called once every time the in-game day rolls over
     /// (e.g. when timeOfDay goes from X to a smaller value).
     /// Handles: calendar day, yearProgress, lunarDay, cosmicDay, icons.
     /// </summary>
-    public void AdvanceDay()
-    {
-        // Calendar
-        dayOfMonth++;
-        if (dayOfMonth > daysInMonth)
-            dayOfMonth = 1;
+    //void AdvanceDay()
+    //{
+    //    var cal = Calendar;
 
-        // Year progression (28 days * 12 months = 336 days/year)
-        float yearStep = 1f / Mathf.Max(1, DaysPerYear);
-        yearProgress = Mathf.Repeat(yearProgress + yearStep, 1f);
-        UpdateSeasonArrow();
+    //    // Calendar day
+    //    cal.dayOfMonth++;
+    //    if (cal.dayOfMonth > cal.daysInMonth)
+    //        cal.dayOfMonth = 1;
 
-        // Lunar cycle
-        lunarDay++;
-        if (lunarDay > lunarCycleLength)
-            lunarDay = 1;
+    //    // Year progression
+    //    float yearStep = 1f / Mathf.Max(1, cal.DaysPerYear);
+    //    cal.yearProgress = Mathf.Repeat(cal.yearProgress + yearStep, 1f);
 
-        // Cosmic cycle
-        int totalCosmicDays = Mathf.Max(1, cosmicBodies.Length * daysPerCosmicBody);
-        cosmicDay++;
-        if (cosmicDay > totalCosmicDays)
-            cosmicDay = 1;
+    //    // Lunar
+    //    cal.lunarDay++;
+    //    if (cal.lunarDay > cal.lunarCycleLength)
+    //        cal.lunarDay = 1;
 
-        // Update visuals that depend on day count / season
-        UpdateDayIcon();        // uses moon phase + seasonal sunrise/sunset
-        UpdateCosmicUI();       // uses cosmicDay
-        UpdateDayBarGradient(); // in case sunrise/sunset moved
-    }
+    //    // Cosmic
+    //    int totalCosmicDays = Mathf.Max(1, cosmicSprites.Length * cal.daysPerCosmicBody);
+    //    cal.cosmicDay++;
+    //    if (cal.cosmicDay > totalCosmicDays)
+    //        cal.cosmicDay = 1;
+
+    //    // Notify listeners
+    //    OnDayAdvanced?.Invoke(cal);
+    //}
 
     // =========================================================
     // INTERNAL: DAY ARROW, ICON, GRADIENT
@@ -172,7 +180,7 @@ public class TimeUIController : MonoBehaviour
             return;
 
         // Arrow always moves linearly from left (0h) to right (24h)
-        float t = Mathf.Clamp01(timeOfDay / 24f);
+        float t = Mathf.Clamp01(Cal.timeOfDay / 24f);
         float posX = dayBar.rect.width * t;
 
         dayArrow.anchoredPosition = new Vector2(posX, dayArrow.anchoredPosition.y);
@@ -238,7 +246,7 @@ Material mat = dayBarImage.materialForRendering;
         if (seasonBar == null || seasonArrow == null)
             return;
 
-        float t = Mathf.Clamp01(yearProgress);
+        float t = Mathf.Clamp01(Cal.yearProgress);
         float posX = seasonBar.rect.width * t;
         seasonArrow.anchoredPosition = new Vector2(posX, seasonArrow.anchoredPosition.y);
     }
@@ -256,7 +264,7 @@ Material mat = dayBarImage.materialForRendering;
         //               0.75= autumn equinox
         //               1.0 = winter again
         // Cosine-based daylight curve
-        return 0.5f - 0.5f * Mathf.Cos(2f * Mathf.PI * yearProgress);
+        return 0.5f - 0.5f * Mathf.Cos(2f * Mathf.PI * Cal.yearProgress);
     }
 
     public float GetSeasonalSunrise()
@@ -275,7 +283,7 @@ Material mat = dayBarImage.materialForRendering;
     {
         float sunrise = GetSeasonalSunrise();
         float sunset = GetSeasonalSunset();
-        return (timeOfDay >= sunrise && timeOfDay < sunset);
+        return (Cal.timeOfDay >= sunrise && Cal.timeOfDay < sunset);
     }
 
     // =========================================================
@@ -288,7 +296,7 @@ Material mat = dayBarImage.materialForRendering;
             return null;
 
         // 1..lunarCycleLength -> 0..1
-        float cyclePos = (float)(lunarDay - 1) / Mathf.Max(1, lunarCycleLength);
+        float cyclePos = (float)(Cal.lunarDay - 1) / Mathf.Max(1, Cal.lunarCycleLength);
 
         // Map that 0..1 range to our set of sprites
         int index = Mathf.FloorToInt(cyclePos * moonPhaseSprites.Length);
@@ -303,6 +311,8 @@ Material mat = dayBarImage.materialForRendering;
 
     void UpdateCosmicUI()
     {
+
+        //Debug.Log($"🌌 Updating cosmic UI in scene {gameObject.scene.name}", this);
         if (cosmicIcon == null || cosmicSprites == null || cosmicSprites.Length == 0)
             return;
 
@@ -321,7 +331,7 @@ Material mat = dayBarImage.materialForRendering;
         if (cosmicBodies == null || cosmicBodies.Length == 0 || daysPerCosmicBody <= 0)
             return 0;
 
-        int index = (cosmicDay - 1) / daysPerCosmicBody;
+        int index = (Cal.cosmicDay - 1) / Cal.daysPerCosmicBody;
         return Mathf.Clamp(index, 0, cosmicBodies.Length - 1);
     }
 }

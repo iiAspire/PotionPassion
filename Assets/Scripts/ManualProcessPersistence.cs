@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class ManualProcessPersistence : MonoBehaviour
 {
     public static ManualProcessPersistence Instance;
-    ManualProcessState activeProcess; // only one at a time (by design)
+    private Dictionary<ProcessingTool, ManualProcessState> activeProcesses = new Dictionary<ProcessingTool, ManualProcessState>();
 
     void Awake()
     {
@@ -14,30 +15,31 @@ public class ManualProcessPersistence : MonoBehaviour
 
     public void Save(ManualProcessState state)
     {
-        Debug.Log($"💾 ManualProcessPersistence.Save: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
-        activeProcess = state;
+        activeProcesses[state.tool] = state;
+        //Debug.Log($"💾 ManualProcessPersistence.Save: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
     }
 
     // 👇 NEW: Peek without consuming
-    public ManualProcessState Peek()
+    public ManualProcessState Peek(ProcessingTool tool)
     {
-        return activeProcess;
+        activeProcesses.TryGetValue(tool, out var state);
+        return state;
     }
 
     // 👇 UPDATED: Only consume (clear) the state
-    public void Consume()
+    public void Consume(ProcessingTool tool)
     {
-        Debug.Log($"✅ ManualProcessPersistence.Consume: cleared state for {activeProcess?.tool}");
-        activeProcess = null;
+        if (activeProcesses.ContainsKey(tool))
+        {
+            //Debug.Log($"✅ ManualProcessPersistence.Consume: cleared state for {tool}");
+            activeProcesses.Remove(tool);
+        }
     }
 
-    public bool HasSavedProcess
+    public bool HasSavedProcess(ProcessingTool tool)
     {
-        get
-        {
-            bool has = activeProcess != null;
-            Debug.Log($"ManualProcessPersistence.HasSavedProcess = {has} (tool={activeProcess?.tool})");
-            return has;
-        }
+        bool has = activeProcesses.ContainsKey(tool);
+        //Debug.Log($"ManualProcessPersistence.HasSavedProcess({tool}) = {has}");
+        return has;
     }
 }

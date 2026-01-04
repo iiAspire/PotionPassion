@@ -27,28 +27,4 @@ public class SceneBinding : MonoBehaviour
 
         persistence.LoadAllCards();
     }
-
-    //void OnDisable()
-    //{
-    //    SceneManager.sceneLoaded -= OnSceneLoaded;
-    //}
-
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //    if (mode != LoadSceneMode.Single)
-    //        return;
-
-    //    var persistence = CardPersistenceManager.Instance;
-    //    if (persistence == null)
-    //        return;
-
-    //    persistence.BindSceneParents(
-    //        playerGridContent,
-    //        ingredientsGridContent,
-    //        recipeGridContent,
-    //        cauldronOutput
-    //    );
-
-    //    persistence.LoadAllCards();
-    //}
 }

@@ -159,7 +159,7 @@ public class CauldronWorkbench : WorkbenchStation
 
     private IEnumerator BrewRoutine(List<string> ingredients)
     {
-        Debug.Log($"⏱ BrewRoutine started. enabled={enabled}, active={gameObject.activeInHierarchy}");
+        //Debug.Log($"⏱ BrewRoutine started. enabled={enabled}, active={gameObject.activeInHierarchy}");
 
         while (true)
         {
@@ -221,7 +221,7 @@ public class CauldronWorkbench : WorkbenchStation
                 });
             }
 
-            Debug.LogWarning("❌ Brew failed.");
+            //Debug.LogWarning("❌ Brew failed.");
             activeCombo = null;
             return;
         }
@@ -260,7 +260,7 @@ public class CauldronWorkbench : WorkbenchStation
             }
         }
 
-        Debug.Log($"✅ Brew complete: {activeCombo.SpellName}");
+        //Debug.Log($"✅ Brew complete: {activeCombo.SpellName}");
         activeCombo = null;
     }
 
@@ -279,7 +279,7 @@ public class CauldronWorkbench : WorkbenchStation
         float totalBrewTimeFromSave
     )
     {
-        Debug.Log($"RestoreFromSave called. Recipes count = {Recipes?.SpellCombos?.Count}");
+        //Debug.Log($"RestoreFromSave called. Recipes count = {Recipes?.SpellCombos?.Count}");
 
         totalBrewTime = totalBrewTimeFromSave;
 
@@ -337,7 +337,7 @@ public class CauldronWorkbench : WorkbenchStation
         // If we're already past the finish time → complete instantly
         if (remainingSeconds <= 0f)
         {
-            Debug.Log("⏱ Offline brew finished while away, completing immediately.");
+            //Debug.Log("⏱ Offline brew finished while away, completing immediately.");
             brewTimeRemaining = 0f;
             CompleteBrewing(null);
             return;
@@ -347,6 +347,6 @@ public class CauldronWorkbench : WorkbenchStation
         brewTimeRemaining = remainingSeconds;
         brewCoroutine = StartCoroutine(BrewRoutine(null));
 
-        Debug.Log($"🔄 Restored brewing '{spellName}' with {remainingSeconds:F1}s remaining");
+        //Debug.Log($"🔄 Restored brewing '{spellName}' with {remainingSeconds:F1}s remaining");
     }
 }

@@ -33,6 +33,6 @@ public class CardManagerAutoPopulate : MonoBehaviour
         EditorUtility.SetDirty(manager);
         AssetDatabase.SaveAssets();
 
-        Debug.Log($"CardManager populated with {allCards.Length} cards.");
+        //Debug.Log($"CardManager populated with {allCards.Length} cards.");
     }
 }

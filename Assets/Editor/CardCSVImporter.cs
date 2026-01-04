@@ -257,18 +257,18 @@ public class CardCSVImporter : EditorWindow
             if (isNew)
             {
                 AssetDatabase.CreateAsset(card, cardPath);
-                Debug.Log($"Created new card: {cardName}");
+                //Debug.Log($"Created new card: {cardName}");
             }
             else
             {
                 EditorUtility.SetDirty(card);
-                Debug.Log($"Updated card: {cardName}");
+                //Debug.Log($"Updated card: {cardName}");
             }
         }
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log("CSV Import complete.");
+        //Debug.Log("CSV Import complete.");
     }
             
 
