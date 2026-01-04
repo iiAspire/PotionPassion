@@ -2897,7 +2897,7 @@ GameObject:
   - component: {fileID: 292953746}
   - component: {fileID: 292953745}
   m_Layer: 5
-  m_Name: ToolsFrame
+  m_Name: ShopFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8387,7 +8387,7 @@ GameObject:
   - component: {fileID: 1153408431}
   - component: {fileID: 1153408430}
   m_Layer: 5
-  m_Name: LeftTools
+  m_Name: LeftShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9167,7 +9167,7 @@ GameObject:
   - component: {fileID: 1309518290}
   - component: {fileID: 1309518289}
   m_Layer: 5
-  m_Name: ToolsGridContent
+  m_Name: ShopGridContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9287,6 +9287,7 @@ MonoBehaviour:
   playerGridContent: {fileID: 173398408}
   recipeGridContent: {fileID: 864877853}
   cauldronOutput: {fileID: 608606504}
+  saleGridContent: {fileID: 1309518288}
 --- !u!4 &1329435537
 Transform:
   m_ObjectHideFlags: 0
@@ -9403,6 +9404,7 @@ GameObject:
   - component: {fileID: 1330359986}
   - component: {fileID: 1330359988}
   - component: {fileID: 1330359987}
+  - component: {fileID: 1330359989}
   m_Layer: 5
   m_Name: MainBackground
   m_TagString: Untagged
@@ -9475,6 +9477,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330359985}
   m_CullTransparentMesh: 1
+--- !u!114 &1330359989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330359985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67796a17fa0120d47aec6cbca259b2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SafeArea
 --- !u!1 &1357224089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13615,6 +13629,7 @@ MonoBehaviour:
   persistence: {fileID: 0}
   leftInventory: {fileID: 1570708291}
   numberOfCardsToSpawn: 5
+  spawnTestCards: 1
 --- !u!4 &1819324026
 Transform:
   m_ObjectHideFlags: 0

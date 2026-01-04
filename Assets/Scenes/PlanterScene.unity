@@ -2452,7 +2452,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 228724863}
         m_TargetAssemblyTypeName: SceneLoaderButton, Assembly-CSharp
-        m_MethodName: LoadBruteRoom
+        m_MethodName: LoadShopScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2836,7 +2836,7 @@ GameObject:
   - component: {fileID: 292953746}
   - component: {fileID: 292953745}
   m_Layer: 5
-  m_Name: ToolsFrame
+  m_Name: ShopFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4930,7 +4930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter4
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 1835014169}
   radialTimer: {fileID: 105463880}
@@ -8933,7 +8933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter1
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 1618676426}
   radialTimer: {fileID: 78087047}
@@ -9384,7 +9384,7 @@ GameObject:
   - component: {fileID: 1153408431}
   - component: {fileID: 1153408430}
   m_Layer: 5
-  m_Name: LeftTools
+  m_Name: LeftShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10445,7 +10445,7 @@ GameObject:
   - component: {fileID: 1309518290}
   - component: {fileID: 1309518289}
   m_Layer: 5
-  m_Name: ToolsGridContent
+  m_Name: ShopGridContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10618,6 +10618,7 @@ GameObject:
   - component: {fileID: 1330359986}
   - component: {fileID: 1330359988}
   - component: {fileID: 1330359987}
+  - component: {fileID: 1330359989}
   m_Layer: 5
   m_Name: MainBackground
   m_TagString: Untagged
@@ -10690,6 +10691,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330359985}
   m_CullTransparentMesh: 1
+--- !u!114 &1330359989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330359985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67796a17fa0120d47aec6cbca259b2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SafeArea
 --- !u!1 &1336944222
 GameObject:
   m_ObjectHideFlags: 0
@@ -10723,6 +10736,7 @@ MonoBehaviour:
   playerGridContent: {fileID: 173398408}
   recipeGridContent: {fileID: 864877853}
   cauldronOutput: {fileID: 2080351953}
+  saleGridContent: {fileID: 1309518288}
 --- !u!4 &1336944224
 Transform:
   m_ObjectHideFlags: 0
@@ -11851,7 +11865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter5
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 1733435085}
   radialTimer: {fileID: 539595134}
@@ -12611,7 +12625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter3
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 1094989782}
   radialTimer: {fileID: 350690382}
@@ -15223,6 +15237,7 @@ MonoBehaviour:
   persistence: {fileID: 0}
   leftInventory: {fileID: 1570708291}
   numberOfCardsToSpawn: 5
+  spawnTestCards: 1
 --- !u!4 &1819324026
 Transform:
   m_ObjectHideFlags: 0
@@ -16896,7 +16911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter6
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 433106767}
   radialTimer: {fileID: 1523177391}
@@ -17890,14 +17905,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b9feb2d58b9f4184a0b0d60d79b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanterSlot
-  planterID: 
+  planterID: Planter2
   growthDatabase: {fileID: 11400000, guid: 3bf67a85680324a4ca3d3e6a385ff451, type: 2}
   planterBaseImage: {fileID: 1748006248}
   radialTimer: {fileID: 1146634889}
   growthImage: {fileID: 1882913275}
   seedLabelParent: {fileID: 2100249601}
   seedLabelSprite: {fileID: 521434925}
-  playerInventoryParent: {fileID: 1570708291}
+  playerInventoryParent: {fileID: 0}
   outputAnchor: {fileID: 2133283223}
   ingredientInventoryParent: {fileID: 1570708291}
 --- !u!114 &2133283227

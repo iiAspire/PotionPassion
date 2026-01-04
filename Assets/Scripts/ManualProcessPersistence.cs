@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
+
 public class ManualProcessPersistence : MonoBehaviour
 {
     public static ManualProcessPersistence Instance;
-
     ManualProcessState activeProcess; // only one at a time (by design)
 
     void Awake()
@@ -14,15 +14,30 @@ public class ManualProcessPersistence : MonoBehaviour
 
     public void Save(ManualProcessState state)
     {
+        Debug.Log($"💾 ManualProcessPersistence.Save: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
         activeProcess = state;
     }
 
-    public ManualProcessState Consume()
+    // 👇 NEW: Peek without consuming
+    public ManualProcessState Peek()
     {
-        var s = activeProcess;
-        activeProcess = null;
-        return s;
+        return activeProcess;
     }
 
-    public bool HasSavedProcess => activeProcess != null;
+    // 👇 UPDATED: Only consume (clear) the state
+    public void Consume()
+    {
+        Debug.Log($"✅ ManualProcessPersistence.Consume: cleared state for {activeProcess?.tool}");
+        activeProcess = null;
+    }
+
+    public bool HasSavedProcess
+    {
+        get
+        {
+            bool has = activeProcess != null;
+            Debug.Log($"ManualProcessPersistence.HasSavedProcess = {has} (tool={activeProcess?.tool})");
+            return has;
+        }
+    }
 }

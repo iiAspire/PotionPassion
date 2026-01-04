@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 6979346075521288746}
   - component: {fileID: 1125928352475530730}
   - component: {fileID: 4597553379161780345}
+  - component: {fileID: -2891704731181604342}
   m_Layer: 5
   m_Name: SpellOutput
   m_TagString: Untagged
@@ -387,11 +388,12 @@ MonoBehaviour:
   outputIconsParent: {fileID: 0}
   outputIconPrefab: {fileID: 5541781292661126199}
   outputPartIcon: {fileID: 0}
-  outputQuantityText: {fileID: 0}
+  stackCountText: {fileID: 0}
   cardData: {fileID: 0}
   AssignedCombo:
     SpellName: 
     Ingredients: []
+    SpellLevel: 0
     Intimate: 
     Spiritual: 
     Astrological: 
@@ -402,11 +404,14 @@ MonoBehaviour:
     BrewTime: 5
     Description: 
     ResultType: 5
+  spellTierText: {fileID: 0}
   visualOutputs: []
   typeIconBorder: {fileID: 8168682591203647089}
   processedIconBorder: {fileID: 1994382173778267709}
+  partIconBorder: {fileID: 0}
   showBorders: 1
   borderScale: 1
+  runtimeID: 
 --- !u!225 &4597553379161780345
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -419,6 +424,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
+--- !u!114 &-2891704731181604342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541781292661126199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f1c785b2bb65c4183297e0419ca278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellOutput
 --- !u!1 &6229314691392328609
 GameObject:
   m_ObjectHideFlags: 0

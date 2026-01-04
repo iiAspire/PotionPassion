@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BruteScene.unity
     guid: a9802e74324e7774ca576abe91933742
+  - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: 90a4c879ac1951b49919be1d01ccc5b2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -10,6 +10,7 @@ public class RandomCardSpawner : MonoBehaviour
 
     [Header("Random spawn")]
     public int numberOfCardsToSpawn = 5;
+    public bool spawnTestCards = true;
 
     IEnumerator Start()
     {
@@ -27,13 +28,11 @@ public class RandomCardSpawner : MonoBehaviour
             yield break;
         }
 
-#if UNITY_EDITOR
-        if (!GameData.Instance.testCardsSpawned)
+        if (spawnTestCards && !GameData.Instance.testCardsSpawned)
         {
             GameData.Instance.testCardsSpawned = true;
             yield return StartCoroutine(SpawnTestCards());
         }
-#endif
 
         if (!GameData.Instance.initialRandomCardsSpawned)
         {
@@ -41,18 +40,13 @@ public class RandomCardSpawner : MonoBehaviour
             yield return StartCoroutine(SpawnInitialRandomCards());
         }
 
-        //// Save initial state
-        //if (persistence != null)
-        //{
-        //    persistence.SaveAllCards();
-        //}
     }
 
     private IEnumerator SpawnTestCards()
     {
         yield return null;
 
-        string[] testCards = { "Sandstone", "Chia", "Corn" };
+        string[] testCards = { "Sandstone", "Chia", "Corn", "Chia Seed" };
 
         foreach (string cardName in testCards)
         {

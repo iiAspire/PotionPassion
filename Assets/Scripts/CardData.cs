@@ -111,11 +111,28 @@ public class CardData : ScriptableObject
     public bool Incinerates;
     public bool Smoulders;
 
-    public Sprite topHalfSprite;
-    public Sprite bottomHalfSprite;
+    [Header("Optional Shelf Visuals")]
+    public ShelfVisualData shelfVisuals;
 
     [Header("Processing Recipes")]
     public List<ProcessingRecipe> processingRecipes = new List<ProcessingRecipe>();
+
+    [Header("Selling")]
+    public bool canBeSold = false;
+
+    public bool IsSellable
+    {
+        get
+        {
+            // Explicit override always wins
+            if (canBeSold)
+                return true;
+
+            // Fallback logic for now - to get  poison/potion working now, can later just use canBeSold
+            return processedType == ProcessedType.Potion
+                || processedType == ProcessedType.Poison;
+        }
+    }
 
     public static class OutputNames
     {
@@ -160,6 +177,7 @@ public class CardData : ScriptableObject
         processedIcon = other.processedIcon;
         partIcon = other.partIcon;
         //quantityIcon = other.quantityIcon;
+        this.shelfVisuals = other.shelfVisuals;
 
         itemType = other.itemType;
         processedType = other.processedType;

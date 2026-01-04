@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using static CardData;
+using static UnityEngine.InputSystem.InputRemoting;
 
 [CustomEditor(typeof(CardData))]
 public class CardDataEditor : Editor
@@ -14,6 +15,7 @@ public class CardDataEditor : Editor
     private SerializedProperty cardPrefabProp;
     private SerializedProperty itemTypeProp;
     private SerializedProperty partIconProp;
+    private SerializedProperty canBeSoldProp;
 
     private SerializedProperty incineratesProp;
     private SerializedProperty smouldersProp;
@@ -29,6 +31,7 @@ public class CardDataEditor : Editor
     private SerializedProperty floweryProp;
     private SerializedProperty umamiProp;
 
+    private SerializedProperty shelfVisualsProp;
     private SerializedProperty processingRecipesProp;
 
     private void OnEnable()
@@ -42,6 +45,7 @@ public class CardDataEditor : Editor
         cardPrefabProp = serializedObject.FindProperty("cardPrefab");
         itemTypeProp = serializedObject.FindProperty("itemType");
         partIconProp = serializedObject.FindProperty("partIcon");
+        canBeSoldProp = serializedObject.FindProperty("canBeSold");
 
         incineratesProp = serializedObject.FindProperty("Incinerates");
         smouldersProp = serializedObject.FindProperty("Smoulders");
@@ -56,6 +60,8 @@ public class CardDataEditor : Editor
         spicyProp = serializedObject.FindProperty("Spicy");
         floweryProp = serializedObject.FindProperty("Flowery");
         umamiProp = serializedObject.FindProperty("Umami");
+
+        shelfVisualsProp = serializedObject.FindProperty("shelfVisuals");
 
         processingRecipesProp = serializedObject.FindProperty("processingRecipes");
     }
@@ -74,6 +80,41 @@ public class CardDataEditor : Editor
         EditorGUILayout.PropertyField(cardPrefabProp);
         EditorGUILayout.PropertyField(itemTypeProp);
         EditorGUILayout.PropertyField(partIconProp);
+
+        EditorGUILayout.Space();
+        //EditorGUILayout.LabelField("Selling", EditorStyles.boldLabel);
+
+        // Implicit sellability hint (read-only, informational)
+        ProcessedType processedType = ((CardData)target).processedType;
+        bool implicitlySellable =
+            processedType == ProcessedType.Potion ||
+            processedType == ProcessedType.Poison;
+
+        EditorGUILayout.BeginVertical("box");
+
+        if (implicitlySellable)
+        {
+            EditorGUILayout.HelpBox(
+                $"This card is implicitly sellable because it is a {processedType}.",
+                UnityEditor.MessageType.Info
+            );
+        }
+
+        // Explicit override
+        EditorGUILayout.PropertyField(
+            canBeSoldProp,
+            new GUIContent("Can Be Sold")
+        );
+
+        // OR change above 4 lines to below if you want to prevent the sale of raw ingredients
+        //bool isProcessed = ((CardData)target).processedType != ProcessedType.None;
+
+        //GUI.enabled = isProcessed;
+        //EditorGUILayout.PropertyField(canBeSoldProp);
+        //GUI.enabled = true;
+        //);
+
+        EditorGUILayout.EndVertical();
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
@@ -149,6 +190,43 @@ public class CardDataEditor : Editor
         {
             ((CardData)target).ApplyDefaultColor();
         }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Shelf Visuals (Spell Outputs)", EditorStyles.boldLabel);
+
+        CardData card = (CardData)target;
+
+        // This is the real rule:
+        bool usesSpellOutputPrefab =
+            card.cardPrefab != null &&
+            card.cardPrefab.GetComponent<SpellOutput>() != null;
+
+        EditorGUILayout.BeginVertical("box");
+
+        if (!usesSpellOutputPrefab)
+        {
+            EditorGUILayout.HelpBox(
+                "Shelf visuals are only used by cards that instantiate as SpellOutput (sellable brews).",
+                UnityEditor.MessageType.Info
+            );
+        }
+
+        GUI.enabled = usesSpellOutputPrefab;
+        EditorGUILayout.PropertyField(
+            shelfVisualsProp,
+            new GUIContent("Shelf Visual Data")
+        );
+        GUI.enabled = true;
+
+        if (usesSpellOutputPrefab && shelfVisualsProp.objectReferenceValue == null)
+        {
+            EditorGUILayout.HelpBox(
+                "This SpellOutput card will appear on shop shelves but has no shelf visuals assigned.",
+                UnityEditor.MessageType.Warning
+            );
+        }
+
+        EditorGUILayout.EndVertical();
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Processing Recipes", EditorStyles.boldLabel);

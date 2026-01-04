@@ -16,4 +16,9 @@ public class SceneLoaderButton : MonoBehaviour
     {
         SceneLoadManager.Instance.LoadRoom("BruteScene");
     }
+
+    public void LoadShopScene()
+    {
+        SceneLoadManager.Instance.LoadRoom("ShopScene");
+    }
 }

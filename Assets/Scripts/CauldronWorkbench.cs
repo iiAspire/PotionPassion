@@ -172,7 +172,7 @@ public class CauldronWorkbench : WorkbenchStation
             if (toolTimerSlider != null)
                 toolTimerSlider.value = brewTimeRemaining;
 
-            Debug.Log($"⏳ Remaining: {brewTimeRemaining:F2}");
+            //Debug.Log($"⏳ Remaining: {brewTimeRemaining:F2}");
 
             if (brewTimeRemaining <= 0f)
                 break;

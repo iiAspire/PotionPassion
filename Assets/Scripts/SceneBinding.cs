@@ -9,6 +9,7 @@ public class SceneBinding : MonoBehaviour
     [SerializeField] Transform playerGridContent;
     [SerializeField] Transform recipeGridContent;
     [SerializeField] Transform cauldronOutput;
+    [SerializeField] Transform saleGridContent;
 
     void Start()
     {
@@ -20,7 +21,8 @@ public class SceneBinding : MonoBehaviour
             playerGridContent,
             ingredientsGridContent,
             recipeGridContent,
-            cauldronOutput
+            cauldronOutput,
+            saleGridContent
         );
 
         persistence.LoadAllCards();

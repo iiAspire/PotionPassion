@@ -9,7 +9,8 @@ public enum CardContainer
     RecipeHolding,
     CauldronOutput,
     PlanterOutput,
-    Workbench
+    Workbench,
+    SaleInventory
 }
 
 [Serializable]

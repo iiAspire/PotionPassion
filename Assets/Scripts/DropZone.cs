@@ -6,7 +6,7 @@ public class DropZone : MonoBehaviour, IDropHandler
     public enum InventoryZone
     {
         IngredientInventory,  // top-left
-        ToolInventory,        // bottom-left
+        SaleInventory,        // bottom-left
         PlayerInventory,      // top-right
         RecipeHolding,         // bottom-right
         Planter
@@ -28,8 +28,8 @@ public class DropZone : MonoBehaviour, IDropHandler
         {
             case InventoryZone.IngredientInventory:
                 return card.CardData.itemType != ItemType.Tool && card.CardData.itemType != ItemType.Crafting;
-            case InventoryZone.ToolInventory:
-                return card.CardData.itemType == ItemType.Tool;
+            case InventoryZone.SaleInventory:
+                return card.CardData.IsSellable;
             case InventoryZone.PlayerInventory:
             case InventoryZone.RecipeHolding:
                 return true;

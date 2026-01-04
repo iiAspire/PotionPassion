@@ -2081,7 +2081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &442061077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,7 +2260,7 @@ GameObject:
   - component: {fileID: 489844701}
   - component: {fileID: 489844700}
   m_Layer: 5
-  m_Name: ToolsGridContent
+  m_Name: ShopGridContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3524,6 +3524,7 @@ MonoBehaviour:
   ingredientsInventoryParent: {fileID: 227117724}
   recipeHoldingParent: {fileID: 2079526538}
   cauldronOutputParent: {fileID: 596967958}
+  saleInventoryParent: {fileID: 489844699}
   cardManager: {fileID: 11400000, guid: c9841794c2f141147ae7a46c5c608e12, type: 2}
 --- !u!4 &791809909
 Transform:
@@ -5459,7 +5460,7 @@ GameObject:
   - component: {fileID: 1392484752}
   - component: {fileID: 1392484751}
   m_Layer: 5
-  m_Name: LeftTools
+  m_Name: LeftShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6047,7 +6048,7 @@ GameObject:
   - component: {fileID: 1554965432}
   - component: {fileID: 1554965431}
   m_Layer: 5
-  m_Name: ToolsFrame
+  m_Name: ShopFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6330,7 +6331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1708454143
 RectTransform:
   m_ObjectHideFlags: 0

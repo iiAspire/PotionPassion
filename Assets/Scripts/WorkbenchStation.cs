@@ -61,6 +61,9 @@ public class WorkbenchStation : MonoBehaviour
     public Button pauseButton;
     public TMPro.TMP_Text pauseLabel;
 
+    private bool isBusy = false;
+    private bool isPaused = false;
+
     private void Awake()
     {
         if (tool == ProcessingTool.DryingRack && dryingRackTimer == null)
@@ -90,31 +93,52 @@ public class WorkbenchStation : MonoBehaviour
 
     IEnumerator TryRestoreAfterLoad()
     {
+        Debug.Log($"[{tool}] TryRestoreAfterLoad starting...");
+
         // Wait until cards have been restored
         yield return null; // one frame after LoadAllCards
         yield return null; // extra safety frame
 
         if (!ManualProcessPersistence.Instance.HasSavedProcess)
-            yield break;
-
-        var state = ManualProcessPersistence.Instance.Consume();
-
-        if (state.tool != tool)
         {
-            ManualProcessPersistence.Instance.Save(state);
+            Debug.Log($"[{tool}] No saved process found");
             yield break;
         }
+
+        // 👇 PEEK instead of consuming
+        var state = ManualProcessPersistence.Instance.Peek();
+
+        Debug.Log($"[{tool}] Peeked at saved state: tool={state.tool}, cardID={state.cardRuntimeID}, remaining={state.remainingTime}");
+
+        // 👇 Check if this is OUR tool
+        if (state.tool != tool)
+        {
+            Debug.Log($"[{tool}] Saved tool ({state.tool}) doesn't match this tool ({tool}), ignoring");
+            yield break; // Don't consume, let the right workbench find it
+        }
+
+        Debug.Log($"[{tool}] This is our tool! Looking for card with runtimeID: {state.cardRuntimeID}");
 
         CardComponent card = FindCardInSceneByRuntimeID(state.cardRuntimeID);
 
         if (card == null)
         {
-            Debug.LogWarning(
-                $"[Workbench] Saved process for {tool} but card {state.cardRuntimeID} not found after load."
-            );
-            ManualProcessPersistence.Instance.Save(state);
+            Debug.LogWarning($"[{tool}] Card {state.cardRuntimeID} not found after load. Checking all cards in scene:");
+
+            // Debug: list all cards in the scene
+            foreach (var c in FindObjectsOfType<CardComponent>())
+            {
+                Debug.LogWarning($"  Found card: {c.CardData?.cardName} with runtimeID={c.RuntimeID}");
+            }
+
+            // Don't consume - maybe the card will appear later?
             yield break;
         }
+
+        Debug.Log($"✅ Found card '{card.CardData.cardName}' at position {card.transform.position}, parent={card.transform.parent?.name}");
+
+        // 👇 NOW consume since we're using it
+        ManualProcessPersistence.Instance.Consume();
 
         Debug.Log($"✅ Restoring paused {tool} with {state.remainingTime:F2}s");
 
@@ -135,8 +159,8 @@ public class WorkbenchStation : MonoBehaviour
         currentRecipe = state.recipe;
         currentElapsed = state.recipe.processingTime - state.remainingTime;
 
-        ManualToolState.SetBusy(true);
-        ManualToolState.SetPaused(true);
+        isBusy = true;
+        isPaused = true;
 
         ShowPauseButton();
         pauseLabel.text = "Resume";
@@ -184,7 +208,7 @@ public class WorkbenchStation : MonoBehaviour
             return;
         }
 
-        ManualToolState.SetBusy(true);
+        isBusy = true;
 
         Debug.Log($"[StartProcessing] Using recipe on {card.CardData.cardName}: " +
                   $"tool={recipe.tool}, processedType={recipe.processedResultType}, " +
@@ -231,6 +255,7 @@ public class WorkbenchStation : MonoBehaviour
 
         currentRecipe = recipe;
         currentCard = card;
+        currentElapsed = 0f;
         activeCoroutine = StartCoroutine(ProcessTimer(card, recipe, toolTimerSlider));
     }
 
@@ -251,25 +276,18 @@ public class WorkbenchStation : MonoBehaviour
 
     private IEnumerator ProcessTimer(CardComponent card, ProcessingRecipe recipe, Slider slider)
     {
-        currentElapsed = 0f;
         float totalTime = recipe.processingTime; // real-time seconds
 
         toolTimerSlider.maxValue = totalTime;
-        toolTimerSlider.value = totalTime;
+        toolTimerSlider.value = totalTime - currentElapsed;
 
         while (currentElapsed < totalTime)
         {
-            if (!ManualToolState.IsPaused)
+            if (!isPaused) // Instead of ManualToolState.IsPaused
             {
                 currentElapsed += timerSpeedMultiplier * Time.deltaTime;
-
-                if (currentElapsed > totalTime)
-                    currentElapsed = totalTime;
-
-                if (slider != null)
-                    slider.value = totalTime - currentElapsed;
+                // ...
             }
-
             yield return null;
         }
 
@@ -301,7 +319,7 @@ public class WorkbenchStation : MonoBehaviour
             card.SetCardData(card.CardData, true);
         }
 
-        ManualToolState.SetBusy(false);
+        isBusy = false;
         HidePauseButton();
 
         // Spawn outputs
@@ -540,21 +558,30 @@ public class WorkbenchStation : MonoBehaviour
 
     public void TogglePause()
     {
-        if (!ManualToolState.IsBusy)
+        if (!isBusy)
             return;
 
-        bool newPaused = !ManualToolState.IsPaused;
-        ManualToolState.SetPaused(newPaused);
+        isPaused = !isPaused;
 
         if (pauseLabel != null)
-            pauseLabel.text = newPaused ? "Resume" : "Pause";
+            pauseLabel.text = isPaused ? "Resume" : "Pause";
 
-        // Enable exits while paused
-        ExitButtonsController.SetEnabled(newPaused);
+        // Check if ANY workbench is busy
+        bool anyWorkbenchBusy = false;
+        foreach (var station in FindObjectsOfType<WorkbenchStation>())
+        {
+            if (station.isBusy && !station.isPaused)
+            {
+                anyWorkbenchBusy = true;
+                break;
+            }
+        }
 
-        Debug.Log(newPaused
-            ? "[Workbench] Process paused"
-            : "[Workbench] Process resumed");
+        ExitButtonsController.SetEnabled(!anyWorkbenchBusy);
+
+        Debug.Log(isPaused
+            ? $"[{tool}] Process paused"
+            : $"[{tool}] Process resumed");
     }
 
     void ShowPauseButton()
@@ -577,10 +604,10 @@ public class WorkbenchStation : MonoBehaviour
 
     public void PersistIfPaused()
     {
-        if (!ManualToolState.IsBusy)
+        if (!isBusy)
             return;
 
-        if (!ManualToolState.IsPaused)
+        if (!isPaused)
             return;
 
         if (currentCard == null || currentRecipe == null)
@@ -589,6 +616,49 @@ public class WorkbenchStation : MonoBehaviour
         float remaining = currentRecipe.processingTime - currentElapsed;
         if (remaining <= 0f)
             return;
+
+        // 👇 SAVE THE CARD to CardPersistenceManager FIRST
+        if (CardPersistenceManager.Instance != null && currentCard != null)
+        {
+            CardData data = currentCard.CardData;
+
+            var savedCard = new SavedCardState
+            {
+                runtimeID = currentCard.runtimeID,
+                cardName = data.cardName,
+                baseName = data.baseName,
+
+                itemType = data.itemType,
+                processedType = data.processedType,
+                partType = data.partType,
+                quantityType = data.quantityType,
+
+                Toxin = data.Toxin,
+                Neutral = data.Neutral,
+                Antidote = data.Antidote,
+                Sweet = data.Sweet,
+                Bitter = data.Bitter,
+                Salty = data.Salty,
+                Spicy = data.Spicy,
+                Flowery = data.Flowery,
+                Umami = data.Umami,
+                Edible = data.Edible,
+                Incinerates = data.Incinerates,
+                Smoulders = data.Smoulders,
+
+                container = CardContainer.Workbench,
+                workbenchTool = tool.ToString(),
+                orderInParent = 0,
+
+                isStacked = false,
+                stackKey = null,
+                indexInStack = 0
+            };
+
+            // Add directly to the saved cards list
+            GameData.Instance.savedCards.Add(savedCard);
+            Debug.Log($"💾 Saved workbench card: {data.cardName}, runtimeID={currentCard.runtimeID}");
+        }
 
         ManualProcessPersistence.Instance.Save(
             new ManualProcessState
@@ -605,11 +675,23 @@ public class WorkbenchStation : MonoBehaviour
 
     CardComponent FindCardInSceneByRuntimeID(string runtimeID)
     {
-        foreach (var card in FindObjectsOfType<CardComponent>())
+        Debug.Log($"[{tool}] Searching for card with runtimeID: {runtimeID}");
+
+        var allCards = FindObjectsOfType<CardComponent>();
+        Debug.Log($"[{tool}] Found {allCards.Length} total cards in scene");
+
+        foreach (var card in allCards)
         {
+            Debug.Log($"[{tool}]   Checking card: name={card.CardData?.cardName}, runtimeID={card.RuntimeID}, parent={card.transform.parent?.name}");
+
             if (card.RuntimeID == runtimeID)
+            {
+                Debug.Log($"[{tool}] ✅ MATCH FOUND!");
                 return card;
+            }
         }
+
+        Debug.LogWarning($"[{tool}] ❌ No card found with runtimeID={runtimeID}");
         return null;
     }
 }

@@ -43,14 +43,24 @@ public class PlanterSlot : MonoBehaviour
         Debug.Log($"{name} planted seed {plantedSeedName}");
 
         if (isGrowing)
+        {
+            Debug.LogWarning($"[{name}] Already growing - cannot plant!");
             return;
+        }
 
         plantedSeedName = seed.CardData.cardName;
         seed.gameObject.SetActive(false);
+        Debug.Log($"[{name}] Seed {plantedSeedName} deactivated");
 
         currentEntry = growthDatabase.GetEntry(seed.CardData.cardName);
         if (currentEntry == null)
+        {
+            Debug.LogError($"[{name}] ❌ NO GROWTH ENTRY FOUND for '{seed.CardData.cardName}' in database!");
+            Debug.LogError($"[{name}] Database has {growthDatabase?.entries?.Count ?? 0} entries");
             return;
+        }
+
+        Debug.Log($"[{name}] ✅ Found growth entry: {currentEntry.grownPlant.cardName}, growTime={currentEntry.growTime}");
 
         elapsedMinutes = 0f;
         isGrowing = true;
@@ -59,10 +69,12 @@ public class PlanterSlot : MonoBehaviour
         // visuals on
         growthImage.gameObject.SetActive(true);
         radialTimer.gameObject.SetActive(true);
+        Debug.Log($"[{name}] Growth visuals activated");
 
         // label
         seedLabelParent.SetActive(true);
         seedLabelSprite.sprite = currentEntry.grownPlant.Icon;
+        Debug.Log($"[{name}] Seed label set");
     }
 
     public void TickByMinutes(float minutes)
@@ -126,6 +138,8 @@ public class PlanterSlot : MonoBehaviour
 
         // 6️⃣ Force UI refresh
         TickByMinutes(0f);
+        Canvas.ForceUpdateCanvases();
+
     }
 
     public void Harvest()

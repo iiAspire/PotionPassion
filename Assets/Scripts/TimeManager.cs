@@ -101,6 +101,8 @@ public class TimeManager : MonoBehaviour
         logAccumulator += Time.deltaTime;
 
         float minutesThisFrame = Time.deltaTime * minutesPerRealSecond;
+        TotalGameMinutes += minutesThisFrame;
+
         AddGameHours(minutesThisFrame / 60f);
 
         if (logAccumulator >= 1f)
