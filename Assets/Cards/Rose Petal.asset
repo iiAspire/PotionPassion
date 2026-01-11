@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Rose Petal
   baseName: Rose
   Icon: {fileID: 8195955157704768447, guid: 7f1bd39e9ecf0514bb68be508cbc0bf5, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,13 +39,12 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes:
   - foldout: 0
     tool: 1
     resultCard: {fileID: 11400000}
-    processingTime: 480
+    processingTime: 20
     processedResultType: 8
     needsFire: 1
     processingTimeWithFire: 15
@@ -76,8 +76,9 @@ MonoBehaviour:
   - foldout: 0
     tool: 1
     resultCard: {fileID: 11400000}
-    processingTime: 480
+    processingTime: 20
     processedResultType: 7
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

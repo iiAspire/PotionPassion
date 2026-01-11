@@ -14,7 +14,7 @@ public class GameData : MonoBehaviour
     {
         public bool isBrewing;
         public string spellName;
-        public double finishTimeUtcOa;
+        public double finishAtGameMinutes;
         public bool fireWasOn;
         public float totalBrewTime;
     }

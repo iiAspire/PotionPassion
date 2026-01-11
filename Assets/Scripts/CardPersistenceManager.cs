@@ -235,7 +235,7 @@ public class CardPersistenceManager : MonoBehaviour
                 {
                     isBrewing = true,
                     spellName = cauldron.ActiveSpellName,
-                    finishTimeUtcOa = cauldron.FinishTimeUtcOa,   // absolute UTC finish time
+                    finishAtGameMinutes = cauldron.FinishAtGameMinutes,
                     fireWasOn = cauldron.FireWasOn,
                     totalBrewTime = cauldron.TotalBrewTime
                 };
@@ -616,42 +616,21 @@ public class CardPersistenceManager : MonoBehaviour
 
         var saved = GameData.Instance.savedCauldron;
         if (saved == null || !saved.isBrewing)
-        {
             yield break;
-        }
 
         var cauldron = FindObjectOfType<CauldronWorkbench>();
         if (cauldron == null)
-        {
             yield break;
-        }
 
-        // compute remaining time from absolute finish
-        double nowOa = System.DateTime.UtcNow.ToOADate();
-        float remaining = (float)((saved.finishTimeUtcOa - nowOa) * 86400.0); // days → seconds
+        double remaining =
+            saved.finishAtGameMinutes - TimeManager.TotalGameMinutes;
 
-        if (remaining <= 0f)
-        {
-            // brew finished while away
-            cauldron.RestoreFromSave(
-                saved.spellName,
-                saved.finishTimeUtcOa,
-                saved.fireWasOn,
-                saved.totalBrewTime
-                );
-        }
-        else
-        {
-            // resume brewing
-            cauldron.RestoreFromSave(
-                saved.spellName,
-                saved.finishTimeUtcOa,
-                saved.fireWasOn,
-                saved.totalBrewTime
-                        );
-        }
-
-        //Debug.Log($"🔥 Cauldron restored — remaining={remaining:0.00}s");
+        cauldron.RestoreFromSave(
+            saved.spellName,
+            saved.finishAtGameMinutes,
+            saved.fireWasOn,
+            saved.totalBrewTime
+        );
     }
 
     void RestorePlanters()

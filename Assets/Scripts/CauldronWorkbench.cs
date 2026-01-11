@@ -15,6 +15,9 @@ public class CauldronWorkbench : WorkbenchStation
     public GameObject cardPrefab;        // prefab with CardComponent
     public float defaultBrewTime = 5f;
 
+    [Header("Recipe Holding")]
+    public Transform recipeHoldingParent;
+
     [Header("Feedback")]
     public Image cauldronContents;
     public GameObject recipeStatus;
@@ -25,15 +28,16 @@ public class CauldronWorkbench : WorkbenchStation
 
     private SpellCombo activeCombo;
     // 🔒 Internal cauldron state
+    private CardComponent processingSingleCard;
     private bool isBrewing = false;
-    private float totalBrewTime = 0f;
-    private double finishTimeUtcOa = 0;
-    private float brewTimeRemaining = 0f;
+    private double finishAtGameMinutes;
+    private float brewTimeRemaining;
+    private float totalBrewTime;
     public float TotalBrewTime => totalBrewTime;
+    public double FinishAtGameMinutes => finishAtGameMinutes;
 
     public bool IsBrewing => isBrewing;
     public string ActiveSpellName => activeCombo != null ? activeCombo.SpellName : null;
-    public double FinishTimeUtcOa => finishTimeUtcOa;
     public bool FireWasOn => fireController != null && fireController.IsFireOn;
 
 
@@ -53,8 +57,65 @@ public class CauldronWorkbench : WorkbenchStation
             fireController.ToggleFire();
     }
 
+    private void StartSingleIngredientProcess(string ingredientName)
+    {
+        CardComponent card = null;
+        int count = 0;
+
+        foreach (Transform child in recipeHoldingParent)
+        {
+            var c = child.GetComponent<CardComponent>();
+            if (c != null)
+            {
+                card = c;
+                count++;
+            }
+        }
+
+        if (count != 1)
+            return;
+
+        var recipe = card.CardData.processingRecipes
+            .Find(r => r.tool == ProcessingTool.Cauldron);
+
+        if (recipe == null)
+        {
+            Debug.LogWarning("No cauldron recipe for card");
+            return;
+        }
+
+        if (recipe.needsFire && (fireController == null || !fireController.IsFireOn))
+        {
+            Debug.LogWarning("🔥 Fire required for this process");
+            return;
+        }
+
+        activeCombo = null;   // 🔴 IMPORTANT: marks this as NOT a spell
+        isBrewing = true;
+
+        double now = TimeManager.TotalGameMinutes;
+        double minutes = recipe.processingTime;
+
+        finishAtGameMinutes = now + minutes;
+        totalBrewTime = (float)minutes;
+        brewTimeRemaining = (float)minutes;
+
+        processingSingleCard = card;
+
+        card.gameObject.SetActive(false);
+
+        brewCoroutine = StartCoroutine(BrewRoutine(null));
+    }
+
     public void StartBrewing(SpellCombo combo, List<string> ingredients = null)
     {
+        // 🔹 SINGLE INGREDIENT MODE
+        if (ingredients != null && ingredients.Count == 1)
+        {
+            StartSingleIngredientProcess(ingredients[0]);
+            return;
+        }
+
         if (isBrewing)
         {
             Debug.Log("Cauldron is already brewing!");
@@ -78,14 +139,14 @@ public class CauldronWorkbench : WorkbenchStation
         activeCombo = combo;
         isBrewing = true;
 
-        float brewTime = defaultBrewTime;
+        bool failed = (activeCombo == null);
 
-        totalBrewTime = brewTime;
+        // 1️⃣ Base time from RecipeDatabase (tier-based)
+        float brewTime = Recipes != null
+            ? Recipes.GetBrewTimeSeconds(activeCombo, failed)
+            : defaultBrewTime;
 
-        finishTimeUtcOa = DateTime.UtcNow.AddSeconds(brewTime).ToOADate();
-        brewTimeRemaining = brewTime;
-
-        // Use recipe time if available and valid
+        // 2️⃣ Optional override from ProcessingRecipe
         if (activeCombo != null && activeCombo.ResultCard != null)
         {
             var recipe = activeCombo.ResultCard.processingRecipes
@@ -98,14 +159,14 @@ public class CauldronWorkbench : WorkbenchStation
                     if (fireController == null || !fireController.IsFireOn)
                     {
                         Debug.LogWarning("🔥 Recipe requires fire, but fire is OFF.");
-                        activeCombo = null; // forces failed path
+                        activeCombo = null;
                     }
                     else if (recipe.processingTimeWithFire > 0f)
                     {
                         brewTime = recipe.processingTimeWithFire;
                     }
                 }
-                else
+                else if (recipe.processingTime > 0f)
                 {
                     brewTime = recipe.processingTime;
                 }
@@ -113,9 +174,14 @@ public class CauldronWorkbench : WorkbenchStation
         }
 
         // record the absolute finish time
-        var finishTimeUtc = DateTime.UtcNow.AddSeconds(brewTime);
-        finishTimeUtcOa = finishTimeUtc.ToOADate();
-        brewTimeRemaining = brewTime;
+        double now = TimeManager.TotalGameMinutes;
+
+        // brewTime is in seconds → convert to game minutes
+        double brewMinutes = brewTime * TimeManager.MinutesPerRealSecond;
+
+        finishAtGameMinutes = now + brewMinutes;
+        brewTimeRemaining = (float)brewMinutes;
+        totalBrewTime = (float)brewMinutes;
 
         // Show cauldron contents
         if (cauldronContents != null)
@@ -139,8 +205,8 @@ public class CauldronWorkbench : WorkbenchStation
 
         if (toolTimerSlider != null)
         {
-            toolTimerSlider.maxValue = brewTime;
-            toolTimerSlider.value = brewTime;
+            toolTimerSlider.maxValue = totalBrewTime;
+            toolTimerSlider.value = totalBrewTime;
             toolTimerSlider.gameObject.SetActive(true);
         }
 
@@ -159,20 +225,15 @@ public class CauldronWorkbench : WorkbenchStation
 
     private IEnumerator BrewRoutine(List<string> ingredients)
     {
-        //Debug.Log($"⏱ BrewRoutine started. enabled={enabled}, active={gameObject.activeInHierarchy}");
-
         while (true)
         {
-            // compute remaining from absolute finish time
-            var finishTime = DateTime.FromOADate(finishTimeUtcOa);
-            var remaining = (float)(finishTime - DateTime.UtcNow).TotalSeconds;
+            double now = TimeManager.TotalGameMinutes;
+            double remaining = finishAtGameMinutes - now;
 
-            brewTimeRemaining = Mathf.Max(0f, remaining);
+            brewTimeRemaining = Mathf.Max(0f, (float)remaining);
 
             if (toolTimerSlider != null)
                 toolTimerSlider.value = brewTimeRemaining;
-
-            //Debug.Log($"⏳ Remaining: {brewTimeRemaining:F2}");
 
             if (brewTimeRemaining <= 0f)
                 break;
@@ -185,6 +246,24 @@ public class CauldronWorkbench : WorkbenchStation
 
     private void CompleteBrewing(List<string> ingredients)
     {
+        // 🔹 SINGLE INGREDIENT COMPLETE
+        if (processingSingleCard != null)
+        {
+            var recipe = processingSingleCard.CardData.processingRecipes
+                .Find(r => r.tool == ProcessingTool.Cauldron);
+
+            processingSingleCard.CardData.processedType = recipe.processedResultType;
+            processingSingleCard.MarkAsProcessed();
+
+            processingSingleCard.transform.SetParent(outputParent, false);
+            processingSingleCard.transform.localPosition = Vector3.zero;
+            processingSingleCard.gameObject.SetActive(true);
+
+            processingSingleCard = null;
+            isBrewing = false;
+            return;
+        }
+
         if (toolTimerRoot != null)
             toolTimerRoot.SetActive(false);
         isBrewing = false;
@@ -214,6 +293,8 @@ public class CauldronWorkbench : WorkbenchStation
 
             if (Recipes != null && ingredients != null)
             {
+                // Store failed brew with just ingredient names
+                // The FailedBrewPanelController will look up the CardData when displaying
                 GameData.Instance.failedBrews.Add(new SpellCombo
                 {
                     SpellName = "Invalid Combo",
@@ -221,7 +302,6 @@ public class CauldronWorkbench : WorkbenchStation
                 });
             }
 
-            //Debug.LogWarning("❌ Brew failed.");
             activeCombo = null;
             return;
         }
@@ -274,28 +354,15 @@ public class CauldronWorkbench : WorkbenchStation
     // NOTE: second parameter is now *finishTimeUtcOa*, not remaining seconds
     public void RestoreFromSave(
         string spellName,
-        double finishTimeUtcOaFromSave,
+        double savedFinishAtGameMinutes,
         bool fireWasOn,
         float totalBrewTimeFromSave
     )
     {
-        //Debug.Log($"RestoreFromSave called. Recipes count = {Recipes?.SpellCombos?.Count}");
-
-        totalBrewTime = totalBrewTimeFromSave;
-
-        // make sure we’re active
-        if (!enabled)
-            enabled = true;
-
-        if (!gameObject.activeInHierarchy)
-            gameObject.SetActive(true);
-
         if (string.IsNullOrEmpty(spellName))
             return;
 
-        // Find the combo again from runtime database
         SpellCombo combo = GameInitialization.Recipes.GetComboByName(spellName);
-
         if (combo == null)
         {
             Debug.LogWarning($"⚠️ Could not restore brew for spell '{spellName}'");
@@ -305,16 +372,23 @@ public class CauldronWorkbench : WorkbenchStation
         activeCombo = combo;
         isBrewing = true;
 
-        finishTimeUtcOa = finishTimeUtcOaFromSave;
+        totalBrewTime = totalBrewTimeFromSave;
+        finishAtGameMinutes = savedFinishAtGameMinutes;
 
-        var finishTime = DateTime.FromOADate(finishTimeUtcOa);
-        var remainingSeconds = (float)(finishTime - DateTime.UtcNow).TotalSeconds;
+        double remaining = finishAtGameMinutes - TimeManager.TotalGameMinutes;
 
-        // Restore fire state
+        if (remaining <= 0)
+        {
+            CompleteBrewing(null);
+            return;
+        }
+
+        brewTimeRemaining = (float)remaining;
+
+        // Restore visuals
         if (fireController != null)
             fireController.SetFire(fireWasOn);
 
-        // Restore visuals
         if (cauldronContents != null)
         {
             cauldronContents.gameObject.SetActive(true);
@@ -330,23 +404,10 @@ public class CauldronWorkbench : WorkbenchStation
         if (toolTimerSlider != null)
         {
             toolTimerSlider.maxValue = totalBrewTime;
-            toolTimerSlider.value = Mathf.Clamp(brewTimeRemaining, 0f, totalBrewTime);
+            toolTimerSlider.value = brewTimeRemaining;
             toolTimerSlider.gameObject.SetActive(true);
         }
 
-        // If we're already past the finish time → complete instantly
-        if (remainingSeconds <= 0f)
-        {
-            //Debug.Log("⏱ Offline brew finished while away, completing immediately.");
-            brewTimeRemaining = 0f;
-            CompleteBrewing(null);
-            return;
-        }
-
-        // otherwise, resume countdown
-        brewTimeRemaining = remainingSeconds;
         brewCoroutine = StartCoroutine(BrewRoutine(null));
-
-        //Debug.Log($"🔄 Restored brewing '{spellName}' with {remainingSeconds:F1}s remaining");
     }
 }
