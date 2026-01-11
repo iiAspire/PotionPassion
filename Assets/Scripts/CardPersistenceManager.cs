@@ -34,6 +34,16 @@ public class CardPersistenceManager : MonoBehaviour
         public double savedAtGameMinutes;
     }
 
+    [System.Serializable]
+    public class SavedDryingRackProcess
+    {
+        public string cardRuntimeID;
+        public string cardName;
+        public string baseName;
+        public bool completed;
+        public double finishAtGameMinutes;
+    }
+
     private WorkbenchStation FindWorkbenchByTool(string toolName)
     {
         foreach (var station in FindObjectsOfType<WorkbenchStation>())
@@ -201,6 +211,10 @@ public class CardPersistenceManager : MonoBehaviour
             //    Debug.Log($"[SAVE] Preserving {preservedWorkbenchCards.Count} workbench cards from PersistIfPaused");
             //}
         }
+
+        var rack = FindObjectOfType<DryingRackTimer>();
+        if (rack != null)
+            rack.Save();
 
         GameData.Instance.savedCards.Clear();
 
@@ -579,8 +593,21 @@ public class CardPersistenceManager : MonoBehaviour
         IsLoaded = true;
         RestorePlanters();
 
+        StartCoroutine(RestoreDryingRackWhenReady());
+
         CardsRestored = true;
         //Debug.Log("✅ Cards fully restored");
+    }
+
+    IEnumerator RestoreDryingRackWhenReady()
+    {
+        yield return null; // wait one frame
+
+        var rack = FindObjectOfType<DryingRackTimer>();
+        if (rack != null)
+        {
+            rack.RestoreFromSave();
+        }
     }
 
     private IEnumerator RestoreCauldronWhenReady()

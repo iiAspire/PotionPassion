@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public static class ManualToolState
 {
@@ -8,28 +9,50 @@ public static class ManualToolState
     public static event Action<bool> OnBusyChanged;
     public static event Action<bool> OnPausedChanged;
 
-    public static void SetBusy(bool busy)
+    static bool IsManualTool(ProcessingTool tool)
     {
-        if (IsBusy == busy)
-            return;
-
-        IsBusy = busy;
-
-        if (!busy)
-            IsPaused = false;
-
-        OnBusyChanged?.Invoke(IsBusy);
+        return tool == ProcessingTool.MortarAndPestle
+            || tool == ProcessingTool.ChoppingBoard;
     }
 
-    public static void SetPaused(bool paused)
+    public static void Recompute()
     {
-        if (!IsBusy)
-            return;
+        var stations = UnityEngine.Object.FindObjectsOfType<WorkbenchStation>();
 
-        if (IsPaused == paused)
-            return;
+        bool anyManualRunning = false;
+        bool anyManualBusy = false;
 
-        IsPaused = paused;
-        OnPausedChanged?.Invoke(IsPaused);
+        foreach (var s in stations)
+        {
+            // Ignore passive tools entirely (Drying Rack, etc.)
+            if (!IsManualTool(s.tool))
+                continue;
+
+            if (!s.IsBusy)
+                continue;
+
+            anyManualBusy = true;
+
+            if (!s.IsPaused)
+            {
+                anyManualRunning = true;
+                break;
+            }
+        }
+
+        bool newBusy = anyManualRunning;
+        bool newPaused = anyManualBusy && !anyManualRunning;
+
+        if (IsBusy != newBusy)
+        {
+            IsBusy = newBusy;
+            OnBusyChanged?.Invoke(IsBusy);
+        }
+
+        if (IsPaused != newPaused)
+        {
+            IsPaused = newPaused;
+            OnPausedChanged?.Invoke(IsPaused);
+        }
     }
 }

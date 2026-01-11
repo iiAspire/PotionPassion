@@ -83,6 +83,23 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             if (station != null) { bestStation = station; break; }
 
             DropZone zone = result.gameObject.GetComponent<DropZone>();
+            if (zone != null)
+            {
+                bool accepts = zone.AcceptsItem(thisCard);
+                Debug.Log($"[CardDragDrop] Found DropZone: {zone.name}, zone type: {zone.inventoryZone}, accepts: {accepts}");
+
+                // 👇 If we hit a Planter (regardless of accept/reject), stop looking for other zones
+                if (zone.inventoryZone == DropZone.InventoryZone.Planter)
+                {
+                    if (accepts)
+                    {
+                        bestInventory = zone;
+                    }
+                    // Whether accepted or not, don't check zones behind the planter
+                    break;
+                }
+            }
+
             if (zone == null || !zone.AcceptsItem(thisCard)) continue;
 
             int depth = 0;
@@ -214,15 +231,39 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         }
 
         // 4️⃣ If no valid drop target, return to original
-        transform.SetParent(originalParent, false);
-        transform.localPosition = Vector3.zero;
+        Debug.Log($"[CardDragDrop] No valid drop found. originalStack={(originalStack != null ? originalStack.name : "NULL")}, originalParent={(originalParent != null ? originalParent.name : "NULL")}");
+
+        if (originalStack != null)
+        {
+            Debug.Log($"[CardDragDrop] Returning to original stack: {originalStack.name}");
+
+            // Return to the original stack
+            thisCard.transform.SetParent(originalStack.transform, false);
+
+            RectTransform rt = thisCard.GetComponent<RectTransform>();
+            rt.anchoredPosition = Vector2.zero;
+            rt.localPosition = Vector3.zero;
+            rt.localRotation = Quaternion.identity;
+
+            originalStack.RefreshStack();
+        }
+        else if (originalParent != null)
+        {
+            Debug.Log($"[CardDragDrop] Returning to original parent: {originalParent.name}");
+
+            // No stack, just return to original parent
+            transform.SetParent(originalParent, false);
+            transform.localPosition = Vector3.zero;
+        }
+        else
+        {
+            Debug.LogError("[CardDragDrop] Both originalStack and originalParent are NULL!");
+        }
 
         if (thisCard != null && thisCard.CardData != null)
         {
             thisCard.SetCardData(thisCard.CardData, forceShowProcessed: true);
         }
-
-        return;
     }
 
     private void ReturnToOriginal()

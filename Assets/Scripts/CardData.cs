@@ -183,6 +183,7 @@ public class CardData : ScriptableObject
         processedType = other.processedType;
         partType = other.partType;
         //quantityType = other.quantityType;
+        canBeSold = other.canBeSold;
 
         this.processingRecipes = new List<ProcessingRecipe>();
         foreach (var r in other.processingRecipes)

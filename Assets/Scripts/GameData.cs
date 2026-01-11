@@ -23,6 +23,7 @@ public class GameData : MonoBehaviour
     public List<SavedCardState> savedCards = new List<SavedCardState>();
     public List<CardData> cauldronOutputCards = new List<CardData>();
     public List<SavedPlanterState> savedPlanters = new();
+    public List<SavedDryingRackProcess> savedDryingRack = new(); 
     public SavedCauldronBrew savedCauldron;
 
     public bool testCardsSpawned = false;

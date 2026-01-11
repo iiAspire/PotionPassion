@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CardComponent : MonoBehaviour
+public partial class CardComponent : MonoBehaviour
 {
     [Header("UI References")]
     public Image iconImage;              // Main card icon
@@ -43,20 +43,25 @@ public class CardComponent : MonoBehaviour
 
     public string runtimeID;
     public string RuntimeID => runtimeID;
+    private static bool iconsInitialized = false;
+
+    private static void InitIcons()
+    {
+        if (iconsInitialized) return;
+
+        iconManager = Resources.Load<CardIconManager>("CardIconManager");
+        iconsInitialized = true;
+
+        if (iconManager == null)
+            Debug.LogError("CardIconManager asset not found in Resources!");
+    }
 
     private void Awake()
     {
-        if (iconManager == null)
-        {
-            iconManager = Resources.Load<CardIconManager>("CardIconManager");
-            if (iconManager == null)
-                Debug.LogError("CardIconManager asset not found in Resources!");
-        }
+        InitIcons();
 
         if (string.IsNullOrEmpty(runtimeID))
-        {
             runtimeID = System.Guid.NewGuid().ToString();
-        }
     }
 
     //void OnEnable()

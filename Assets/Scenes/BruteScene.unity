@@ -1440,9 +1440,9 @@ RectTransform:
   - {fileID: 1483143052}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -630, y: 450}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -630, y: -80}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188601994
@@ -1938,9 +1938,9 @@ RectTransform:
   - {fileID: 490467794}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 756, y: 450}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 756, y: -80}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227771848
@@ -2114,9 +2114,9 @@ RectTransform:
   - {fileID: 66742758}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 635, y: 450}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 635, y: -80}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &228724861
@@ -2414,9 +2414,14 @@ RectTransform:
   m_GameObject: {fileID: 267305480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1039872845}
+  - {fileID: 2142833955}
+  - {fileID: 938316958}
+  - {fileID: 402419878}
+  - {fileID: 755884473}
   - {fileID: 672040584}
   - {fileID: 753569381}
   - {fileID: 1902305616}
@@ -2528,6 +2533,8 @@ MonoBehaviour:
       visualOutputs: []
     elapsedTime: 0
     active: 0
+    completed: 0
+    slotAnchor: {fileID: 1039872845}
   - card: {fileID: 0}
     timerSlider: {fileID: 1195543855}
     iconImage: {fileID: 155504997}
@@ -2544,6 +2551,8 @@ MonoBehaviour:
       visualOutputs: []
     elapsedTime: 0
     active: 0
+    completed: 0
+    slotAnchor: {fileID: 2142833955}
   - card: {fileID: 0}
     timerSlider: {fileID: 1968748533}
     iconImage: {fileID: 2130091541}
@@ -2560,6 +2569,8 @@ MonoBehaviour:
       visualOutputs: []
     elapsedTime: 0
     active: 0
+    completed: 0
+    slotAnchor: {fileID: 938316958}
   - card: {fileID: 0}
     timerSlider: {fileID: 269549086}
     iconImage: {fileID: 1130000833}
@@ -2576,6 +2587,8 @@ MonoBehaviour:
       visualOutputs: []
     elapsedTime: 0
     active: 0
+    completed: 0
+    slotAnchor: {fileID: 402419878}
   - card: {fileID: 0}
     timerSlider: {fileID: 1216323063}
     iconImage: {fileID: 204825111}
@@ -2592,8 +2605,10 @@ MonoBehaviour:
       visualOutputs: []
     elapsedTime: 0
     active: 0
+    completed: 0
+    slotAnchor: {fileID: 755884473}
   fadedAlpha: 0.5
-  cardManager: {fileID: 0}
+  cardManager: {fileID: 11400000, guid: c9841794c2f141147ae7a46c5c608e12, type: 2}
 --- !u!1 &269549084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3072,9 @@ MonoBehaviour:
   addToRecipeBuilder: {fileID: 0}
   removeFromRecipeBuilder: {fileID: 0}
   planterSlot: {fileID: 0}
+  invalidOutline: {fileID: 0}
+  invalidFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  invalidFlashDuration: 0.25
 --- !u!1 &324886624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3581,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395729256}
   m_CullTransparentMesh: 1
+--- !u!1 &402419877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402419878}
+  m_Layer: 5
+  m_Name: Timer4SlotAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &402419878
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402419877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 267305481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -68}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &417039314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3953,10 +4006,10 @@ RectTransform:
   - {fileID: 1789360904}
   m_Father: {fileID: 1836343916}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 450}
-  m_SizeDelta: {x: -800, y: -960}
+  m_AnchoredPosition: {x: 0, y: -90}
+  m_SizeDelta: {x: -800, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492720027
 MonoBehaviour:
@@ -4678,9 +4731,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 318706992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210, y: -210}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 202, y: 202}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &640420489
@@ -5660,6 +5713,9 @@ MonoBehaviour:
   addToRecipeBuilder: {fileID: 728884551}
   removeFromRecipeBuilder: {fileID: 728884551}
   planterSlot: {fileID: 0}
+  invalidOutline: {fileID: 0}
+  invalidFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  invalidFlashDuration: 0.25
 --- !u!114 &728884548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5962,6 +6018,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753569380}
   m_CullTransparentMesh: 1
+--- !u!1 &755884472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755884473}
+  m_Layer: 5
+  m_Name: Timer5SlotAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &755884473
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755884472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 267305481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -135}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &761316753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6318,9 +6409,9 @@ RectTransform:
   - {fileID: 1623545338}
   m_Father: {fileID: 1330359986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 876, y: 450}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 876, y: -80}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852748374
@@ -7211,6 +7302,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924567064}
   m_CullTransparentMesh: 1
+--- !u!1 &938316957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938316958}
+  m_Layer: 5
+  m_Name: Timer3SlotAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &938316958
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938316957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 267305481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &938514334
 GameObject:
   m_ObjectHideFlags: 0
@@ -7573,6 +7699,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024852098}
   m_CullTransparentMesh: 1
+--- !u!1 &1039872844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039872845}
+  m_Layer: 5
+  m_Name: Timer1SlotAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1039872845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039872844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 267305481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 135}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1046850195
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,6 +8591,9 @@ MonoBehaviour:
   addToRecipeBuilder: {fileID: 0}
   removeFromRecipeBuilder: {fileID: 0}
   planterSlot: {fileID: 0}
+  invalidOutline: {fileID: 0}
+  invalidFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  invalidFlashDuration: 0.25
 --- !u!114 &1153408431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10092,9 +10256,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 318706992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 210, y: 210}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -202, y: -202}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1428105127
@@ -11541,9 +11705,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 318706992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -210}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -202, y: 202}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553578190
@@ -12302,6 +12466,9 @@ MonoBehaviour:
   addToRecipeBuilder: {fileID: 0}
   removeFromRecipeBuilder: {fileID: 0}
   planterSlot: {fileID: 0}
+  invalidOutline: {fileID: 0}
+  invalidFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  invalidFlashDuration: 0.25
 --- !u!114 &1623205660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13812,6 +13979,9 @@ MonoBehaviour:
   addToRecipeBuilder: {fileID: 0}
   removeFromRecipeBuilder: {fileID: 0}
   planterSlot: {fileID: 0}
+  invalidOutline: {fileID: 0}
+  invalidFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  invalidFlashDuration: 0.25
 --- !u!114 &1847567097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14920,7 +15090,6 @@ MonoBehaviour:
   outputParent: {fileID: 1997263668}
   cardPrefab: {fileID: 0}
   toolTimer: {fileID: 0}
-  testSpellCard: {fileID: 11400000, guid: 6deb4d7563203ef46b952cfc5950daa4, type: 2}
   cauldronWorkbench: {fileID: 1997263673}
 --- !u!114 &1997263673
 MonoBehaviour:
@@ -15921,6 +16090,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139789252}
   m_CullTransparentMesh: 1
+--- !u!1 &2142833954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142833955}
+  m_Layer: 5
+  m_Name: Timer2SlotAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2142833955
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142833954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 267305481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 68}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2143341919
 GameObject:
   m_ObjectHideFlags: 0
@@ -16007,9 +16211,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 318706992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -210, y: 210}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 202, y: -202}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

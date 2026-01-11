@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System.Collections;
 
 public class DropZone : MonoBehaviour, IDropHandler
 {
@@ -20,6 +22,11 @@ public class DropZone : MonoBehaviour, IDropHandler
 
     [SerializeField] public PlanterSlot planterSlot;
 
+    [Header("Planter Feedback")]
+    [SerializeField] private Outline invalidOutline; // 👈 Add this
+    public Color invalidFlashColor = Color.red;
+    public float invalidFlashDuration = 0.25f;
+
     public bool AcceptsItem(CardComponent card)
     {
         if (card == null || card.CardData == null) return false;
@@ -33,6 +40,11 @@ public class DropZone : MonoBehaviour, IDropHandler
             case InventoryZone.PlayerInventory:
             case InventoryZone.RecipeHolding:
                 return true;
+            case InventoryZone.Planter:
+                // 👇 Validate for planters
+                if (planterSlot == null || planterSlot.growthDatabase == null)
+                    return false;
+                return planterSlot.growthDatabase.GetEntry(card.CardData.cardName) != null;
             default:
                 return false;
         }
@@ -50,6 +62,23 @@ public class DropZone : MonoBehaviour, IDropHandler
         // 🌱 If this drop zone is a planter and the card is a seed/spore
         if (inventoryZone == InventoryZone.Planter && planterSlot != null)
         {
+            // 👇 ADD VALIDATION: Check if the planter can accept this seed
+            if (planterSlot.growthDatabase == null)
+            {
+                Debug.LogWarning($"[{name}] Planter has no growth database assigned");
+                FlashInvalidDrop();
+                return; // Card will return to original location
+            }
+
+            var entry = planterSlot.growthDatabase.GetEntry(card.CardData.cardName);
+            if (entry == null)
+            {
+                Debug.LogWarning($"[{name}] Invalid seed for planter: {card.CardData.cardName}");
+                FlashInvalidDrop();
+                return; // Card will return to original location via OnEndDrag
+            }
+
+            // Valid seed - plant it
             planterSlot.PlantSeed(card);
             return;
         }
@@ -69,5 +98,31 @@ public class DropZone : MonoBehaviour, IDropHandler
         // Reparent card visually
         card.transform.SetParent(transform, false);
         card.transform.localPosition = Vector3.zero;
+    }
+
+    public void FlashInvalidDrop()
+    {
+        if (invalidOutline == null) return;
+        StopAllCoroutines();
+        StartCoroutine(FlashOutlineRoutine());
+    }
+
+    private IEnumerator FlashOutlineRoutine()
+    {
+        Color start = invalidOutline.effectColor;
+        Color flash = invalidFlashColor;
+        flash.a = 1f;
+
+        invalidOutline.effectColor = flash;
+
+        yield return new WaitForSeconds(invalidFlashDuration);
+
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * 8f;
+            invalidOutline.effectColor = Color.Lerp(flash, start, t);
+            yield return null;
+        }
     }
 }

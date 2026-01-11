@@ -19,7 +19,12 @@ public class PlanterSlot : MonoBehaviour
     public GameObject seedLabelParent;
     public Image seedLabelSprite;
 
+    [Header("Output Spawn")]
+    [Tooltip("Where harvested cards appear on THIS planter")]
+    public Transform outputAnchor;
+
     [Header("Inventory")]
+    [Tooltip("Where invalid seeds get returned to")]
     public Transform playerInventoryParent;
 
     private PlantGrowthEntry currentEntry;
@@ -34,14 +39,8 @@ public class PlanterSlot : MonoBehaviour
     public float RemainingTime =>
         currentEntry != null ? Mathf.Max(0, currentEntry.growTime - elapsedMinutes) : 0f;
 
-    [Header("Output Spawn")]
-    public Transform outputAnchor;  // An empty object above the planter
-    public Transform ingredientInventoryParent;  // where to send the item if a new seed is planted
-
     public void PlantSeed(CardComponent seed)
     {
-        //Debug.Log($"{name} planted seed {plantedSeedName}");
-
         if (isGrowing)
         {
             Debug.LogWarning($"[{name}] Already growing - cannot plant!");
@@ -49,53 +48,33 @@ public class PlanterSlot : MonoBehaviour
         }
 
         plantedSeedName = seed.CardData.cardName;
-
         currentEntry = growthDatabase.GetEntry(seed.CardData.cardName);
 
+        // DropZone already validated this, but double-check just in case
         if (currentEntry == null)
         {
-            Debug.LogError($"[{name}] ❌ NO GROWTH ENTRY FOUND for '{seed.CardData.cardName}' in database!");
-            Debug.LogError($"[{name}] Database has {growthDatabase?.entries?.Count ?? 0} entries");
-            if (playerInventoryParent != null)
-            {
-                seed.transform.SetParent(playerInventoryParent, false);
-                seed.transform.localPosition = Vector3.zero;
-                seed.gameObject.SetActive(true); // Make sure it's visible
-                Debug.Log($"[{name}] Returned invalid seed to player inventory");
-            }
-            else
-            {
-                Debug.LogError($"[{name}] No playerInventoryParent assigned!");
-                seed.gameObject.SetActive(true); // At least make it visible again
-            }
-
+            Debug.LogError($"[{name}] ❌ Unexpected: NO GROWTH ENTRY (should have been caught by DropZone)");
             return;
         }
 
+        // Hide the seed card since it's now "planted"
         seed.gameObject.SetActive(false);
-        Debug.Log($"[{name}] Seed {plantedSeedName} deactivated");
-
-        //Debug.Log($"[{name}] ✅ Found growth entry: {currentEntry.grownPlant.cardName}, growTime={currentEntry.growTime}");
 
         elapsedMinutes = 0f;
         isGrowing = true;
         isReadyToHarvest = false;
 
-        // visuals on
+        // Show growth visuals
         growthImage.gameObject.SetActive(true);
         radialTimer.gameObject.SetActive(true);
-        //Debug.Log($"[{name}] Growth visuals activated");
 
-        // label
+        // Show seed label
         seedLabelParent.SetActive(true);
         seedLabelSprite.sprite = currentEntry.grownPlant.Icon;
-        //Debug.Log($"[{name}] Seed label set");
     }
 
     public void TickByMinutes(float minutes)
     {
-        //Debug.Log($"{name} TickByMinutes: {minutes}");
-
         if (!isGrowing || currentEntry == null)
             return;
 
@@ -116,32 +95,24 @@ public class PlanterSlot : MonoBehaviour
         {
             isGrowing = false;
             isReadyToHarvest = true;
-
-            Harvest(); // ✅ AUTO harvest, global-time based
+            Harvest(); // Auto harvest when ready
         }
     }
 
     public void RestoreFromSave(string seedName, float remainingTime)
     {
-        //Debug.Log($"{name} restored: growing={isGrowing}");
-
-        // 1️⃣ Remember the planted seed (NO CardComponent exists)
         plantedSeedName = seedName;
 
-        // 2️⃣ Rebuild growth entry
         currentEntry = growthDatabase.GetEntry(seedName);
         if (currentEntry == null)
             return;
 
-        // 3️⃣ Restore elapsed time
         elapsedMinutes = currentEntry.growTime - remainingTime;
         elapsedMinutes = Mathf.Clamp(elapsedMinutes, 0, currentEntry.growTime);
 
-        // 4️⃣ Mark growing state
         isGrowing = true;
         isReadyToHarvest = false;
 
-        // 5️⃣ Restore visuals
         growthImage.gameObject.SetActive(true);
         radialTimer.gameObject.SetActive(true);
 
@@ -151,10 +122,8 @@ public class PlanterSlot : MonoBehaviour
         float t = Mathf.Clamp01(elapsedMinutes / currentEntry.growTime);
         radialTimer.fillAmount = 1f - t;
 
-        // 6️⃣ Force UI refresh
         TickByMinutes(0f);
         Canvas.ForceUpdateCanvases();
-
     }
 
     public void Harvest()
@@ -162,38 +131,32 @@ public class PlanterSlot : MonoBehaviour
         if (!isReadyToHarvest || currentEntry == null)
             return;
 
-        // remove seed
+        // Remove planted seed (if it still exists)
         if (plantedSeed != null)
             Destroy(plantedSeed.gameObject);
-
         plantedSeed = null;
 
-        // hide visuals
+        // Hide growth visuals
         radialTimer.gameObject.SetActive(false);
         seedLabelParent.SetActive(false);
-
         if (growthImage != null)
         {
             growthImage.sprite = null;
             growthImage.gameObject.SetActive(false);
         }
 
-        // spawn output
+        // 👇 Spawn harvested cards ON THE PLANTER (outputAnchor)
         for (int i = 0; i < currentEntry.outputQuantity; i++)
         {
-            GameObject cardGO =
-                Instantiate(currentEntry.grownPlant.cardPrefab, outputAnchor);
-
+            GameObject cardGO = Instantiate(currentEntry.grownPlant.cardPrefab, outputAnchor);
             cardGO.transform.localPosition = Vector3.zero;
 
             CardComponent card = cardGO.GetComponent<CardComponent>();
-            CardData runtimeCopy =
-                ScriptableObject.Instantiate(currentEntry.grownPlant);
-
+            CardData runtimeCopy = ScriptableObject.Instantiate(currentEntry.grownPlant);
             card.SetCardData(runtimeCopy, true);
         }
 
-        // reset
+        // Reset planter state
         currentEntry = null;
         isReadyToHarvest = false;
     }

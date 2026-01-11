@@ -10,6 +10,10 @@ public class DryingRackSlot
     public float totalTime;          // Total processing time
     public GameObject timerFrame;
     public ProcessingRecipe recipe;
+
     [HideInInspector] public float elapsedTime;
     [HideInInspector] public bool active;
+    [HideInInspector] public bool completed;
+
+    public Transform slotAnchor;
 }

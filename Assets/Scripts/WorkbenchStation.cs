@@ -63,6 +63,8 @@ public class WorkbenchStation : MonoBehaviour
 
     private bool isBusy = false;
     private bool isPaused = false;
+    public bool IsBusy => isBusy;
+    public bool IsPaused => isPaused;
 
     private void Awake()
     {
@@ -144,6 +146,7 @@ public class WorkbenchStation : MonoBehaviour
 
         isBusy = true;
         isPaused = true;
+        ManualToolState.Recompute();
 
         if (toolTimerSlider != null)
         {
@@ -199,6 +202,8 @@ public class WorkbenchStation : MonoBehaviour
         }
 
         isBusy = true;
+        isPaused = false;
+        ManualToolState.Recompute();
 
         //Debug.Log($"[StartProcessing] Using recipe on {card.CardData.cardName}: " +
         //          $"tool={recipe.tool}, processedType={recipe.processedResultType}, " +
@@ -322,6 +327,8 @@ public class WorkbenchStation : MonoBehaviour
         }
 
         isBusy = false;
+        isPaused = false;
+        ManualToolState.Recompute();
         HidePauseButton();
 
         RemoveSavedCard();
@@ -597,18 +604,7 @@ public class WorkbenchStation : MonoBehaviour
         if (pauseLabel != null)
             pauseLabel.text = isPaused ? "Resume" : "Pause";
 
-        // Check if ANY workbench is busy
-        bool anyWorkbenchBusy = false;
-        foreach (var station in FindObjectsOfType<WorkbenchStation>())
-        {
-            if (station.isBusy && !station.isPaused)
-            {
-                anyWorkbenchBusy = true;
-                break;
-            }
-        }
-
-        ExitButtonsController.SetEnabled(!anyWorkbenchBusy);
+        ManualToolState.Recompute();
 
         Debug.Log(isPaused
             ? $"[{tool}] Process paused"
