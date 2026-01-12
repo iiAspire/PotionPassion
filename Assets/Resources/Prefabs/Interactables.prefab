@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardComponent
   iconImage: {fileID: 150033831489230393}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 8612375607934134151}
   typeIconImage: {fileID: 5003381606925647884}
   nameText: {fileID: 0}
   processedIconImage: {fileID: 5153902455581493272}
@@ -684,6 +684,7 @@ MonoBehaviour:
   AssignedCombo:
     SpellName: 
     Ingredients: []
+    SpellLevel: 0
     Intimate: 
     Spiritual: 
     Astrological: 
@@ -694,12 +695,14 @@ MonoBehaviour:
     BrewTime: 5
     Description: 
     ResultType: 5
+  spellTierText: {fileID: 0}
   visualOutputs: []
   typeIconBorder: {fileID: 8346529630924054082}
   processedIconBorder: {fileID: 3139080469508208694}
   partIconBorder: {fileID: 8484429664885290812}
   showBorders: 1
   borderScale: 1
+  runtimeID: 
 --- !u!225 &-3337183642774312525
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -72,12 +72,20 @@ public partial class CardComponent : MonoBehaviour
     private bool isProcessedVisually = false;
 
     public void SetCardData(CardData newData, bool forceShowProcessed = false)
-    {
-        isProcessedVisually = false;
-        
+    {        
         if (newData == null) return;
 
+        if (!iconsInitialized)
+            InitIcons();
+
+        isProcessedVisually = false;
         cardData = newData;
+
+        Debug.Log(
+            $"[{name}] BG Image = {(backgroundImage != null ? backgroundImage.gameObject.name : "NULL")}, " +
+            $"Color = {cardData.cardColor}",
+            this
+        );
 
         // Main icon
         if (iconImage != null)

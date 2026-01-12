@@ -84,6 +84,15 @@ public class CauldronWorkbench : WorkbenchStation
             return;
         }
 
+        // Check if already processed (prevent reprocessing)
+        if (card.CardData.processedType != ProcessedType.None &&
+            (recipe.visualOutputs == null || recipe.visualOutputs.Count == 0))
+        {
+            Debug.Log($"Cannot reprocess '{card.CardData.cardName}' - already processed");
+            ReturnCardToRecipeHolding(card);
+            return;
+        }
+
         if (recipe.needsFire && (fireController == null || !fireController.IsFireOn))
         {
             Debug.LogWarning("🔥 Fire required for this process");
@@ -94,7 +103,7 @@ public class CauldronWorkbench : WorkbenchStation
         isBrewing = true;
 
         double now = TimeManager.TotalGameMinutes;
-        double minutes = recipe.processingTime;
+        double minutes = recipe.processingTime * TimeManager.MinutesPerRealSecond;
 
         finishAtGameMinutes = now + minutes;
         totalBrewTime = (float)minutes;
@@ -102,9 +111,47 @@ public class CauldronWorkbench : WorkbenchStation
 
         processingSingleCard = card;
 
+        // Hide card during processing
         card.gameObject.SetActive(false);
 
+        // Show timer UI
+        if (toolTimerRoot != null)
+            toolTimerRoot.SetActive(true);
+
+        if (toolTimerSlider != null)
+        {
+            toolTimerSlider.maxValue = totalBrewTime;
+            toolTimerSlider.value = totalBrewTime;
+            toolTimerSlider.gameObject.SetActive(true);
+        }
+
+        // Show processing visuals
+        if (bubbleUI != null)
+        {
+            bubbleUI.enabled = true;
+            bubbleUI.gameObject.SetActive(true);
+        }
+
+        if (cauldronContents != null)
+        {
+            cauldronContents.gameObject.SetActive(true);
+            // Could set a default processing sprite here if you have one
+        }
+
         brewCoroutine = StartCoroutine(BrewRoutine(null));
+    }
+
+    private void ReturnCardToRecipeHolding(CardComponent card)
+    {
+        if (recipeHoldingParent == null)
+        {
+            Debug.LogWarning("Recipe holding parent not assigned!");
+            return;
+        }
+
+        card.transform.SetParent(recipeHoldingParent, false);
+        card.transform.localPosition = Vector3.zero;
+        card.gameObject.SetActive(true);
     }
 
     public void StartBrewing(SpellCombo combo, List<string> ingredients = null)
@@ -252,15 +299,39 @@ public class CauldronWorkbench : WorkbenchStation
             var recipe = processingSingleCard.CardData.processingRecipes
                 .Find(r => r.tool == ProcessingTool.Cauldron);
 
+            // Mark as processed with the correct type
             processingSingleCard.CardData.processedType = recipe.processedResultType;
-            processingSingleCard.MarkAsProcessed();
+            processingSingleCard.MarkAsProcessed(); // This should add the visual icon
 
+            // Update the card name to include the processed type (like WorkbenchStation does)
+            string processedSuffix = recipe.processedResultType.ToString();
+            string currentName = processingSingleCard.CardData.cardName;
+
+            if (!currentName.EndsWith(" " + processedSuffix))
+            {
+                processingSingleCard.CardData.cardName = currentName + " " + processedSuffix;
+            }
+
+            // Refresh the card visuals to show the new name and icon
+            processingSingleCard.SetCardData(processingSingleCard.CardData, true);
+
+            // Move to output parent
             processingSingleCard.transform.SetParent(outputParent, false);
             processingSingleCard.transform.localPosition = Vector3.zero;
             processingSingleCard.gameObject.SetActive(true);
 
+            // Clean up
             processingSingleCard = null;
             isBrewing = false;
+
+            // Hide visuals
+            if (toolTimerRoot != null)
+                toolTimerRoot.SetActive(false);
+            if (bubbleUI != null)
+                bubbleUI.enabled = false;
+            if (cauldronContents != null)
+                cauldronContents.gameObject.SetActive(false);
+
             return;
         }
 

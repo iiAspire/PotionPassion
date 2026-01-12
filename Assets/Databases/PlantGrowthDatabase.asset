@@ -66,9 +66,9 @@ MonoBehaviour:
     grownPlant: {fileID: 11400000, guid: 5279af5c9583d14448d21eae0bd20549, type: 2}
     growTime: 1440
     outputQuantity: 1
-    stage1: {fileID: 0}
-    stage2: {fileID: 6553298333988512432, guid: f81d6084d57c6884d90aa8d372f5ba95, type: 3}
-    stageFinal: {fileID: -3308568669249145394, guid: 6f8af1fe696baa24890cd01da7508ff4, type: 3}
+    stage1: {fileID: -6411853266399160265, guid: 7be89b5de8106c44ca9fd316f418d015, type: 3}
+    stage2: {fileID: -8929353221699503643, guid: d7caeb1e3d8f9c349a93fbe69c26c692, type: 3}
+    stageFinal: {fileID: -3975079647551906316, guid: 190b6d022df7efe4d8e661f0e921e015, type: 3}
   - seedName: Common Puffball Spores
     grownPlant: {fileID: 11400000, guid: 1f63a3a4f263a924f87e7bb4a292dccd, type: 2}
     growTime: 720

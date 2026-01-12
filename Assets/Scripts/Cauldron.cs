@@ -12,16 +12,13 @@ public class Cauldron : MonoBehaviour, IDropHandler
     ComboGenerator Combos => GameInitialization.Combos;
 
     public DropZone recipeHolding;
-    public RecipeBuilder recipeBuilder;     // reference to the RecipeBuilder linked to recipeHolding
-    public Transform outputParent;          // where new cards should appear
+    public RecipeBuilder recipeBuilder;
+    public Transform outputParent;
     public GameObject cardPrefab;
 
     public ToolTimer toolTimer;
-    //public CardData testSpellCard;          // to permit adding test receipe 'Spell Test' to the RecipeDatabase
-
     public CauldronWorkbench cauldronWorkbench;
 
-    /// Helper to create a pre-determined SpellCombo and add it to the runtime database (for learning new spells mid-game)
     private void AddPreDeterminedSpell(string spellName, List<string> ingredients, string tool)
     {
         if (Recipes == null) return;
@@ -39,33 +36,6 @@ public class Cauldron : MonoBehaviour, IDropHandler
         Recipes.AddCombo(combo);
     }
 
-    // test code start - TESTSPELL
-    //public void SpawnTestCards()  // for adding a test recipe to the database
-    //{
-    //    if (Recipes == null)
-    //    {
-    //        Debug.LogError("RecipeDatabase not assigned!");
-    //        return;
-    //    }
-
-    //    // Example test ingredients
-    //    string[] testIngredients = { "Corn", "Chia", "Sandstone" };
-
-    //    // Create a test SpellCombo for these ingredients
-    //    SpellCombo testCombo = new SpellCombo
-    //    {
-    //        SpellName = "Spell Test",
-    //        Ingredients = new List<string>(testIngredients),
-    //        ResultCard = testSpellCard   // ✅ this line links the sprite
-    //    };
-
-    //    // Register it in the runtime RecipeDatabase
-    //    Recipes.AddCombo(testCombo);
-
-    //    Debug.Log($"✅ Test combo '{testCombo.SpellName}' registered with ResultCard '{testSpellCard?.name ?? "null"}'.");
-    //}
-    // testing code end
-
     public void OnDrop(PointerEventData eventData)
     {
         var draggedGO = eventData.pointerDrag;
@@ -74,7 +44,6 @@ public class Cauldron : MonoBehaviour, IDropHandler
         var cardComp = draggedGO.GetComponent<CardComponent>();
         if (cardComp == null) return;
 
-        // ✅ Forward the card to the RecipeBuilder, letting it handle the slot parent
         if (recipeBuilder != null)
         {
             recipeBuilder.AddCard(cardComp);
@@ -82,22 +51,17 @@ public class Cauldron : MonoBehaviour, IDropHandler
     }
 
     public void StartProcessing()
-    { 
-        // Consume ingredients from the recipe holding
+    {
         List<CardComponent> droppedCards = recipeBuilder.ConsumeAll();
         if (droppedCards.Count == 0) return;
 
-        // Convert the CardComponents into their ingredient names
+        // Convert cards to ingredient names
         List<string> ingredientNames = new List<string>();
         foreach (var card in droppedCards)
         {
             if (card.CardData != null)
             {
                 ingredientNames.Add(card.CardData.cardName);
-            }
-            else
-            {
-                Debug.LogWarning("Card has no name assigned!");
             }
         }
 
@@ -107,29 +71,83 @@ public class Cauldron : MonoBehaviour, IDropHandler
             return;
         }
 
-        if (Recipes.SpellCombos == null)
+        // 🔹 SINGLE CARD - Check if it's a processing recipe
+        if (droppedCards.Count == 1)
         {
-            Debug.LogError("❌ Recipes.SpellCombos is NULL");
-            return;
+            CardComponent singleCard = droppedCards[0];
+
+            // Check if this card has a cauldron processing recipe
+            var recipe = singleCard.CardData.processingRecipes
+                ?.Find(r => r.tool == ProcessingTool.Cauldron);
+
+            if (recipe != null)
+            {
+                // Check if already processed
+                if (singleCard.CardData.processedType != ProcessedType.None &&
+                    (recipe.visualOutputs == null || recipe.visualOutputs.Count == 0))
+                {
+                    Debug.Log($"Cannot reprocess '{singleCard.CardData.cardName}' - already processed");
+                    ReturnCardToRecipeHolding(singleCard);
+                    return;
+                }
+
+                // Check fire requirement
+                if (recipe.needsFire &&
+                    (cauldronWorkbench.fireController == null ||
+                     !cauldronWorkbench.fireController.IsFireOn))
+                {
+                    Debug.LogWarning("🔥 Fire required for this process - returning card");
+                    ReturnCardToRecipeHolding(singleCard);
+
+                    // Optional: show feedback to player
+                    if (cauldronWorkbench.failedBrewLogTMP != null)
+                    {
+                        cauldronWorkbench.failedBrewLogTMP.text = "Fire required for this process!";
+                        cauldronWorkbench.failedBrewLogTMP.gameObject.SetActive(true);
+                        StartCoroutine(HideTextAfterDelay(cauldronWorkbench.failedBrewLogTMP.gameObject, 2f));
+                    }
+                    return;
+                }
+
+                // Valid single-card processing - move to workbench's recipe holding
+                singleCard.transform.SetParent(cauldronWorkbench.recipeHoldingParent, false);
+                singleCard.transform.localPosition = Vector3.zero;
+
+                if (cauldronWorkbench != null)
+                {
+                    cauldronWorkbench.StartBrewing(null, ingredientNames);
+                }
+                return;
+            }
         }
 
-        // Look up the combo in the runtime database for this playthrough
-        SpellCombo combo =
-            Recipes.GetComboByIngredients(ingredientNames);
-
-        //Debug.Log(
-        //    $"Cauldron DB instance: {Recipes.GetInstanceID()}, " +
-        //    $"combos: {Recipes.SpellCombos.Count}"
-        //);
+        // 🔹 MULTI-INGREDIENT - Try spell combo lookup
+        SpellCombo combo = Recipes.GetComboByIngredients(ingredientNames);
 
         if (cauldronWorkbench != null)
         {
-            cauldronWorkbench.StartBrewing(combo, ingredientNames); // ✅ Let workbench handle the rest
+            cauldronWorkbench.StartBrewing(combo, ingredientNames);
         }
         else
         {
             Debug.LogWarning("No CauldronWorkbench assigned! Cannot start brewing.");
         }
+    }
+
+    private void ReturnCardToRecipeHolding(CardComponent card)
+    {
+        if (recipeBuilder != null && recipeBuilder.transform != null)
+        {
+            card.transform.SetParent(recipeBuilder.transform, false);
+            card.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    private System.Collections.IEnumerator HideTextAfterDelay(GameObject obj, float seconds)
+    {
+        yield return new UnityEngine.WaitForSeconds(seconds);
+        if (obj != null)
+            obj.SetActive(false);
     }
 
     private CardComponent InstantiateCardFromCombo(SpellCombo combo, Transform parent)
@@ -148,20 +166,14 @@ public class Cauldron : MonoBehaviour, IDropHandler
             return null;
         }
 
-        // Determine the processed type
         ProcessedType resultType = DetermineProcessedTypeFromCombo(combo);
 
-        // Create a temporary CardData for this new card
         CardData tempData = ScriptableObject.CreateInstance<CardData>();
         tempData.cardName = combo.SpellName;
         tempData.processedType = resultType;
-        //tempData.itemType = ItemType.Tool;
 
-        // Assign CardData and force show processed icon
         card.SetCardData(tempData, true);
-
-        // Optional: store the combo itself for reference on the card
-        card.AssignedCombo = combo; // add this field to CardComponent
+        card.AssignedCombo = combo;
 
         if (card.typeIconImage != null)
         {
@@ -174,8 +186,6 @@ public class Cauldron : MonoBehaviour, IDropHandler
 
     private ProcessedType DetermineProcessedTypeFromCombo(SpellCombo combo)
     {
-        // Example logic: could be based on combo properties
-        // For now, just return Potion as a default, you can replace with your rules
         return ProcessedType.Potion;
     }
 }
