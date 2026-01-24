@@ -1,0 +1,33 @@
+using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+public class GenerateNoiseTexture
+{
+#if UNITY_EDITOR
+    [MenuItem("Tools/Generate Cloud Noise Texture")]
+    public static void Generate()
+    {
+        int size = 256;
+        Texture2D tex = new Texture2D(size, size, TextureFormat.RGB24, false);
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                float v = Mathf.PerlinNoise(x * 0.05f, y * 0.05f);
+                tex.SetPixel(x, y, new Color(v, v, v, 1));
+            }
+        }
+
+        tex.Apply();
+
+        byte[] png = tex.EncodeToPNG();
+        System.IO.File.WriteAllBytes("Assets/CloudNoise.png", png);
+        AssetDatabase.Refresh();
+
+        Debug.Log("CloudNoise.png generated in Assets/");
+    }
+#endif
+}

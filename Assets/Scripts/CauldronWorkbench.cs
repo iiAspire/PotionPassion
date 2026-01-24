@@ -11,8 +11,8 @@ public class CauldronWorkbench : WorkbenchStation
     RecipeDatabase Recipes => GameInitialization.Recipes;
 
     [Header("Cauldron Specific")]
-    public Transform outputParent;       // where brew result card appears
-    public GameObject cardPrefab;        // prefab with CardComponent
+    public Transform outputParent;
+    public GameObject cardPrefab;
     public float defaultBrewTime = 5f;
 
     [Header("Recipe Holding")]
@@ -27,21 +27,21 @@ public class CauldronWorkbench : WorkbenchStation
     public CauldronFireController fireController;
 
     private SpellCombo activeCombo;
-    // 🔒 Internal cauldron state
     private CardComponent processingSingleCard;
     private bool isBrewing = false;
     private double finishAtGameMinutes;
     private float brewTimeRemaining;
     private float totalBrewTime;
+
     public float TotalBrewTime => totalBrewTime;
     public double FinishAtGameMinutes => finishAtGameMinutes;
-
     public bool IsBrewing => isBrewing;
     public string ActiveSpellName => activeCombo != null ? activeCombo.SpellName : null;
     public bool FireWasOn => fireController != null && fireController.IsFireOn;
 
-
     private Coroutine brewCoroutine;
+
+    private ProcessingRecipe singleCardRecipe; // Store the recipe selected by Cauldron
 
     void OnDisable()
     {
@@ -57,47 +57,70 @@ public class CauldronWorkbench : WorkbenchStation
             fireController.ToggleFire();
     }
 
+    public void StartBrewingWithRecipe(ProcessingRecipe recipe, List<string> ingredients)
+    {
+        Debug.Log($"🟢 [CauldronWorkbench] StartBrewingWithRecipe called with recipe: {recipe.processedResultType}");
+
+        if (ingredients != null && ingredients.Count == 1 && recipe != null)
+        {
+            singleCardRecipe = recipe;
+            StartSingleIngredientProcess(ingredients[0]);
+        }
+        else
+        {
+            Debug.LogWarning("StartBrewingWithRecipe called with invalid parameters");
+        }
+    }
+
     private void StartSingleIngredientProcess(string ingredientName)
     {
-        CardComponent card = null;
-        int count = 0;
+        Debug.Log("🟢 [CauldronWorkbench] StartSingleIngredientProcess called");
+        Debug.Log($"🟢 [CauldronWorkbench] recipeHoldingParent null? {recipeHoldingParent == null}");
 
-        foreach (Transform child in recipeHoldingParent)
+        // Find the single card in recipeHoldingParent
+        CardComponent card = null;
+
+        if (recipeHoldingParent != null && recipeHoldingParent.childCount > 0)
         {
-            var c = child.GetComponent<CardComponent>();
-            if (c != null)
-            {
-                card = c;
-                count++;
-            }
+            Debug.Log($"🟢 [CauldronWorkbench] recipeHoldingParent has {recipeHoldingParent.childCount} children");
+            card = recipeHoldingParent.GetChild(0).GetComponent<CardComponent>();
         }
 
-        if (count != 1)
+        if (card == null)
+        {
+            Debug.LogWarning("⚠️ [CauldronWorkbench] No card found in recipeHoldingParent for single ingredient processing");
             return;
+        }
 
-        var recipe = card.CardData.processingRecipes
-            .Find(r => r.tool == ProcessingTool.Cauldron);
+        Debug.Log($"🟢 [CauldronWorkbench] Found card: {card.CardData.cardName}");
+
+        // Use the recipe passed from Cauldron (which already selected based on fire state)
+        ProcessingRecipe recipe = singleCardRecipe;
 
         if (recipe == null)
         {
-            Debug.LogWarning("No cauldron recipe for card");
+            Debug.LogWarning("⚠️ [CauldronWorkbench] No recipe was passed from Cauldron!");
             return;
         }
+
+        Debug.Log($"🟢 [CauldronWorkbench] Using passed recipe: processedType={recipe.processedResultType}, time={recipe.processingTime}, needsFire={recipe.needsFire}");
 
         // Check if already processed (prevent reprocessing)
         if (card.CardData.processedType != ProcessedType.None &&
             (recipe.visualOutputs == null || recipe.visualOutputs.Count == 0))
         {
-            Debug.Log($"Cannot reprocess '{card.CardData.cardName}' - already processed");
+            Debug.Log($"⚠️ [CauldronWorkbench] Cannot reprocess '{card.CardData.cardName}' - already processed");
             ReturnCardToRecipeHolding(card);
             return;
         }
 
         if (recipe.needsFire && (fireController == null || !fireController.IsFireOn))
         {
-            Debug.LogWarning("🔥 Fire required for this process");
+            Debug.LogWarning("🔥 [CauldronWorkbench] Fire required for this process");
             return;
         }
+
+        Debug.Log("✅ [CauldronWorkbench] Starting single ingredient process");
 
         activeCombo = null;   // 🔴 IMPORTANT: marks this as NOT a spell
         isBrewing = true;
@@ -111,8 +134,15 @@ public class CauldronWorkbench : WorkbenchStation
 
         processingSingleCard = card;
 
+        Debug.Log($"🟢 [CauldronWorkbench] Process time: {recipe.processingTime}s real-time = {minutes} game minutes");
+        Debug.Log($"🟢 [CauldronWorkbench] Stored card reference: {processingSingleCard != null}");
+        Debug.Log($"🟢 [CauldronWorkbench] Card name before hiding: {processingSingleCard.CardData.cardName}");
+        Debug.Log($"🟢 [CauldronWorkbench] Hiding card and starting brew routine");
+
         // Hide card during processing
         card.gameObject.SetActive(false);
+
+        Debug.Log($"🟢 [CauldronWorkbench] After hiding, processingSingleCard null? {processingSingleCard == null}");
 
         // Show timer UI
         if (toolTimerRoot != null)
@@ -135,10 +165,10 @@ public class CauldronWorkbench : WorkbenchStation
         if (cauldronContents != null)
         {
             cauldronContents.gameObject.SetActive(true);
-            // Could set a default processing sprite here if you have one
         }
 
-        brewCoroutine = StartCoroutine(BrewRoutine(null));
+        brewCoroutine = StartCoroutine(BrewRoutine(null, card, singleCardRecipe));
+
     }
 
     private void ReturnCardToRecipeHolding(CardComponent card)
@@ -156,16 +186,18 @@ public class CauldronWorkbench : WorkbenchStation
 
     public void StartBrewing(SpellCombo combo, List<string> ingredients = null)
     {
-        // 🔹 SINGLE INGREDIENT MODE
+        Debug.Log($"🟢 [CauldronWorkbench] StartBrewing called: combo={(combo != null ? combo.SpellName : "NULL")}, ingredients={ingredients?.Count ?? 0}");
+
+        // 🔹 SINGLE INGREDIENT MODE - handled by StartBrewingWithRecipe instead
         if (ingredients != null && ingredients.Count == 1)
         {
-            StartSingleIngredientProcess(ingredients[0]);
+            Debug.LogWarning("⚠️ [CauldronWorkbench] StartBrewing called for single ingredient - should use StartBrewingWithRecipe");
             return;
         }
 
         if (isBrewing)
         {
-            Debug.Log("Cauldron is already brewing!");
+            Debug.Log("⚠️ [CauldronWorkbench] Cauldron is already brewing!");
             return;
         }
 
@@ -187,6 +219,7 @@ public class CauldronWorkbench : WorkbenchStation
         isBrewing = true;
 
         bool failed = (activeCombo == null);
+        Debug.Log($"🟢 [CauldronWorkbench] Multi-ingredient brew: failed={failed}");
 
         // 1️⃣ Base time from RecipeDatabase (tier-based)
         float brewTime = Recipes != null
@@ -220,17 +253,13 @@ public class CauldronWorkbench : WorkbenchStation
             }
         }
 
-        // record the absolute finish time
         double now = TimeManager.TotalGameMinutes;
-
-        // brewTime is in seconds → convert to game minutes
         double brewMinutes = brewTime * TimeManager.MinutesPerRealSecond;
 
         finishAtGameMinutes = now + brewMinutes;
         brewTimeRemaining = (float)brewMinutes;
         totalBrewTime = (float)brewMinutes;
 
-        // Show cauldron contents
         if (cauldronContents != null)
         {
             cauldronContents.gameObject.SetActive(true);
@@ -246,7 +275,6 @@ public class CauldronWorkbench : WorkbenchStation
         if (bubbleUI != null)
             bubbleUI.enabled = true;
 
-        // Show timer
         if (toolTimerRoot != null)
             toolTimerRoot.SetActive(true);
 
@@ -257,7 +285,6 @@ public class CauldronWorkbench : WorkbenchStation
             toolTimerSlider.gameObject.SetActive(true);
         }
 
-        // Ensure the cauldron visuals are alive
         if (!enabled)
             enabled = true;
 
@@ -267,11 +294,16 @@ public class CauldronWorkbench : WorkbenchStation
         if (fireController != null)
             fireController.gameObject.SetActive(true);
 
-        brewCoroutine = StartCoroutine(BrewRoutine(ingredients));
+        brewCoroutine = StartCoroutine(BrewRoutine(ingredients, null, null));
     }
 
-    private IEnumerator BrewRoutine(List<string> ingredients)
+    private IEnumerator BrewRoutine(List<string> ingredients, CardComponent singleCard = null, ProcessingRecipe singleRecipe = null)
     {
+        Debug.Log("🟢 [CauldronWorkbench] BrewRoutine started");
+        Debug.Log($"🟢 [CauldronWorkbench] At start of routine, singleCard param null? {singleCard == null}");
+        Debug.Log($"🟢 [CauldronWorkbench] At start of routine, processingSingleCard field null? {processingSingleCard == null}");
+
+        int frameCount = 0;
         while (true)
         {
             double now = TimeManager.TotalGameMinutes;
@@ -282,46 +314,79 @@ public class CauldronWorkbench : WorkbenchStation
             if (toolTimerSlider != null)
                 toolTimerSlider.value = brewTimeRemaining;
 
+            // Periodic check
+            //if (frameCount % 60 == 0 && singleCard != null)
+            //{
+            //    bool cardStillExists = singleCard != null;
+            //    bool gameObjectExists = singleCard != null && singleCard.gameObject != null;
+            //    Debug.Log($"🟢 [CauldronWorkbench] Frame {frameCount}: card={cardStillExists}, gameObject={gameObjectExists}");
+            //}
+            //frameCount++;
+
             if (brewTimeRemaining <= 0f)
+            {
+                Debug.Log("🟢 [CauldronWorkbench] Brew time complete!");
                 break;
+            }
 
             yield return null;
         }
 
-        CompleteBrewing(ingredients);
+        CompleteBrewing(ingredients, singleCard, singleRecipe);
     }
 
-    private void CompleteBrewing(List<string> ingredients)
+    private void CompleteBrewing(List<string> ingredients, CardComponent singleCard = null, ProcessingRecipe singleRecipe = null)
     {
-        // 🔹 SINGLE INGREDIENT COMPLETE
-        if (processingSingleCard != null)
+        Debug.Log("🟢 [CauldronWorkbench] CompleteBrewing called");
+        Debug.Log($"🟢 [CauldronWorkbench] singleCard param null? {singleCard == null}");
+        Debug.Log($"🟢 [CauldronWorkbench] processingSingleCard field null? {processingSingleCard == null}");
+
+        if (singleCard != null)
         {
-            var recipe = processingSingleCard.CardData.processingRecipes
-                .Find(r => r.tool == ProcessingTool.Cauldron);
+            Debug.Log($"🟢 [CauldronWorkbench] Card reference exists via parameter, checking GameObject...");
+            Debug.Log($"🟢 [CauldronWorkbench] Card GameObject null? {singleCard.gameObject == null}");
+            Debug.Log($"🟢 [CauldronWorkbench] Card name: {(singleCard.gameObject != null ? singleCard.name : "DESTROYED")}");
+        }
+
+        // 🔹 SINGLE INGREDIENT COMPLETE
+        if (singleCard != null && singleRecipe != null)
+        {
+            Debug.Log($"🟢 [CauldronWorkbench] Processing single card: {singleCard.CardData.cardName}");
+
+            Debug.Log($"🟢 [CauldronWorkbench] Recipe processedType: {singleRecipe.processedResultType}");
 
             // Mark as processed with the correct type
-            processingSingleCard.CardData.processedType = recipe.processedResultType;
-            processingSingleCard.MarkAsProcessed(); // This should add the visual icon
+            singleCard.CardData.processedType = singleRecipe.processedResultType;
+            Debug.Log($"🟢 [CauldronWorkbench] Set CardData.processedType to {singleRecipe.processedResultType}");
 
-            // Update the card name to include the processed type (like WorkbenchStation does)
-            string processedSuffix = recipe.processedResultType.ToString();
-            string currentName = processingSingleCard.CardData.cardName;
+            singleCard.MarkAsProcessed();
+            Debug.Log("🟢 [CauldronWorkbench] Called MarkAsProcessed()");
+
+            // Update the card name to include the processed type
+            string processedSuffix = singleRecipe.processedResultType.ToString();
+            string currentName = singleCard.CardData.cardName;
 
             if (!currentName.EndsWith(" " + processedSuffix))
             {
-                processingSingleCard.CardData.cardName = currentName + " " + processedSuffix;
+                singleCard.CardData.cardName = currentName + " " + processedSuffix;
+                Debug.Log($"🟢 [CauldronWorkbench] Renamed card: '{currentName}' → '{singleCard.CardData.cardName}'");
             }
 
-            // Refresh the card visuals to show the new name and icon
-            processingSingleCard.SetCardData(processingSingleCard.CardData, true);
+            // Refresh the card visuals
+            singleCard.SetCardData(singleCard.CardData, true);
+            Debug.Log("🟢 [CauldronWorkbench] Called SetCardData with forceRefresh=true");
 
             // Move to output parent
-            processingSingleCard.transform.SetParent(outputParent, false);
-            processingSingleCard.transform.localPosition = Vector3.zero;
-            processingSingleCard.gameObject.SetActive(true);
+            Debug.Log($"🟢 [CauldronWorkbench] Moving to outputParent (null? {outputParent == null})");
+            singleCard.transform.SetParent(outputParent, false);
+            singleCard.transform.localPosition = Vector3.zero;
+            singleCard.gameObject.SetActive(true);
+
+            Debug.Log("✅ [CauldronWorkbench] Single card processing COMPLETE");
 
             // Clean up
             processingSingleCard = null;
+            singleCardRecipe = null;
             isBrewing = false;
 
             // Hide visuals
@@ -348,6 +413,8 @@ public class CauldronWorkbench : WorkbenchStation
         // INVALID RECIPE
         if (activeCombo == null)
         {
+            Debug.Log("⚠️ [CauldronWorkbench] Invalid recipe - showing failed brew");
+
             if (recipeStatus != null)
             {
                 recipeStatus.SetActive(true);
@@ -364,8 +431,6 @@ public class CauldronWorkbench : WorkbenchStation
 
             if (Recipes != null && ingredients != null)
             {
-                // Store failed brew with just ingredient names
-                // The FailedBrewPanelController will look up the CardData when displaying
                 GameData.Instance.failedBrews.Add(new SpellCombo
                 {
                     SpellName = "Invalid Combo",
@@ -378,6 +443,8 @@ public class CauldronWorkbench : WorkbenchStation
         }
 
         // VALID RECIPE → spawn result card on cauldron
+        Debug.Log($"✅ [CauldronWorkbench] Valid recipe complete: {activeCombo.SpellName}");
+
         if (cardPrefab != null && outputParent != null)
         {
             GameObject cardGO = Instantiate(cardPrefab, outputParent);
@@ -411,7 +478,7 @@ public class CauldronWorkbench : WorkbenchStation
             }
         }
 
-        //Debug.Log($"✅ Brew complete: {activeCombo.SpellName}");
+        RecipeDiscoverySystem.Instance.OnSuccessfulBrew(activeCombo);
         activeCombo = null;
     }
 
@@ -422,7 +489,6 @@ public class CauldronWorkbench : WorkbenchStation
             obj.SetActive(false);
     }
 
-    // NOTE: second parameter is now *finishTimeUtcOa*, not remaining seconds
     public void RestoreFromSave(
         string spellName,
         double savedFinishAtGameMinutes,
@@ -456,7 +522,6 @@ public class CauldronWorkbench : WorkbenchStation
 
         brewTimeRemaining = (float)remaining;
 
-        // Restore visuals
         if (fireController != null)
             fireController.SetFire(fireWasOn);
 

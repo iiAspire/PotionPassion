@@ -288,4 +288,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 799069b917f968b41a55198a602bb9c9, type: 2}
   - {fileID: 11400000, guid: 9121c341cde76bf47adb536562aa9532, type: 2}
   - {fileID: 11400000, guid: 87c3e984751a71d4cb85b1e031b4eb78, type: 2}
+  - {fileID: 11400000, guid: d5336fcd8b968ea48a73433199914d00, type: 2}
+  - {fileID: 11400000, guid: 2b127f8496fd1bb4bb314e077b73bcca, type: 2}
+  - {fileID: 11400000, guid: 5e813409c36c9e947ae165f4ffebf17b, type: 2}
+  - {fileID: 11400000, guid: 5008df5cc1ab1b04980c10c526f6a1a3, type: 2}
+  - {fileID: 11400000, guid: 2284ca3b250ad764fb6a110e3027a61d, type: 2}
+  - {fileID: 11400000, guid: 23cc7f1b9cea6894ba47dd43b6f2b1f8, type: 2}
+  - {fileID: 11400000, guid: 735f4028bf8e07d43a27b2a4af40a720, type: 2}
+  - {fileID: 11400000, guid: b64bf8eff9ca89043b411aee28ba6bae, type: 2}
+  - {fileID: 11400000, guid: 82a86b16d80a132448bdccfa2cdc87c9, type: 2}
+  - {fileID: 11400000, guid: f946d12cbc2e6634b8c125c5f4369139, type: 2}
   cardStackPrefab: {fileID: 0}

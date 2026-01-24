@@ -10,7 +10,6 @@ public class SpellSetup : MonoBehaviour
 {
     public RecipeDatabase recipeDatabase;
     public IngredientDatabase ingredientDatabase;
-    public ComboGenerator comboGenerator;
 
     // Ingredient category lists
     private List<MetalIngredient> Metals;
@@ -174,7 +173,12 @@ public class SpellSetup : MonoBehaviour
         combo.Tool = !string.IsNullOrEmpty(toolName) ? toolName : null;
 
         // Assign result card
-        combo.ResultCard = comboGenerator?.GetResultCardForSpell(name);
+        combo.ResultCard = GameInitialization.Combos.GetResultCardForSpell(name);
+
+        if (combo.ResultCard == null)
+            Debug.LogError($"❌ ResultCard missing for '{name}'. ComboGenerator map ready? {GameInitialization.Combos != null}");
+        else
+            Debug.Log($"✅ ResultCard OK for '{name}' → {combo.ResultCard.cardName}");
 
         // Add to database
         generatedCombos.Add(combo);
@@ -268,7 +272,7 @@ public class SpellSetup : MonoBehaviour
 
         List<string> allowedParts = spellLevel switch
         {
-            "Basic" => parts.FindAll(p => p.Contains("Chip") || p.Contains("Dust")),
+            "Basic" => parts.FindAll(p => p.Contains("Chips") || p.Contains("Dust")),
             "Intermediate" => parts.FindAll(p => p.Contains("Lump") || p.Contains("Hunk")),
             _ => parts
         };
@@ -286,31 +290,31 @@ public class SpellSetup : MonoBehaviour
 
         if (baseName.ToLower() != "dirt")
         {
-            return $"{chosenPart} of {baseName}";
+            return TitleCase($"{baseName} {chosenPart}");
         }
 
         else
-            return $"{chosenPart} {baseName}";
+            return TitleCase($"{chosenPart} {baseName}");
     }
 
-    
+
 
     private string PickAnimalPart(AnimalIngredient animal)
     {
         if (animal.Parts == null || animal.Parts.Count == 0)
-            return animal.AnimalName;
+            return animal.AnimalName.ToLower();
 
-        string part = animal.Parts[UnityEngine.Random.Range(0, animal.Parts.Count)];
-        return $"{part} of {animal.AnimalName}";
+        string part = animal.Parts[UnityEngine.Random.Range(0, animal.Parts.Count)].ToLower();
+        return TitleCase($"{animal.AnimalName} {part}");
     }
 
     private string PickBotanicalPart(BotanicalIngredient botanical)
     {
         if (botanical.Parts == null || botanical.Parts.Count == 0)
-            return botanical.BotanicalName;
+            return botanical.BotanicalName.ToLower();
 
-        string part = botanical.Parts[UnityEngine.Random.Range(0, botanical.Parts.Count)];
-        return $"{part} of {botanical.BotanicalName}";
+        string part = botanical.Parts[UnityEngine.Random.Range(0, botanical.Parts.Count)].ToLower();
+        return TitleCase($"{botanical.BotanicalName} {part}");
     }
 
     private string PickRandom(List<string> source)
@@ -318,6 +322,21 @@ public class SpellSetup : MonoBehaviour
         List<string> filtered = source.FindAll(x => !x.ToLower().StartsWith("unknown"));
         if (filtered.Count == 0) return null;
         return filtered[UnityEngine.Random.Range(0, filtered.Count)];
+    }
+
+    string TitleCase(string input)
+    {
+        if (string.IsNullOrEmpty(input)) return input;
+
+        var words = input.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 1)
+                words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1).ToLower();
+            else
+                words[i] = words[i].ToUpper();
+        }
+        return string.Join(" ", words);
     }
 
     //public void SpawnTestCards()

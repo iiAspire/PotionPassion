@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -30,7 +31,6 @@ public class ComboGenerator : MonoBehaviour
 {
     public IngredientDatabase ingredientDatabase;
     public RecipeDatabase recipeDatabase;
-    public List<SpellCombo> spellCombos = new List<SpellCombo>();
 
     [Header("Result Card Mapping")]
     public List<CardData> resultCards; // assign in inspector in same order as spell names
@@ -54,11 +54,23 @@ public class ComboGenerator : MonoBehaviour
         }
     }
 
+    public void BuildResultMap()
+    {
+        spellToCardMap = new Dictionary<string, CardData>(StringComparer.OrdinalIgnoreCase);
+
+        for (int i = 0; i < Mathf.Min(spellNames.Count, resultCards.Count); i++)
+        {
+            if (!string.IsNullOrEmpty(spellNames[i]) && resultCards[i] != null)
+                spellToCardMap[spellNames[i]] = resultCards[i];
+        }
+    }
+
     public CardData GetResultCardForSpell(string spellName)
     {
-        if (spellToCardMap != null && spellToCardMap.TryGetValue(spellName, out CardData card))
-            return card;
-        return null;
+        if (spellToCardMap == null || spellToCardMap.Count == 0)
+            BuildResultMap();
+
+        return spellToCardMap.TryGetValue(spellName, out var card) ? card : null;
     }
 
     public SpellCombo GenerateCombo(
@@ -209,7 +221,7 @@ public class ComboGenerator : MonoBehaviour
         List<string> result = new List<string>();
         for (int i = 0; i < count && copy.Count > 0; i++)
         {
-            int index = Random.Range(0, copy.Count);
+            int index = UnityEngine.Random.Range(0, copy.Count);
             result.Add(copy[index]);
             copy.RemoveAt(index);
         }
@@ -218,43 +230,43 @@ public class ComboGenerator : MonoBehaviour
 
     string GetRandomItem(List<string> list)
     {
-        return list[Random.Range(0, list.Count)];
+        return list[UnityEngine.Random.Range(0, list.Count)];
     }
 
-    public bool IsValidRecipe(List<string> ingredients)
-    {
-        foreach (var combo in spellCombos)
-        {
-            if (combo.Ingredients.Count != ingredients.Count) continue;
+    //public bool IsValidRecipe(List<string> ingredients)
+    //{
+    //    foreach (var combo in spellCombos)
+    //    {
+    //        if (combo.Ingredients.Count != ingredients.Count) continue;
 
-            // Count ingredients in both lists
-            var recipeCount = new Dictionary<string, int>();
-            foreach (var ing in combo.Ingredients)
-            {
-                if (!recipeCount.ContainsKey(ing)) recipeCount[ing] = 0;
-                recipeCount[ing]++;
-            }
+    //        // Count ingredients in both lists
+    //        var recipeCount = new Dictionary<string, int>();
+    //        foreach (var ing in combo.Ingredients)
+    //        {
+    //            if (!recipeCount.ContainsKey(ing)) recipeCount[ing] = 0;
+    //            recipeCount[ing]++;
+    //        }
 
-            var inputCount = new Dictionary<string, int>();
-            foreach (var ing in ingredients)
-            {
-                if (!inputCount.ContainsKey(ing)) inputCount[ing] = 0;
-                inputCount[ing]++;
-            }
+    //        var inputCount = new Dictionary<string, int>();
+    //        foreach (var ing in ingredients)
+    //        {
+    //            if (!inputCount.ContainsKey(ing)) inputCount[ing] = 0;
+    //            inputCount[ing]++;
+    //        }
 
-            bool matches = true;
-            foreach (var kvp in recipeCount)
-            {
-                if (!inputCount.ContainsKey(kvp.Key) || inputCount[kvp.Key] != kvp.Value)
-                {
-                    matches = false;
-                    break;
-                }
-            }
+    //        bool matches = true;
+    //        foreach (var kvp in recipeCount)
+    //        {
+    //            if (!inputCount.ContainsKey(kvp.Key) || inputCount[kvp.Key] != kvp.Value)
+    //            {
+    //                matches = false;
+    //                break;
+    //            }
+    //        }
 
-            if (matches) return true;
-        }
+    //        if (matches) return true;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 }

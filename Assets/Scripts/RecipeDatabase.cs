@@ -15,6 +15,8 @@ public class RecipeDatabase : ScriptableObject
     // Stores all combos generated at the start of the game
     public List<SpellCombo> SpellCombos = new List<SpellCombo>();
 
+    public List<SpellCombo> AllCombos => SpellCombos;
+
     // Stores failed or invalid combos encountered during gameplay
     public List<SpellCombo> FailedCombos = new List<SpellCombo>();
 

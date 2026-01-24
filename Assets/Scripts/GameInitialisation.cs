@@ -18,6 +18,10 @@ public class GameInitialization : MonoBehaviour
         if (initialized)
             return;
 
+        Debug.Log($"ComboGenerator instance ID: {comboGenerator.GetInstanceID()}");
+        Debug.Log($"spellNames count: {comboGenerator.spellNames.Count}");
+        Debug.Log($"resultCards count: {comboGenerator.resultCards.Count}");
+
         initialized = true;
         DontDestroyOnLoad(gameObject);
 
@@ -26,6 +30,7 @@ public class GameInitialization : MonoBehaviour
 
         // ✅ THIS is the critical order
         Recipes.ClearAll();
+        Combos.BuildResultMap();
         spellSetup.GenerateAllSpells();
         RecipesReady = true;
 

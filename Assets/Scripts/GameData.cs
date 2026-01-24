@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour
 
     public List<SpellCombo> failedBrews = new List<SpellCombo>();
     public List<SpellCombo> successfulBrews = new List<SpellCombo>();
+    public HashSet<string> knownRecipes = new HashSet<string>();
 
     [System.Serializable]
     public class SavedCauldronBrew

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d3d20a4ef639428b08ee1223e3dbd, type: 3}
+  m_Name: GlyphLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::GlyphLibrary
+  spellGlyphs:
+  - spellName: Protection
+    glyph: {fileID: 21300000, guid: 5b29a11cfcd18ce4ca422f97d455715e, type: 3}
+  - spellName: Success
+    glyph: {fileID: 21300000, guid: 7ceb629cfc2201b408f3b00041691ac7, type: 3}
+  - spellName: Insomnia
+    glyph: {fileID: 21300000, guid: f59fe791dd1332c4eb2c9c1610579e82, type: 3}
+  - spellName: Happy Home
+    glyph: {fileID: 21300000, guid: 39e6c0b31e28d2b42a5e99d4c514802d, type: 3}
+  - spellName: Health
+    glyph: {fileID: 21300000, guid: 3cdf7dad1c531b84b9624714e147bdf9, type: 3}
+  - spellName: Luck
+    glyph: {fileID: 21300000, guid: 100ef65baf7e872439cba445decd188d, type: 3}
+  - spellName: Locator
+    glyph: {fileID: 21300000, guid: f2ebdbebbb518324d8ae6149b3d14487, type: 3}
+  - spellName: Cleansing
+    glyph: {fileID: 21300000, guid: 8cd287436c14ba64db88ebee356c68f1, type: 3}
+  - spellName: Justice
+    glyph: {fileID: 21300000, guid: 91999f38609f1bc48bea7b18415c8b83, type: 3}
+  - spellName: Divination
+    glyph: {fileID: 21300000, guid: e35cca0c578e291429b2e6e1b9c82f80, type: 3}
+  - spellName: Persuasion
+    glyph: {fileID: 21300000, guid: fd6784f91437ad34ca3144b9f1e1313f, type: 3}
+  - spellName: Healing
+    glyph: {fileID: 21300000, guid: 155439d0c18320949a8892a19953acad, type: 3}
+  - spellName: Banishing
+    glyph: {fileID: 21300000, guid: 0fe918a01c84ee646a4bed45b3f103e3, type: 3}
+  - spellName: Weather
+    glyph: {fileID: 21300000, guid: 7ceb629cfc2201b408f3b00041691ac7, type: 3}
+  - spellName: Necromancy
+    glyph: {fileID: 21300000, guid: 91ce721425b773448b80e135d0c9f24e, type: 3}
+  - spellName: Flying
+    glyph: {fileID: 21300000, guid: d466a07f0608c8442990809ac4c29a18, type: 3}
+  - spellName: Love
+    glyph: {fileID: 21300000, guid: f38cfa4ad6147cd41b784916d6265ea2, type: 3}
+  - spellName: Psychic Power
+    glyph: {fileID: 21300000, guid: 04d647da4a42b2240a7efa8c7d374c38, type: 3}
+  - spellName: Spirit Summoning
+    glyph: {fileID: 21300000, guid: fad304458c08f6d45820f87b632b7cdf, type: 3}
+  - spellName: Youth
+    glyph: {fileID: 21300000, guid: 43a9b28ec07f22444909f6c1e7a488b8, type: 3}
+  - spellName: Fertility
+    glyph: {fileID: 21300000, guid: 62df0ed791be9b04db2ce2e188f96473, type: 3}
+  tierGlyphs:
+  - tier: 0
+    glyphs:
+    - {fileID: 21300000, guid: 6c6aec7a466170a4bad88a7afba35922, type: 3}
+    - {fileID: 21300000, guid: 398c109ca83092e47acf169c3346d29c, type: 3}
+    - {fileID: 21300000, guid: 35ca820f87bb0384eb185d056b78ee2d, type: 3}
+    - {fileID: 21300000, guid: 28a795d1eb4bd1945a44d2b09dcce038, type: 3}
+    - {fileID: 21300000, guid: 7e920e169e7d9d24cbe2fac1f4424006, type: 3}
+  - tier: 1
+    glyphs:
+    - {fileID: 21300000, guid: 32695f1744f4a7f419b32569a46faa4e, type: 3}
+    - {fileID: 21300000, guid: 731656c13aab04f42bc2a9e3576c0e3a, type: 3}
+    - {fileID: 21300000, guid: b80ccb1011b61cc4382a8a4e4b0ac4d9, type: 3}
+    - {fileID: 21300000, guid: f8ede25919673f349b3fae0378f44048, type: 3}
+    - {fileID: 21300000, guid: 081bf7bc3932a7f4f919e78217faff2e, type: 3}
+  - tier: 2
+    glyphs:
+    - {fileID: 21300000, guid: ab5e57cf303d2b248bd0faa00f26e838, type: 3}
+    - {fileID: 21300000, guid: 1c1b9a796c91c994e9ad81ad13d4d0d3, type: 3}
+    - {fileID: 21300000, guid: 9d5e6df5cd79f8a4485aa4152859f189, type: 3}
+    - {fileID: 21300000, guid: 53861c79c9a204c448c91c82964dbe75, type: 3}
+    - {fileID: 21300000, guid: 480b6fd098764e244bde8ee6274e6a45, type: 3}

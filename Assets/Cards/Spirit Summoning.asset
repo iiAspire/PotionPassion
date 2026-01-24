@@ -39,6 +39,6 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: ea48987e880b8a240a43457c83aa9e96, type: 2}
   processingRecipes: []
+  canBeSold: 1

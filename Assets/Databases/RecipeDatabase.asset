@@ -15,378 +15,378 @@ MonoBehaviour:
   SpellCombos:
   - SpellName: Protection
     Ingredients:
-    - Gills of Pleated Ink Cap
-    - Oil of Rabbit
-    - Lunar Water
-    - Dust of Limestone
-    SpellLevel: 0
-    Intimate: 
-    Spiritual: 
-    Astrological: 
-    Element: Water
-    Tool: 
-    ResultCard: {fileID: 0}
-    ResultSprite: {fileID: 0}
-    BrewTime: 5
-    Description: 
-    ResultType: 5
-  - SpellName: Success
-    Ingredients:
-    - Shell of Snail
-    - Angelic Water
-    - Chips of Emerald
-    - Straw
-    SpellLevel: 0
-    Intimate: 
-    Spiritual: Soul
-    Astrological: 
-    Element: 
-    Tool: 
-    ResultCard: {fileID: 0}
-    ResultSprite: {fileID: 0}
-    BrewTime: 5
-    Description: 
-    ResultType: 5
-  - SpellName: Insomnia
-    Ingredients:
-    - Chips of Lead
-    - Woodchips of Birch
-    - Tail of Cat
-    - Dark Water
-    SpellLevel: 0
-    Intimate: Hair
-    Spiritual: 
-    Astrological: 
-    Element: 
-    Tool: 
-    ResultCard: {fileID: 0}
-    ResultSprite: {fileID: 0}
-    BrewTime: 5
-    Description: 
-    ResultType: 5
-  - SpellName: Happy Home
-    Ingredients:
-    - Dust of Aluminium
-    - Wing of Fly
-    - Infused Water
-    - Spider Silk
-    SpellLevel: 0
-    Intimate: 
-    Spiritual: Aura
-    Astrological: 
-    Element: 
-    Tool: 
-    ResultCard: {fileID: 0}
-    ResultSprite: {fileID: 0}
-    BrewTime: 5
-    Description: 
-    ResultType: 5
-  - SpellName: Health
-    Ingredients:
-    - Leaf of Vervain
-    - Blood of Worm
-    - Sea Water
-    - Dust of Ruby
-    SpellLevel: 0
-    Intimate: Blood
-    Spiritual: 
-    Astrological: 
-    Element: 
-    Tool: 
-    ResultCard: {fileID: 0}
-    ResultSprite: {fileID: 0}
-    BrewTime: 5
-    Description: 
-    ResultType: 5
-  - SpellName: Luck
-    Ingredients:
-    - Leaf of Foxglove
+    - Pine Woodchips
+    - Beetle Oil
     - Spring Water
-    - Hunk of Lodestone
-    - String
+    - Limestone Chips
     SpellLevel: 0
     Intimate: 
     Spiritual: 
     Astrological: 
     Element: Clay
     Tool: 
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 86c378c7ee0e53e4d9cbec299ce5af54, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
-  - SpellName: Locator
+  - SpellName: Success
     Ingredients:
-    - Chips of Iron
-    - Cap of Fly Agaric
-    - Well Water
+    - Newt Blood
+    - Sea Water
+    - Diamond Chips
     - Copper Thread
+    SpellLevel: 0
+    Intimate: 
+    Spiritual: Ether
+    Astrological: 
+    Element: 
+    Tool: 
+    ResultCard: {fileID: 11400000, guid: 31c012da2af348c43b91287931439a20, type: 2}
+    ResultSprite: {fileID: 0}
+    BrewTime: 5
+    Description: 
+    ResultType: 5
+  - SpellName: Insomnia
+    Ingredients:
+    - Platinum Chips
+    - Rose Pollen
+    - Rat Oil
+    - Blessed Water
     SpellLevel: 0
     Intimate: Oils
     Spiritual: 
     Astrological: 
     Element: 
     Tool: 
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 7dffcd7357664414dad67a59375bca1f, type: 2}
+    ResultSprite: {fileID: 0}
+    BrewTime: 5
+    Description: 
+    ResultType: 5
+  - SpellName: Happy Home
+    Ingredients:
+    - Lead Dust
+    - Toad Leg
+    - Dark Water
+    - Wool
+    SpellLevel: 0
+    Intimate: 
+    Spiritual: Soul
+    Astrological: 
+    Element: 
+    Tool: 
+    ResultCard: {fileID: 11400000, guid: 4f4bfb16ba09da44ab74177d8d08a98b, type: 2}
+    ResultSprite: {fileID: 0}
+    BrewTime: 5
+    Description: 
+    ResultType: 5
+  - SpellName: Health
+    Ingredients:
+    - Death Cap Stem
+    - Worm Blood
+    - Light Water
+    - Quartz Chips
+    SpellLevel: 0
+    Intimate: Sweat
+    Spiritual: 
+    Astrological: 
+    Element: 
+    Tool: 
+    ResultCard: {fileID: 11400000, guid: bb0220614a2523a4f9e6a3cc50eade45, type: 2}
+    ResultSprite: {fileID: 0}
+    BrewTime: 5
+    Description: 
+    ResultType: 5
+  - SpellName: Luck
+    Ingredients:
+    - Nightshade Petal
+    - Angelic Water
+    - Sapphire Dust
+    - String
+    SpellLevel: 0
+    Intimate: 
+    Spiritual: 
+    Astrological: 
+    Element: Wax
+    Tool: 
+    ResultCard: {fileID: 11400000, guid: 8676ad525ad816548963b8effaeb5aea, type: 2}
+    ResultSprite: {fileID: 0}
+    BrewTime: 5
+    Description: 
+    ResultType: 5
+  - SpellName: Locator
+    Ingredients:
+    - Copper Chips
+    - Birch Bark
+    - Lunar Water
+    - Spider Silk
+    SpellLevel: 0
+    Intimate: Phlegm
+    Spiritual: 
+    Astrological: 
+    Element: 
+    Tool: 
+    ResultCard: {fileID: 11400000, guid: d083d9fc247807846b11d626a1ffecf4, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Cleansing
     Ingredients:
-    - Leaf of Musk Mallow
-    - Pollen of Nightshade
-    - Oil of Toad
-    - Sea Water
-    - Dust of Ruby
+    - Nightshade Stem
+    - Bullwort Head
+    - Cat Blood
+    - Angelic Water
+    - Limestone Lump
     SpellLevel: 1
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Rain
+    Element: Dew
     Tool: Candle
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: c5bfc8ef89e44bb42bf7563322e6317d, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Justice
     Ingredients:
-    - Skin of Mouse
-    - Leg of Cat
-    - Dark Water
-    - Lump of Coral
-    - Vine
+    - Fly Blood
+    - Crow Eye
+    - Light Water
+    - Marble Hunk
+    - Copper Thread
     SpellLevel: 1
     Intimate: 
-    Spiritual: Mind
+    Spiritual: Aura
     Astrological: 
     Element: 
     Tool: Paper
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 2abab64e645b32848a6f3ae0565b19c9, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Divination
     Ingredients:
-    - Hunk of Zinc
-    - Gills of Yellow Cap
-    - Moss
-    - Oil of Beetle
+    - Brass Lump
+    - Foxglove Leaf
+    - Daisy Stem
+    - Rabbit Fur
     - Infused Water
     SpellLevel: 1
-    Intimate: Blood
+    Intimate: Nail
     Spiritual: 
     Astrological: 
     Element: 
     Tool: Crystal Ball
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 12364b45def947341b349ba5a1c9fe9a, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Persuasion
     Ingredients:
-    - Hunk of Copper
-    - Eye of Bat
-    - Tail of Rat
-    - Lunar Water
+    - Platinum Lump
+    - Beetle Leg
+    - Mouse Eye
+    - Blessed Water
     - String
     SpellLevel: 1
     Intimate: 
-    Spiritual: Soul
+    Spiritual: Mind
     Astrological: 
     Element: 
     Tool: Horseshoe
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 2cb80adfbe374394ba0093004ee29167, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Healing
     Ingredients:
-    - Nectar of Rose
-    - Eye of Snail
-    - Blood of Worm
-    - Light Water
-    - Silver Thread
+    - Forget Me Not Leaf
+    - Snail Blood
+    - Toad Oil
+    - Dark Water
+    - Gold Thread
     SpellLevel: 1
-    Intimate: Phlegm
+    Intimate: Sweat
     Spiritual: 
     Astrological: 
     Element: 
     Tool: Ring
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: f9a62343936265f4c8cb59f14eab2fb7, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Banishing
     Ingredients:
-    - Stem of Death Cap
-    - Seed of Sesame
-    - Angelic Water
-    - Lump of Haematite
-    - Gold Thread
+    - Vervain Leaf
+    - Common Puffball Cap
+    - Spring Water
+    - Ruby Chips
+    - Straw
     SpellLevel: 1
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Water
+    Element: Fire
     Tool: Doll
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: eccdba81dd08bcc4f916464418d4ffbe, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Weather
     Ingredients:
-    - Hunk of Iron
-    - Thorn of Hawthorn
-    - Cap of Common Puffball
+    - Zinc Lump
+    - Sunflower Stem
+    - Redwood Shavings
     - Well Water
     - Spider Silk
     SpellLevel: 1
-    Intimate: Oils
+    Intimate: Sweat
     Spiritual: 
     Astrological: 
     Element: 
     Tool: Charm Bag
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 73cb6052f7eb2df40b485b2d2d008a74, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Necromancy
     Ingredients:
-    - Bark of Oak
-    - Nectar of Rose
-    - Shell of Beetle
-    - Talon of Crow
-    - Sea Water
-    - Chips of Diamond
+    - Forget Me Not Leaf
+    - Yellow Morel Stem
+    - Fly Wing
+    - Worm Oil
+    - Well Water
+    - Amethyst Chips
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Venus
+    Astrological: Saturn
     Element: 
     Tool: Pentacle
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 8ac5d22aeea3d404091f37eb688388f2, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Flying
     Ingredients:
-    - Tail of Newt
-    - Talon of Rat
-    - Angelic Water
-    - Chips of Emerald
-    - Straw
+    - Crow Talon
+    - Newt Eye
+    - Infused Water
+    - Graveyard Dirt
     - Gold Thread
+    - Wool
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mars
+    Astrological: Moon
     Element: 
     Tool: Broomstick
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: f0c1d52c06123294eb11675bb6fad4bb, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Love
     Ingredients:
-    - Lump of Aluminium
-    - Stem of Shaggy Ink Cap
-    - Petal of Vervain
-    - Eye of Bat
-    - Fur of Rabbit
-    - Blessed Water
+    - Aluminium Lump
+    - Oak Branch
+    - Nightshade Leaf
+    - Mouse Fur
+    - Bat Talon
+    - Light Water
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mercury
+    Astrological: Comet
     Element: 
     Tool: Pendant
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: a85e444624dde4e4d858ec111bc99e10, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Psychic Power
     Ingredients:
-    - Lump of Bronze
-    - Blood of Fly
-    - Oil of Snail
-    - Dark Water
+    - Zinc Dust
+    - Beetle Oil
+    - Rabbit Eye
+    - Spring Water
+    - Silver Thread
     - Reed
-    - Copper Thread
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Pluto
+    Astrological: Mars
     Element: 
     Tool: Mirror
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 6dd01123d9cd3324db4c68f67d143075, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Spirit Summoning
     Ingredients:
-    - Head of Corn
-    - Seed of Sesame
-    - Oil of Cat
-    - Eye of Toad
-    - Spring Water
-    - Vine
+    - Bullwort Leaf
+    - Common Puffball Cap
+    - Snail Oil
+    - Cat Eye
+    - Sea Water
+    - String
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Neptune
+    Astrological: Mercury
     Element: 
     Tool: Book
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 4887fcef371489d4d8a6d94469c7a525, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Youth
     Ingredients:
-    - Stem of Sunflower
-    - Cap of Black Morel
-    - Well Water
-    - Chips of Coral
-    - String
-    - Silver Thread
+    - Corn Head
+    - Vervain Leaf
+    - Blessed Water
+    - Haematite Dust
+    - Vine
+    - Straw
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mars
+    Astrological: Comet
     Element: 
     Tool: Amulet
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 488123624fe0605408f9c3354cd49541, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 
     ResultType: 5
   - SpellName: Fertility
     Ingredients:
-    - Chips of Platinum
-    - Oil of Labdanum
-    - Stem of Giant Puffball
-    - Lunar Water
+    - Gold Hunk
+    - Black Morel Stem
+    - grass
+    - Dark Water
+    - Copper Thread
     - Spider Silk
-    - Wool
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mercury
+    Astrological: Mars
     Element: 
     Tool: Bell
-    ResultCard: {fileID: 0}
+    ResultCard: {fileID: 11400000, guid: 575f0501616060c4fadaa48b3cb8219d, type: 2}
     ResultSprite: {fileID: 0}
     BrewTime: 5
     Description: 

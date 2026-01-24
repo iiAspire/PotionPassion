@@ -81,11 +81,11 @@ public partial class CardComponent : MonoBehaviour
         isProcessedVisually = false;
         cardData = newData;
 
-        Debug.Log(
-            $"[{name}] BG Image = {(backgroundImage != null ? backgroundImage.gameObject.name : "NULL")}, " +
-            $"Color = {cardData.cardColor}",
-            this
-        );
+        //Debug.Log(
+        //    $"[{name}] BG Image = {(backgroundImage != null ? backgroundImage.gameObject.name : "NULL")}, " +
+        //    $"Color = {cardData.cardColor}",
+        //    this
+        //);
 
         // Main icon
         if (iconImage != null)

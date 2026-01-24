@@ -543,3 +543,8 @@ MonoBehaviour:
     Parts:
     - Stem
     - Cap
+  - BotanicalName: Bulrush
+    Parts:
+    - Stem
+    - Head
+    - Leaf
