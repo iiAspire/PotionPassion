@@ -130,6 +130,9 @@ public class SpellSetup : MonoBehaviour
         //Debug.Log(
         //    $"🧪 SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
         //);
+
+        Debug.Log($"Generated combos: {generatedCombos.Count}");
+        InitializeCookbookWithBasicRecipes();
     }
 
     public List<SpellCombo> GetAllCombos()
@@ -353,4 +356,20 @@ public class SpellSetup : MonoBehaviour
     //    // Add whatever test combos you want here
     //    // (or call GenerateAllSpells if that's your intention)
     //}
+
+    public void InitializeCookbookWithBasicRecipes()
+    {
+        if (GameData.Instance == null) return;
+
+        foreach (var combo in GameInitialization.Recipes.AllCombos)
+        {
+            if (combo == null) continue;
+            if (combo.SpellLevel != SpellTier.Basic) continue;
+
+            // Mark as New at game start
+            GameData.LearnRecipe(combo, markAsNew: true);
+        }
+
+        Debug.Log("📖 Cookbook initialized with Basic recipes (marked NEW).");
+    }
 }

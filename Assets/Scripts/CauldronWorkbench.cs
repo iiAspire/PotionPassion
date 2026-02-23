@@ -472,13 +472,14 @@ public class CauldronWorkbench : WorkbenchStation
                 cardComp.AssignedCombo = activeCombo;
             }
 
-            if (Recipes != null)
-            {
-                GameData.Instance.successfulBrews.Add(activeCombo);
-            }
+            //if (Recipes != null)
+            //{
+            //    GameData.Instance.successfulBrews.Add(activeCombo);
+            //}
         }
 
-        RecipeDiscoverySystem.Instance.OnSuccessfulBrew(activeCombo);
+        GameData.LearnRecipe(activeCombo, markAsNew: false);
+        RecipeDiscoverySystem.Instance?.OnSuccessfulBrew(activeCombo);
         activeCombo = null;
     }
 

@@ -13623,7 +13623,6 @@ MonoBehaviour:
   outputParent: {fileID: 1997263668}
   cardPrefab: {fileID: 5541781292661126199, guid: d3ddf483f1a0a7e49812e417623e8c3a, type: 3}
   defaultBrewTime: 5
-  cardManager: {fileID: 11400000, guid: c9841794c2f141147ae7a46c5c608e12, type: 2}
   recipeHoldingParent: {fileID: 864877853}
   cauldronContents: {fileID: 1070927303}
   recipeStatus: {fileID: 943504125}

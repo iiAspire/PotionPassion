@@ -13,7 +13,7 @@ public class CauldronTestSetup : MonoBehaviour
         }
 
         // Ensure RecipeDatabase is cleared
-        GameInitialization.Recipes.ClearAll();
+        //GameInitialization.Recipes.ClearAll();
 
         // Load CardManager from Resources
         CardManager cardManager = Resources.Load<CardManager>("CardManager");

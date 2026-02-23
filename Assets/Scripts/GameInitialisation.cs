@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 
 public class GameInitialization : MonoBehaviour
@@ -31,9 +32,21 @@ public class GameInitialization : MonoBehaviour
         // ✅ THIS is the critical order
         Recipes.ClearAll();
         Combos.BuildResultMap();
+
+        StartCoroutine(InitializeAfterGameData());
+    }
+
+    private IEnumerator InitializeAfterGameData()
+    {
+        // Wait until GameData singleton exists
+        while (GameData.Instance == null)
+            yield return null;
+
         spellSetup.GenerateAllSpells();
+        spellSetup.InitializeCookbookWithBasicRecipes();
+
         RecipesReady = true;
 
-        //Debug.Log($"✅ Game initialized. Recipes: {Recipes.SpellCombos.Count}");
+        Debug.Log("✅ Game initialized with cookbook.");
     }
 }

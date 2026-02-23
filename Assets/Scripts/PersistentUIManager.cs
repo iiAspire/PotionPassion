@@ -6,7 +6,8 @@ public class PersistentUIManager : MonoBehaviour
 
     public Canvas persistentCanvas;
     public FailedBrewPanelController failedBrewPanel;
-    public SuccessfulBrewPanelController successfulBrewPanel;
+    //public SuccessfulBrewPanelController successfulBrewPanel; // <- success panel
+    public SuccessfulBrewBookController successBook;   // <- recipe book
 
     void Awake()
     {
@@ -30,7 +31,14 @@ public class PersistentUIManager : MonoBehaviour
 
     public void ShowSuccessfulBrews()
     {
-        if (successfulBrewPanel != null)
-            successfulBrewPanel.ShowSuccessfulBrews();
+        // Show the cookbook/book UI
+        if (successBook != null)
+            successBook.Show();
+
+        //public void ShowSuccessfulBrews()
+        //{
+        //    if (successfulBrewPanel != null)
+        //        successfulBrewPanel.ShowSuccessfulBrews();
+        //}
     }
 }

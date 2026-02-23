@@ -93,28 +93,12 @@ public class RecipeDiscoverySystem : MonoBehaviour
 
     private IEnumerator LearningSequence(SpellCombo combo)
     {
-        if (ritual == null)
-        {
-            Debug.LogError("LearningRitualUI not assigned to RecipeDiscoverySystem");
-            yield break;
-        }
+        if (ritual != null)
+            yield return ritual.Play(combo);
 
-        yield return ritual.Play(combo);
+        GameData.LearnRecipe(combo, markAsNew: true);
 
-        // 1️⃣ Mark as known
-        GameData.Instance.knownRecipes.Add(combo.SpellName);
-
-        // 2️⃣ Add to success list
-        if (!GameData.Instance.successfulBrews.Exists(c => c.SpellName == combo.SpellName))
-            GameData.Instance.successfulBrews.Add(combo);
-
-        // 3️⃣ Show panel
-        if (successPanel == null)
-        {
-            Debug.LogError("SuccessfulBrewPanelController not assigned");
-            yield break;
-        }
-
-        successPanel.ShowSuccessfulBrews();
+        if (successPanel != null)
+            successPanel.ShowSuccessfulBrews();
     }
 }
