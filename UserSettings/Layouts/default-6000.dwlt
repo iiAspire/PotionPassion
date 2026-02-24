@@ -43,7 +43,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 11}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 307
     height: 627
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 80
+  controlID: 89
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 79
+  controlID: 98
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 78
+  controlID: 97
   draggingID: 0
 --- !u!114 &14
 MonoBehaviour:
@@ -657,9 +657,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 908e0100
-      m_LastClickedID: 102032
-      m_ExpandedIDs: d494f8ff2695f8ffea95f8ffa818fcff18e5fdff846affffaa6bffff767affffb47dffffa2ceffffc8cfffffaad1ffffdad1ffff1ed2ffff28d3ffff28d4ffff3ad5ffff38e6ffff3ce7ffffacefffff54f0ffffa6f2ffff94f5ffff8af6ffff60f7fffffefafffff4ffffff84d0000076d40000e0d400002ed7000088d800006a0901001e0a0100020c0100320c0100d00c0100fe0c0100aa0e0100620f0100d01001008e170100be180100e4180100cc190100ea190100001a01002c1c0100901e0100fe1f0100ea20010028230100462301005c230100c02b01002e2d0100aa33010092350100003601003436010060690100ae6b0100086d01000c6e0100f46f01006270010096700100ce710100f8890100468c0100a08d0100908e0100789001008e900100c4900100e69001005a9101000e92010022920100289201005292010014420300524503005c450300
+      m_SelectedIDs: bee50000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 48d2fcff96d7fcfff422fdffa425fdff9226fdffa22bfdffa62efdff4e76fdff247afdffcac3fdfffac4fdfff80cfeffcc0dfeffd862feffd663feffc664feffb689feff44a2feffbca2feff86b1feff28b9feff02befeff9cbffeff0cccfeff9adafeffacdbfeff82e2feff50e4feff9ee5feff22e6feff68e6feff86e6feff2ae7feffb0e9feffaceafeff92f6feff60f7feff2ef8fefffcf8feffd6f9feffd4fafeff4e01ffff5a02ffff4a03ffff1804ffffe804ffff0c06ffffe806ffffac07ffff9410ffff242affff962bfffffefaffff66e60000a4e600007ae7000038e800005ce8000066e900004a3f0100ba4f0100da680100fe680100b46c0100d46d01000e6e0100026f0100066f0100366f0100646f0100806f0100ca750100d2750100dc750100027601000a7601000e7601002c760100307601003476010060770100d6790100de7b0100ee7b0100107c01003e7c0100467c01009a7c0100aa7c0100ce7c01000c80010028830100669301007693010042940100069b0100169b0100d09b0100e29b010014c7010062dd010072dd010094dd0100c2dd0100cadd0100d8dd010020de010026de01002cde01003ede0100f2f2010002f301004af301009ef30100a4f30100b6f3010048f4010058f40100a0f40100faf401000cf5010048fb010058fb0100b8fb0100fefb010012fc0100e4110200f41102003c1202009a120200ae120200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -727,7 +727,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 594
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -770,7 +770,7 @@ MonoBehaviour:
     m_ContainerData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: star
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -780,26 +780,26 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/DownloadedAssets/SkymonIconPackFree/skymon-icons-white
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
-    m_OriginalText: star
+    m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/DownloadedAssets/SkymonIconPackFree/skymon-icons-white
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Walker\Desktop\UnityPractice\Create with Code\PotionPassion
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 204}
-    m_SelectedIDs: 30a90200
-    m_LastClickedID: 174384
-    m_ExpandedIDs: 00000000f4c50000f6c50000f8c50000fac50000fcc50000fec5000000c6000002c6000004c6000084c6000000ca9a3b
+    scrollPos: {x: 0, y: 224}
+    m_SelectedIDs: 64c50000
+    m_LastClickedID: 50532
+    m_ExpandedIDs: 00000000c6c40000c8c40000cac40000ccc40000cec40000d0c40000d2c40000d4c40000d6c4000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,7 +828,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4c50000f6c50000f8c50000fac50000fcc50000fec5000000c6000002c6000004c60000
+    m_ExpandedIDs: 00000000c6c40000c8c40000cac40000ccc40000cec40000d0c40000d2c40000d4c40000d6c40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -857,7 +857,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000060030100de7301002ad300008ede0000860501007eb2000032bc0000cc68010026b200001ab2000028b20000acbc0000d4ba000008bd000054bd000018bd0000a4bc0000c0bc000030bd000068bc0000c6bb0000dcb7000006b50000e6b00000fc8e010058770100b05d0100fc7c010020440100dc4c010016c00000ccc00000bec0000022ef000062070100820701000000000078c60300a8e60300d02e0400e23f0400c68304004e02010048020100ccba0400c2ba040048bf000032020100d4320100da320100d0c40000c0c4000088c400006ac400001ace0000a0c40000a63901000e92040092c2000042d00000cebe000024c80000a4be0000b4be0000a4bf0000eee70000cac1000036d20000fc4d010028d2000092c0000090c0000096c000007ec000007cc0000080c0000082c0000084c0000086c000008ac0000088c000008cc000008ec000007ac20000483e0100
+    m_ExpandedInstanceIDs: c623000060030100de7301002ad300008ede0000860501007eb2000032bc0000cc68010026b200001ab2000028b20000acbc0000d4ba000008bd000054bd000018bd0000a4bc0000c0bc000030bd000068bc0000c6bb0000dcb7000006b50000e6b00000fc8e010058770100b05d0100fc7c010020440100dc4c010016c00000ccc00000bec0000022ef000062070100820701000000000078c60300a8e60300d02e0400e23f0400c68304004e02010048020100ccba0400c2ba040048bf000032020100d4320100da320100d0c40000c0c4000088c400006ac400001ace0000a0c40000a63901000e92040092c2000042d00000cebe000024c80000a4be0000b4be0000a4bf0000eee70000cac1000036d20000fc4d010028d2000092c0000090c0000096c000007ec000007cc0000080c0000082c0000084c0000086c000008ac0000088c000008cc000008ec000007ac20000483e010082c50000d6f80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -874,7 +874,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 6}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

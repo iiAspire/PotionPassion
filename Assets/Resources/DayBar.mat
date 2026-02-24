@@ -42,10 +42,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Stop1: 0.17799799
-    - _Stop2: 0.227998
-    - _Stop3: 0.794004
-    - _Stop4: 0.84400403
+    - _Stop1: 0.17916666
+    - _Stop2: 0.22916667
+    - _Stop3: 0.7916667
+    - _Stop4: 0.8416667
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

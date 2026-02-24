@@ -3,6 +3,58 @@
   "WorkspaceRootPath": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolSelector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LoadoutToolSelector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolCard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LoadoutToolCard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ExteriorSceneController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ExteriorSceneController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutPanelController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LoadoutPanelController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\sceneloaderbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloaderbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\leaveroombuttonlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\leaveroombuttonlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\systemssceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\systemssceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LoadoutScreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\Loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOToolItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SOToolItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOCarryItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SOCarryItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOEquipmentItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SOEquipmentItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SuccessBrewBookController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SuccessBrewBookController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,7 +75,7 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PersistentUIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|c:\\users\\walker\\desktop\\unitypractice\\create with code\\potionpassion\\assets\\scripts\\cauldronworkbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\cauldronworkbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cauldronworkbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -147,10 +199,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\CardTooltip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\systemssceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\systemssceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\carddragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carddragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -179,16 +227,8 @@
       "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manualtoolstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\leaveroombuttonlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\leaveroombuttonlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\manualprocessstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manualprocessstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\sceneloaderbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloaderbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\exitbuttonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -247,10 +287,6 @@
       "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenebinding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\scripts\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFDECF3A-E3D0-B95E-3388-3A7B494B117B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{894A4B15-63FB-A46D-B2FC-D1600108EC58}|Assembly-CSharp-Editor.csproj|C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\assets\\editor\\carddataeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{894A4B15-63FB-A46D-B2FC-D1600108EC58}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\carddataeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -290,11 +326,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoadoutToolCard.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadoutToolCard.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadoutToolCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T17:20:15.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoadoutToolSelector.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolSelector.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadoutToolSelector.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutToolSelector.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadoutToolSelector.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T17:19:16.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExteriorSceneController.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ExteriorSceneController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ExteriorSceneController.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ExteriorSceneController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ExteriorSceneController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T15:47:40.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoadoutPanelController.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutPanelController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadoutPanelController.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutPanelController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadoutPanelController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T15:32:03.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoadoutScreen.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadoutScreen.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LoadoutScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadoutScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:56:16.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Loadout.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\Loadout.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Loadout.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\Loadout.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Loadout.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:53:14.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "SOToolItem.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOToolItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SOToolItem.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOToolItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SOToolItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:51:34.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SOEquipmentItem.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOEquipmentItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SOEquipmentItem.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOEquipmentItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SOEquipmentItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:51:34.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SOCarryItem.cs",
+              "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOCarryItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SOCarryItem.cs",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SOCarryItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SOCarryItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T13:51:34.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "RectTransformDebug.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RectTransformDebug.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RectTransformDebug.cs",
@@ -302,12 +455,11 @@
               "RelativeToolTip": "Assets\\Scripts\\RectTransformDebug.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T16:33:41.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T16:33:41.196Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "UIRaycastProbe.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\UIRaycastProbe.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIRaycastProbe.cs",
@@ -315,12 +467,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UIRaycastProbe.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T16:11:01.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T16:11:01.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "SuccessBrewBookController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SuccessBrewBookController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SuccessBrewBookController.cs",
@@ -333,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 40,
               "Title": "GlyphLibrary.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\GlyphLibrary.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GlyphLibrary.cs",
@@ -345,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 39,
               "Title": "GlyphAnim.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\GlyphAnim.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GlyphAnim.cs",
@@ -357,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "LearningRitualUI.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LearningRitualUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LearningRitualUI.cs",
@@ -365,12 +516,11 @@
               "RelativeToolTip": "Assets\\Scripts\\LearningRitualUI.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAmwFwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T08:13:56.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T08:13:56.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "RecipeDiscoverySystem.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RecipeDiscoverySystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RecipeDiscoverySystem.cs",
@@ -378,12 +528,11 @@
               "RelativeToolTip": "Assets\\Scripts\\RecipeDiscoverySystem.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAmwGUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T08:05:24.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T08:05:24.165Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 46,
               "Title": "RecipeHoldingHighlight.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RecipeHoldingHighlight.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RecipeHoldingHighlight.cs",
@@ -395,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 48,
               "Title": "CardTooltip.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardTooltip.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardTooltip.cs",
@@ -407,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "ShowSuccessfulBrewsButton.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShowSuccessfulBrewsButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShowSuccessfulBrewsButton.cs",
@@ -415,12 +564,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ShowSuccessfulBrewsButton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T16:46:01.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T16:46:01.61Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "PersistentUIManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\PersistentUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PersistentUIManager.cs",
@@ -428,12 +576,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PersistentUIManager.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T16:31:35.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T16:31:35.078Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "ShowFailedBrewsButton.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShowFailedBrewsButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShowFailedBrewsButton.cs",
@@ -441,12 +588,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ShowFailedBrewsButton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T16:10:26.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T16:10:26.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 51,
               "Title": "CardComponent.Click.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardComponent.Click.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardComponent.Click.cs",
@@ -458,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 52,
               "Title": "CardClickLog.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardClickLog.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardClickLog.cs",
@@ -470,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 59,
               "Title": "WindowNightFadeController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\WindowNightFadeController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WindowNightFadeController.cs",
@@ -482,7 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 60,
               "Title": "CalendarState.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CalendarState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CalendarState.cs",
@@ -494,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 69,
               "Title": "ShelfVisualData.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShelfVisualData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShelfVisualData.cs",
@@ -506,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 72,
               "Title": "ShopManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShopManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShopManager.cs",
@@ -518,7 +664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 68,
               "Title": "ShelfItemView.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShelfItemView.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShelfItemView.cs",
@@ -530,7 +676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 64,
               "Title": "ShopShelfManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ShopShelfManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShopShelfManager.cs",
@@ -542,7 +688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 41,
               "Title": "SavedCardState.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SavedCardState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SavedCardState.cs",
@@ -554,7 +700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 57,
               "Title": "ExitButtonsController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ExitButtonsController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ExitButtonsController.cs",
@@ -566,7 +712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 55,
               "Title": "ManualToolState.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ManualToolState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ManualToolState.cs",
@@ -578,7 +724,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 6,
               "Title": "LeaveRoomButtonLock.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\LeaveRoomButtonLock.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LeaveRoomButtonLock.cs",
@@ -586,11 +732,12 @@
               "RelativeToolTip": "Assets\\Scripts\\LeaveRoomButtonLock.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAowDAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:35:27.638Z"
+              "WhenOpened": "2025-11-30T15:35:27.638Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 56,
               "Title": "ManualProcessState.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ManualProcessState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ManualProcessState.cs",
@@ -602,7 +749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 65,
               "Title": "ManualProcessPersistence.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ManualProcessPersistence.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ManualProcessPersistence.cs",
@@ -614,7 +761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 73,
               "Title": "EnvironmentLightController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\EnvironmentLightController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnvironmentLightController.cs",
@@ -626,7 +773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 74,
               "Title": "TestFadeOnly.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\TestFadeOnly.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestFadeOnly.cs",
@@ -638,7 +785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 61,
               "Title": "FadeController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\FadeController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FadeController.cs",
@@ -650,7 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 70,
               "Title": "SceneBinding.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneBinding.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneBinding.cs",
@@ -662,31 +809,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 5,
               "Title": "SceneLoadManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneLoadManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneLoadManager.cs",
               "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneLoadManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\SceneLoadManager.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAtwCEAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-29T13:37:15.913Z"
+              "WhenOpened": "2025-11-29T13:37:15.913Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 4,
               "Title": "SceneLoaderButton.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneLoaderButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneLoaderButton.cs",
-              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneLoaderButton.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\SceneLoaderButton.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SceneLoaderButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneLoaderButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-29T12:35:26.37Z"
+              "WhenOpened": "2025-11-29T12:35:26.37Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 7,
               "Title": "SystemsSceneLoader.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SystemsSceneLoader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SystemsSceneLoader.cs",
@@ -694,11 +843,12 @@
               "RelativeToolTip": "Assets\\Scripts\\SystemsSceneLoader.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-29T12:35:00.526Z"
+              "WhenOpened": "2025-11-29T12:35:00.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 37,
               "Title": "DebugRecipeInjector.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\DebugRecipeInjector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DebugRecipeInjector.cs",
@@ -710,7 +860,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "GameInitialisation.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\GameInitialisation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameInitialisation.cs",
@@ -718,12 +868,11 @@
               "RelativeToolTip": "Assets\\Scripts\\GameInitialisation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-29T09:39:32.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-29T09:39:32.742Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 58,
               "Title": "PlanterSlot.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\PlanterSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlanterSlot.cs",
@@ -735,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 47,
               "Title": "CardPersistenceManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardPersistenceManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardPersistenceManager.cs",
@@ -747,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "CardData.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardData.cs",
@@ -759,7 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 71,
               "Title": "CardDataEditor.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Editor\\CardDataEditor.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\CardDataEditor.cs",
@@ -771,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 49,
               "Title": "CardDragDrop.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardDragDrop.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardDragDrop.cs",
@@ -783,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 36,
               "Title": "CardComponent.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardComponent.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardComponent.cs",
@@ -795,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 44,
               "Title": "CardIconManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardIconManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardIconManager.cs",
@@ -807,7 +956,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 35,
               "Title": "CardManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardManager.cs",
@@ -819,7 +968,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 77,
               "Title": "CardStack.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CardStack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardStack.cs",
@@ -831,7 +980,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 50,
               "Title": "DropZone.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\DropZone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DropZone.cs",
@@ -843,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "GameData.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData.cs",
@@ -851,12 +1000,11 @@
               "RelativeToolTip": "Assets\\Scripts\\GameData.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAowF8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:33:29.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:33:29.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 43,
               "Title": "GameTime.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\GameTime.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameTime.cs",
@@ -868,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "WorkbenchStation.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\WorkbenchStation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorkbenchStation.cs",
@@ -876,12 +1024,11 @@
               "RelativeToolTip": "Assets\\Scripts\\WorkbenchStation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T08:34:55.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-16T08:34:55.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 31,
               "Title": "Cauldron.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\Cauldron.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Cauldron.cs",
@@ -893,7 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "CauldronWorkbench.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CauldronWorkbench.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CauldronWorkbench.cs",
@@ -901,12 +1048,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CauldronWorkbench.cs",
               "ViewState": "AgIAAMEBAAAAAAAAAAASwN0BAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:39:42.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T16:39:42.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "ComboGenerator.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ComboGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ComboGenerator.cs",
@@ -914,12 +1060,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ComboGenerator.cs",
               "ViewState": "AgIAANgAAAAAAAAAAAAtwAsBAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T17:38:19.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-03T17:38:19.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "SpellSetup.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SpellSetup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpellSetup.cs",
@@ -927,12 +1072,11 @@
               "RelativeToolTip": "Assets\\Scripts\\SpellSetup.cs",
               "ViewState": "AgIAAGMBAAAAAAAAAAAcwHUBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T13:37:07.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T13:37:07.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "CauldronTestSetup.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CauldronTestSetup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CauldronTestSetup.cs",
@@ -940,12 +1084,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CauldronTestSetup.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAA0wA8AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:26:05.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T19:26:05.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 62,
               "Title": "TimeManager.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\TimeManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimeManager.cs",
@@ -957,7 +1100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 63,
               "Title": "TimeUIController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\TimeUIController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimeUIController.cs",
@@ -969,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 38,
               "Title": "RecipeBuilder.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RecipeBuilder.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RecipeBuilder.cs",
@@ -981,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "RecipeDatabase.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RecipeDatabase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RecipeDatabase.cs",
@@ -993,7 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "IngredientDatabase.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\IngredientDatabase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\IngredientDatabase.cs",
@@ -1005,7 +1148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 54,
               "Title": "DryingRackSlot.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\DryingRackSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DryingRackSlot.cs",
@@ -1017,7 +1160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 53,
               "Title": "DryingRackTimer.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\DryingRackTimer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DryingRackTimer.cs",
@@ -1029,7 +1172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 75,
               "Title": "DayTimeGradient.shader",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\DayTimeGradient.shader",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DayTimeGradient.shader",
@@ -1041,7 +1184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 45,
               "Title": "ToolTimer.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ToolTimer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ToolTimer.cs",
@@ -1053,7 +1196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "SuccessBrewPanelController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\SuccessBrewPanelController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SuccessBrewPanelController.cs",
@@ -1061,12 +1204,11 @@
               "RelativeToolTip": "Assets\\Scripts\\SuccessBrewPanelController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAYwB0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T13:04:40.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T13:04:40.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "FailedBrewPanelController.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\FailedBrewPanelController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FailedBrewPanelController.cs",
@@ -1074,12 +1216,11 @@
               "RelativeToolTip": "Assets\\Scripts\\FailedBrewPanelController.cs",
               "ViewState": "AgIAAEIBAAAAAAAAAAAIwGQBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T11:25:34.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T11:25:34.969Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 76,
               "Title": "ComboTester.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\ComboTester.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ComboTester.cs",
@@ -1091,7 +1232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 42,
               "Title": "RandomCardSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\RandomCardSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RandomCardSpawner.cs",
@@ -1103,7 +1244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "CombinedCardSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Scripts\\CombinedCardSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CombinedCardSpawner.cs",
@@ -1111,12 +1252,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CombinedCardSpawner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T15:11:28.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-27T15:11:28.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 78,
               "Title": "RecipeClearer.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Editor\\RecipeClearer.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\RecipeClearer.cs",
@@ -1128,7 +1268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 67,
               "Title": "CardCSVImporter.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Editor\\CardCSVImporter.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\CardCSVImporter.cs",
@@ -1140,7 +1280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 66,
               "Title": "CardManagerAutoPopulate.cs",
               "DocumentMoniker": "C:\\Users\\Walker\\Desktop\\UnityPractice\\Create with Code\\PotionPassion\\Assets\\Editor\\CardManagerAutoPopulate.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\CardManagerAutoPopulate.cs",

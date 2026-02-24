@@ -21,4 +21,9 @@ public class SceneLoaderButton : MonoBehaviour
     {
         SceneLoadManager.Instance.LoadRoom("ShopScene");
     }
+
+    public void LoadExteriorScene()
+    {
+        SceneLoadManager.Instance.LoadRoom("ExteriorScene");
+    }
 }
