@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Remove if not using TextMeshPro
+using System;
 
 public class LoadoutScreen : MonoBehaviour
 {
@@ -10,10 +11,19 @@ public class LoadoutScreen : MonoBehaviour
     [Header("Current Selection")]
     public SOCarryItem selectedCarry;
 
+    public event Action OnLoadoutChanged;
+
     private readonly List<SOToolItem> selectedTools = new();
+    public IReadOnlyList<SOToolItem> SelectedTools => selectedTools;
 
     private bool handOccupied = false;
     private int usedSlots = 0;
+    public float MaxTravelDistance => selectedCarry ? selectedCarry.travelDistance : 0f;
+
+    private SOToolItem handTool = null;
+    private readonly List<SOToolItem> slotTools = new();
+    public SOToolItem HandTool => handTool;
+    public IReadOnlyList<SOToolItem> SlotTools => slotTools;
 
     // =========================================================
     // CARRY SELECTION
@@ -27,16 +37,22 @@ public class LoadoutScreen : MonoBehaviour
         Recalculate();
 
         UpdateSummary();
+        OnLoadoutChanged?.Invoke();
     }
 
     // =========================================================
     // TOOL TOGGLE (hook to tool buttons)
     // =========================================================
 
-    public void ToggleTool(SOToolItem tool)
+    public bool ToggleTool(SOToolItem tool, out string reason)
     {
+        reason = "";
+
         if (selectedCarry == null)
-            return;
+        {
+            reason = "Select a carry item first.";
+            return false;
+        }
 
         // Remove if already selected
         if (selectedTools.Contains(tool))
@@ -44,54 +60,89 @@ public class LoadoutScreen : MonoBehaviour
             selectedTools.Remove(tool);
             Recalculate();
             UpdateSummary();
-            return;
+            OnLoadoutChanged?.Invoke();
+            return true;
         }
 
         // Try to add
-        if (TryAddTool(tool))
+        if (TryAddTool(tool, out reason))
         {
             UpdateSummary();
+            OnLoadoutChanged?.Invoke();
+            return true;
         }
+
+        return false;
     }
 
     // =========================================================
     // CORE RULES
     // =========================================================
 
-    private bool TryAddTool(SOToolItem tool)
+    private bool TryAddTool(SOToolItem tool, out string reason)
     {
-        // --- Try to hold in hands ---
-        if (tool.requiresHand && selectedCarry.handsFree && !handOccupied)
+        reason = "";
+
+        // --- Try hand ---
+        if (tool.requiresHand)
         {
-            selectedTools.Add(tool);
-            handOccupied = true;
-            return true;
+            if (selectedCarry.handsFree && handTool == null)
+            {
+                selectedTools.Add(tool);
+                handTool = tool;
+                handOccupied = true;
+                return true;
+            }
         }
 
-        // --- Otherwise try storing in slots ---
-        if (tool.canBeStored && usedSlots < selectedCarry.slotCapacity)
+        // --- Try storage ---
+        if (tool.canBeStored)
         {
+            bool storageAllowed = true;
+
+            if (tool.restrictedStorage)
+            {
+                storageAllowed =
+                    tool.allowedCarries != null &&
+                    tool.allowedCarries.Contains(selectedCarry);
+
+                if (!storageAllowed)
+                {
+                    reason = "Too bulky for this pack.";
+                    return false;
+                }
+            }
+
+            if (usedSlots >= selectedCarry.slotCapacity)
+            {
+                reason = "No storage slots available.";
+                return false;
+            }
+
             selectedTools.Add(tool);
+            slotTools.Add(tool);
             usedSlots++;
             return true;
         }
 
-        // Not allowed
+        reason = "Requires a free hand, may be storable.";
         return false;
     }
 
     private void Recalculate()
     {
+        handTool = null;
+        slotTools.Clear();
+
         handOccupied = false;
         usedSlots = 0;
 
         var toolsCopy = new List<SOToolItem>(selectedTools);
         selectedTools.Clear();
 
-        // Re-add tools using current rules
         foreach (var tool in toolsCopy)
         {
-            TryAddTool(tool);
+            TryAddTool(tool, out _);
         }
     }
 

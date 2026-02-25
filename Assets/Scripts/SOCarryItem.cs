@@ -7,4 +7,5 @@ public class SOCarryItem : ScriptableObject
     public Sprite icon;
     public int slotCapacity;
     public bool handsFree;
+    public float travelDistance = 1f;
 }

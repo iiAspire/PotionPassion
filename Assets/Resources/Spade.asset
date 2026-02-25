@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOToolItem
   displayName: Spade
   icon: {fileID: -1026380387186976475, guid: a7a0507750cbcd34789b26b387d08030, type: 3}
-  requiresHand: 0
+  requiresHand: 1
   canBeStored: 1
+  restrictedStorage: 1
+  allowedCarries:
+  - {fileID: 11400000, guid: 0a75811aae66f704a931688302ebe581, type: 2}

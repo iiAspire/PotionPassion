@@ -19,9 +19,9 @@ public class GameInitialization : MonoBehaviour
         if (initialized)
             return;
 
-        Debug.Log($"ComboGenerator instance ID: {comboGenerator.GetInstanceID()}");
-        Debug.Log($"spellNames count: {comboGenerator.spellNames.Count}");
-        Debug.Log($"resultCards count: {comboGenerator.resultCards.Count}");
+        //Debug.Log($"ComboGenerator instance ID: {comboGenerator.GetInstanceID()}");
+        //Debug.Log($"spellNames count: {comboGenerator.spellNames.Count}");
+        //Debug.Log($"resultCards count: {comboGenerator.resultCards.Count}");
 
         initialized = true;
         DontDestroyOnLoad(gameObject);
@@ -47,6 +47,6 @@ public class GameInitialization : MonoBehaviour
 
         RecipesReady = true;
 
-        Debug.Log("✅ Game initialized with cookbook.");
+        //Debug.Log("✅ Game initialized with cookbook.");
     }
 }

@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOToolItem
   displayName: Snare
   icon: {fileID: 4937157870536407989, guid: fd155b5c27afc8e43b8c1475c4041570, type: 3}
-  requiresHand: 0
+  requiresHand: 1
   canBeStored: 1
+  restrictedStorage: 0
+  allowedCarries: []

@@ -25,12 +25,12 @@ public class CardClickLog : MonoBehaviour
         text.gameObject.SetActive(false);
     }
 
-    public void Log(string cardName)
+    public void Log(string message)
     {
         if (routine != null)
             StopCoroutine(routine);
 
-        text.text = cardName;
+        text.text = message;
         text.alpha = 1f;
         text.gameObject.SetActive(true);
 

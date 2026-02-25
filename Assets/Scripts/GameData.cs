@@ -99,8 +99,8 @@ public class GameData : MonoBehaviour
         if (!Instance.successfulBrews.Exists(c => c.SpellName == combo.SpellName))
             Instance.successfulBrews.Add(combo);
 
-        if (isNew)
-            Debug.Log($"📖 Learned recipe: {combo.SpellName} ({Instance.GetRecipeStatus(combo.SpellName)})");
+        //if (isNew)
+        //    Debug.Log($"📖 Learned recipe: {combo.SpellName} ({Instance.GetRecipeStatus(combo.SpellName)})");
 
         // Refresh book if open
         if (PersistentUIManager.Instance?.successBook != null)

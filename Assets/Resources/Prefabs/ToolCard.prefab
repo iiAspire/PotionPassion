@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9025024285413210884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5676908791596898902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 1067902941261933179}
   - component: {fileID: 1240216299686129458}
   - component: {fileID: 2478957777721779295}
+  - component: {fileID: 3740075051450212940}
   - component: {fileID: 5945006809162305768}
   m_Layer: 5
   m_Name: ToolCard
@@ -258,8 +259,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5092230590673999379}
-  - {fileID: 3642593249327532872}
   - {fileID: 9025024285413210884}
+  - {fileID: 3642593249327532872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -319,6 +320,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadoutToolCard
   icon: {fileID: 8186624299551200029}
   highlight: {fileID: 6373299819195910586}
+--- !u!114 &3740075051450212940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090887896718137119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9275908c68b9364fb49601c9aefab65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadoutCarryCard
+  icon: {fileID: 8186624299551200029}
 --- !u!114 &5945006809162305768
 MonoBehaviour:
   m_ObjectHideFlags: 0

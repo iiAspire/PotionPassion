@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOCarryItem
   displayName: Knapsack
   icon: {fileID: -2600406466005647633, guid: 73ce69b82f571c1469f7529fc8367e27, type: 3}
-  slotCapacity: 1
+  slotCapacity: 2
   handsFree: 1
+  travelDistance: 4

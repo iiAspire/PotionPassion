@@ -16,3 +16,4 @@ MonoBehaviour:
   icon: {fileID: -2525264889287532656, guid: c5c946d6d17e1ef4a830f592a53d732f, type: 3}
   slotCapacity: 5
   handsFree: 1
+  travelDistance: 3

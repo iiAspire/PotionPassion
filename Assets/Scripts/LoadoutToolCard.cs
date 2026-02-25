@@ -7,24 +7,24 @@ public class LoadoutToolCard : MonoBehaviour
     [SerializeField] Image highlight;
 
     public SOToolItem ToolData { get; private set; }
+    public int OriginalIndex { get; set; }
 
     LoadoutToolSelector selector;
 
-    void Start()
-    {
-        selector = GetComponentInParent<LoadoutToolSelector>();
-        SetSelected(false);
-    }
-
-    public void Initialize(SOToolItem data)
+    public void Initialize(SOToolItem data, LoadoutToolSelector owner)
     {
         ToolData = data;
         icon.sprite = data.icon;
+
+        selector = owner;
+
+        SetSelected(false);
     }
 
     public void OnClick()
     {
-        selector.OnToolClicked(this);
+        if (selector != null)
+            selector.OnToolClicked(this);
     }
 
     public void SetSelected(bool selected)

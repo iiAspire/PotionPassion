@@ -131,7 +131,7 @@ public class SpellSetup : MonoBehaviour
         //    $"🧪 SpellSetup DB instance: {recipeDatabase.GetInstanceID()}, combos: {recipeDatabase.SpellCombos.Count}"
         //);
 
-        Debug.Log($"Generated combos: {generatedCombos.Count}");
+        //Debug.Log($"Generated combos: {generatedCombos.Count}");
         InitializeCookbookWithBasicRecipes();
     }
 
@@ -178,10 +178,10 @@ public class SpellSetup : MonoBehaviour
         // Assign result card
         combo.ResultCard = GameInitialization.Combos.GetResultCardForSpell(name);
 
-        if (combo.ResultCard == null)
-            Debug.LogError($"❌ ResultCard missing for '{name}'. ComboGenerator map ready? {GameInitialization.Combos != null}");
-        else
-            Debug.Log($"✅ ResultCard OK for '{name}' → {combo.ResultCard.cardName}");
+        //if (combo.ResultCard == null)
+        //    Debug.LogError($"❌ ResultCard missing for '{name}'. ComboGenerator map ready? {GameInitialization.Combos != null}");
+        //else
+        //    Debug.Log($"✅ ResultCard OK for '{name}' → {combo.ResultCard.cardName}");
 
         // Add to database
         generatedCombos.Add(combo);
@@ -370,6 +370,6 @@ public class SpellSetup : MonoBehaviour
             GameData.LearnRecipe(combo, markAsNew: true);
         }
 
-        Debug.Log("📖 Cookbook initialized with Basic recipes (marked NEW).");
+        //Debug.Log("📖 Cookbook initialized with Basic recipes (marked NEW).");
     }
 }

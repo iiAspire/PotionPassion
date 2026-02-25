@@ -87,4 +87,26 @@ public class CalendarState
         // Full day
         return 0f;
     }
+
+    public int CurrentSeasonIndex
+    {
+        get
+        {
+            float seasonLength = 1f / seasonsInYear;
+            return Mathf.FloorToInt(yearProgress / seasonLength);
+        }
+    }
+
+    public string GetSeasonName()
+    {
+        // Default 4-season names
+        switch (CurrentSeasonIndex)
+        {
+            case 0: return "Late Winter";
+            case 1: return "Spring";
+            case 2: return "Summer";
+            case 3: return "Autumn";
+            default: return "Unknown";
+        }
+    }
 }
