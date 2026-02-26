@@ -100,6 +100,7 @@ public class TimeUIController : MonoBehaviour
         UpdateDayArrow();
         UpdateSeasonArrow();
         UpdateCosmicUI();
+        //Debug.Log(TimeManager.Instance.Calendar.timeOfDay);
     }
 
     // =========================================================

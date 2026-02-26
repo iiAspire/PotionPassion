@@ -4,6 +4,7 @@ public class LoadoutPanelController : MonoBehaviour
 {
     [Header("Panel Root")]
     [SerializeField] GameObject panelRoot;
+    [SerializeField] LoadoutScreen loadoutScreen;
 
     // =========================================================
     // PANEL VISIBILITY
@@ -25,10 +26,28 @@ public class LoadoutPanelController : MonoBehaviour
 
     public void OnConfirm()
     {
-        // Later: validate loadout + store in GameState
-        Debug.Log("Loadout confirmed");
+        if (loadoutScreen.selectedRegion == null)
+        {
+            Debug.LogWarning("No destination selected.");
+            return;
+        }
 
-        // TODO: Load exploration scene or start forage mode
+        if (loadoutScreen.selectedCarry == null)
+        {
+            Debug.LogWarning("No carry item selected.");
+            return;
+        }
+
+        if (!loadoutScreen.CanReachSelectedRegion)
+        {
+            Debug.Log("Destination out of range.");
+            return;
+        }
+
+        Debug.Log("Expedition confirmed.");
+
+        GameState.TargetRegion = loadoutScreen.selectedRegion;
+
         // SceneLoadManager.Instance.LoadRoom("ForageScene");
     }
 

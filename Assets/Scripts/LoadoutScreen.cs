@@ -11,6 +11,9 @@ public class LoadoutScreen : MonoBehaviour
     [Header("Current Selection")]
     public SOCarryItem selectedCarry;
 
+    [Header("Region")]
+    public SORegion selectedRegion;
+
     public event Action OnLoadoutChanged;
 
     private readonly List<SOToolItem> selectedTools = new();
@@ -18,12 +21,28 @@ public class LoadoutScreen : MonoBehaviour
 
     private bool handOccupied = false;
     private int usedSlots = 0;
-    public float MaxTravelDistance => selectedCarry ? selectedCarry.travelDistance : 0f;
 
     private SOToolItem handTool = null;
     private readonly List<SOToolItem> slotTools = new();
     public SOToolItem HandTool => handTool;
     public IReadOnlyList<SOToolItem> SlotTools => slotTools;
+
+    public float MaxTravelDistance =>
+        selectedCarry ? selectedCarry.travelDistance : 0f;
+
+
+    // =========================================================
+    // SELECT REGION
+    // =========================================================
+
+    public void SelectRegion(SORegion region)
+    {
+        selectedRegion = region;
+
+        Recalculate();     // Re-apply constraints
+        UpdateSummary();
+        OnLoadoutChanged?.Invoke();
+    }
 
     // =========================================================
     // CARRY SELECTION
@@ -113,7 +132,9 @@ public class LoadoutScreen : MonoBehaviour
                 }
             }
 
-            if (usedSlots >= selectedCarry.slotCapacity)
+            int capacity = selectedCarry.slotCapacity;
+
+            if (usedSlots >= capacity)
             {
                 reason = "No storage slots available.";
                 return false;
@@ -156,6 +177,31 @@ public class LoadoutScreen : MonoBehaviour
     public bool HandAvailable =>
         selectedCarry && selectedCarry.handsFree && !handOccupied;
 
+    public float DistanceToSelectedRegion
+    {
+        get
+        {
+            if (selectedRegion == null)
+                return 0f;
+
+            return Vector2.Distance(
+                WorldState.playerMapPosition,
+                selectedRegion.mapPosition
+            );
+        }
+    }
+
+    public bool CanReachSelectedRegion
+    {
+        get
+        {
+            if (!selectedCarry || selectedRegion == null)
+                return false;
+
+            return DistanceToSelectedRegion <= MaxTravelDistance;
+        }
+    }
+
     // =========================================================
     // SUMMARY
     // =========================================================
@@ -168,16 +214,20 @@ public class LoadoutScreen : MonoBehaviour
             return;
         }
 
+        string regionText =
+            selectedRegion ? selectedRegion.displayName : "None";
+
         string toolsText =
             selectedTools.Count == 0
             ? "None"
             : string.Join(", ", selectedTools.ConvertAll(t => t.displayName));
 
         string summary =
-$@"Carry: {selectedCarry.displayName}
-Slots: {usedSlots}/{selectedCarry.slotCapacity}
-Hands: {(HandAvailable ? "Free" : "Occupied")}
-Tools: {toolsText}";
+            $@"Region: {regionText}
+            Carry: {selectedCarry.displayName}
+            Slots: {usedSlots}/{selectedCarry.slotCapacity}
+            Hands: {(HandAvailable ? "Free" : "Occupied")}
+            Tools: {toolsText}";
 
         SetSummary(summary);
     }

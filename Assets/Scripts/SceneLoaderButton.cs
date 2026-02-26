@@ -26,4 +26,9 @@ public class SceneLoaderButton : MonoBehaviour
     {
         SceneLoadManager.Instance.LoadRoom("ExteriorScene");
     }
+
+    public void LoadStorageScene()
+    {
+        SceneLoadManager.Instance.LoadRoom("StorageScene");
+    }
 }

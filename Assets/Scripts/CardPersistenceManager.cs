@@ -154,163 +154,209 @@ public class CardPersistenceManager : MonoBehaviour
     }
 
     // Call this BEFORE changing scenes
+
     public void SaveAllCards()
     {
-        //Debug.Log($"[SAVE] Ingredients parent instanceID = {ingredientsInventoryParent.GetInstanceID()}");
-        //foreach (Transform child in ingredientsInventoryParent)
-        //{
-        //    Debug.Log($"  child: {child.name}");
-        //}
-
-        if (!SceneLoadManager.Instance ||
-            SceneLoadManager.Instance.IsTransitioning &&
-            !SceneManager.GetActiveScene().isLoaded)
-        {
-            Debug.LogError("❌ SaveAllCards blocked — parent rebinding already occurred");
-            return;
-        }
-
-        // Allow save if at least once loaded
-        if (!IsLoaded && GameData.Instance.savedCards.Count == 0)
-            return;
-
         if (GameData.Instance == null)
             return;
 
-        // If this scene has no cauldron, preserve any existing CauldronOutput
-        // entries from the previous scene so they don't get wiped.
-        List<SavedCardState> preservedCauldron = null;
+        var existing = GameData.Instance.savedCards;
 
-        if (cauldronOutputParent == null)
+        // Keep previous data for containers not present in this scene
+        List<SavedCardState> preserved = new List<SavedCardState>();
+
+        bool HasParent(Transform t) => t != null && t.gameObject != null;
+
+        foreach (var s in existing)
         {
-            preservedCauldron = GameData.Instance.savedCards
-                .FindAll(s => s.container == CardContainer.CauldronOutput);
-        }
-
-        List<SavedCardState> preservedPlanterOutputs = null;
-        var plantersInScene = FindObjectsOfType<PlanterSlot>();
-        if (plantersInScene.Length == 0)
-        {
-            preservedPlanterOutputs = GameData.Instance.savedCards
-                .FindAll(s => s.container == CardContainer.PlanterOutput);
-
-            if (preservedPlanterOutputs.Count > 0)
+            switch (s.container)
             {
-                Debug.Log($"[SAVE] Preserving {preservedPlanterOutputs.Count} planter output cards");
+                case CardContainer.PlayerInventory:
+                    if (!HasParent(playerInventoryParent)) preserved.Add(s);
+                    break;
+
+                case CardContainer.IngredientsInventory:
+                    if (!HasParent(ingredientsInventoryParent)) preserved.Add(s);
+                    break;
+
+                case CardContainer.RecipeHolding:
+                    if (!HasParent(recipeHoldingParent)) preserved.Add(s);
+                    break;
+
+                case CardContainer.CauldronOutput:
+                    if (!HasParent(cauldronOutputParent)) preserved.Add(s);
+                    break;
+
+                case CardContainer.SaleInventory:
+                    if (!HasParent(saleInventoryParent)) preserved.Add(s);
+                    break;
+
+                default:
+                    preserved.Add(s);
+                    break;
             }
         }
-
-        List<SavedCardState> preservedWorkbenchCards = null;
-        if (GameData.Instance.savedCards != null)
-        {
-            preservedWorkbenchCards = GameData.Instance.savedCards
-                .FindAll(s => s.container == CardContainer.Workbench);
-
-            //if (preservedWorkbenchCards.Count > 0)
-            //{
-            //    Debug.Log($"[SAVE] Preserving {preservedWorkbenchCards.Count} workbench cards from PersistIfPaused");
-            //}
-        }
-
-        var rack = FindObjectOfType<DryingRackTimer>();
-        if (rack != null)
-            rack.Save();
 
         GameData.Instance.savedCards.Clear();
 
-        SaveFromParent(playerInventoryParent, CardContainer.PlayerInventory);
-        SaveFromParent(ingredientsInventoryParent, CardContainer.IngredientsInventory);
-        SaveFromParent(recipeHoldingParent, CardContainer.RecipeHolding);
-        SaveFromParent(cauldronOutputParent, CardContainer.CauldronOutput);
-        SaveFromParent(saleInventoryParent, CardContainer.SaleInventory);
+        // Save what exists in THIS scene
+        if (HasParent(playerInventoryParent))
+            SaveFromParent(playerInventoryParent, CardContainer.PlayerInventory);
 
-        var cauldron = FindObjectOfType<CauldronWorkbench>();
+        if (HasParent(ingredientsInventoryParent))
+            SaveFromParent(ingredientsInventoryParent, CardContainer.IngredientsInventory);
 
-        if (cauldron != null)
-        {
-            // We are in a scene that actually HAS a cauldron
-            if (cauldron.IsBrewing)
-            {
-                GameData.Instance.savedCauldron = new SavedCauldronBrew
-                {
-                    isBrewing = true,
-                    spellName = cauldron.ActiveSpellName,
-                    finishAtGameMinutes = cauldron.FinishAtGameMinutes,
-                    fireWasOn = cauldron.FireWasOn,
-                    totalBrewTime = cauldron.TotalBrewTime
-                };
-                //Debug.Log($"[SAVE] Cauldron brewing '{cauldron.ActiveSpellName}' until OA={cauldron.FinishTimeUtcOa}");
-            }
-            else
-            {
-                // Cauldron exists but isn’t brewing → nothing to resume
-                GameData.Instance.savedCauldron = null;
-                //Debug.Log("[SAVE] Cauldron present but not brewing — cleared savedCauldron");
-            }
-        }
-        else
-        {
-            // ❗ No cauldron in this scene (e.g. PlanterScene)
-            // DO NOT touch savedCauldron – we’re just passing through another room.
-            //Debug.Log("[SAVE] No cauldron in this scene — keeping existing savedCauldron as-is");
-        }
+        if (HasParent(recipeHoldingParent))
+            SaveFromParent(recipeHoldingParent, CardContainer.RecipeHolding);
 
-        //var plantersInScene = FindObjectsOfType<PlanterSlot>();
+        if (HasParent(cauldronOutputParent))
+            SaveFromParent(cauldronOutputParent, CardContainer.CauldronOutput);
 
-        // Only update planter saves if this scene actually HAS planters
-        if (plantersInScene.Length > 0)
-        {
-            //Debug.Log($"[SAVE] Scene has {plantersInScene.Length} planters, updating planter saves");
+        if (HasParent(saleInventoryParent))
+            SaveFromParent(saleInventoryParent, CardContainer.SaleInventory);
 
-            // Save planter outputs
-            foreach (var planter in plantersInScene)
-            {
-                SavePlanterOutput(planter.outputAnchor, planter.planterID);
-            }
-
-            // Clear and rebuild planter states
-            GameData.Instance.savedPlanters.Clear();
-
-            foreach (var planter in plantersInScene)
-            {
-                if (!planter.IsActive)
-                    continue;
-
-                //Debug.Log($"💾 Saving planter '{planter.planterID}': seed={planter.CurrentSeedName}, remaining={planter.RemainingTime}");
-
-                GameData.Instance.savedPlanters.Add(new SavedPlanterState
-                {
-                    planterID = planter.planterID,
-                    plantedCardName = planter.CurrentSeedName,
-                    remainingGrowTime = planter.RemainingTime,
-                    isActive = true,
-                    savedAtGameMinutes = TimeManager.TotalGameMinutes
-                });
-            }
-        }
-        else
-        {
-            //Debug.Log("[SAVE] No planters in this scene, keeping existing planter saves");
-        }
-
-        // Re-add preserved cauldron outputs if this scene had none
-        if (preservedCauldron != null && preservedCauldron.Count > 0)
-        {
-            GameData.Instance.savedCards.AddRange(preservedCauldron);
-        }
-
-        if (preservedPlanterOutputs != null && preservedPlanterOutputs.Count > 0)
-        {
-            GameData.Instance.savedCards.AddRange(preservedPlanterOutputs);
-            Debug.Log($"[SAVE] Re-added {preservedPlanterOutputs.Count} planter output cards");
-        }
-
-        if (preservedWorkbenchCards != null && preservedWorkbenchCards.Count > 0)
-        {
-            GameData.Instance.savedCards.AddRange(preservedWorkbenchCards);
-            //Debug.Log($"[SAVE] Re-added {preservedWorkbenchCards.Count} workbench cards");
-        }
+        // Restore preserved data
+        GameData.Instance.savedCards.AddRange(preserved);
     }
+
+    //REPLACED
+    //public void SaveAllCards()
+    //{
+
+    //    if (!SceneLoadManager.Instance ||
+    //        SceneLoadManager.Instance.IsTransitioning &&
+    //        !SceneManager.GetActiveScene().isLoaded)
+    //    {
+    //        Debug.LogError("❌ SaveAllCards blocked — parent rebinding already occurred");
+    //        return;
+    //    }
+
+    //    // Allow save if at least once loaded
+    //    if (!IsLoaded && GameData.Instance.savedCards.Count == 0)
+    //        return;
+
+    //    if (GameData.Instance == null)
+    //        return;
+
+    //    // If this scene has no cauldron, preserve any existing CauldronOutput
+    //    // entries from the previous scene so they don't get wiped.
+    //    List<SavedCardState> preservedCauldron = null;
+
+    //    if (cauldronOutputParent == null)
+    //    {
+    //        preservedCauldron = GameData.Instance.savedCards
+    //            .FindAll(s => s.container == CardContainer.CauldronOutput);
+    //    }
+
+    //    List<SavedCardState> preservedPlanterOutputs = null;
+    //    var plantersInScene = FindObjectsOfType<PlanterSlot>();
+    //    if (plantersInScene.Length == 0)
+    //    {
+    //        preservedPlanterOutputs = GameData.Instance.savedCards
+    //            .FindAll(s => s.container == CardContainer.PlanterOutput);
+
+    //        if (preservedPlanterOutputs.Count > 0)
+    //        {
+    //            Debug.Log($"[SAVE] Preserving {preservedPlanterOutputs.Count} planter output cards");
+    //        }
+    //    }
+
+    //    List<SavedCardState> preservedWorkbenchCards = null;
+    //    if (GameData.Instance.savedCards != null)
+    //    {
+    //        preservedWorkbenchCards = GameData.Instance.savedCards
+    //            .FindAll(s => s.container == CardContainer.Workbench);
+    //    }
+
+    //    var rack = FindObjectOfType<DryingRackTimer>();
+    //    if (rack != null)
+    //        rack.Save();
+
+    //    GameData.Instance.savedCards.Clear();
+
+    //    SaveFromParent(playerInventoryParent, CardContainer.PlayerInventory);
+    //    SaveFromParent(ingredientsInventoryParent, CardContainer.IngredientsInventory);
+    //    SaveFromParent(recipeHoldingParent, CardContainer.RecipeHolding);
+    //    SaveFromParent(cauldronOutputParent, CardContainer.CauldronOutput);
+    //    SaveFromParent(saleInventoryParent, CardContainer.SaleInventory);
+
+    //    var cauldron = FindObjectOfType<CauldronWorkbench>();
+
+    //    if (cauldron != null)
+    //    {
+    //        // We are in a scene that actually HAS a cauldron
+    //        if (cauldron.IsBrewing)
+    //        {
+    //            GameData.Instance.savedCauldron = new SavedCauldronBrew
+    //            {
+    //                isBrewing = true,
+    //                spellName = cauldron.ActiveSpellName,
+    //                finishAtGameMinutes = cauldron.FinishAtGameMinutes,
+    //                fireWasOn = cauldron.FireWasOn,
+    //                totalBrewTime = cauldron.TotalBrewTime
+    //            };
+    //        }
+    //        else
+    //        {
+    //            // Cauldron exists but isn’t brewing → nothing to resume
+    //            GameData.Instance.savedCauldron = null;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        // ❗ No cauldron in this scene (e.g. PlanterScene)
+    //        // DO NOT touch savedCauldron – we’re just passing through another room.
+    //    }
+
+    //    // Only update planter saves if this scene actually HAS planters
+    //    if (plantersInScene.Length > 0)
+    //    { 
+    //        // Save planter outputs
+    //        foreach (var planter in plantersInScene)
+    //        {
+    //            SavePlanterOutput(planter.outputAnchor, planter.planterID);
+    //        }
+
+    //        // Clear and rebuild planter states
+    //        GameData.Instance.savedPlanters.Clear();
+
+    //        foreach (var planter in plantersInScene)
+    //        {
+    //            if (!planter.IsActive)
+    //                continue;
+
+    //            GameData.Instance.savedPlanters.Add(new SavedPlanterState
+    //            {
+    //                planterID = planter.planterID,
+    //                plantedCardName = planter.CurrentSeedName,
+    //                remainingGrowTime = planter.RemainingTime,
+    //                isActive = true,
+    //                savedAtGameMinutes = TimeManager.TotalGameMinutes
+    //            });
+    //        }
+    //    }
+    //    else
+    //    {
+
+    //    }
+
+    //    // Re-add preserved cauldron outputs if this scene had none
+    //    if (preservedCauldron != null && preservedCauldron.Count > 0)
+    //    {
+    //        GameData.Instance.savedCards.AddRange(preservedCauldron);
+    //    }
+
+    //    if (preservedPlanterOutputs != null && preservedPlanterOutputs.Count > 0)
+    //    {
+    //        GameData.Instance.savedCards.AddRange(preservedPlanterOutputs);
+    //        Debug.Log($"[SAVE] Re-added {preservedPlanterOutputs.Count} planter output cards");
+    //    }
+
+    //    if (preservedWorkbenchCards != null && preservedWorkbenchCards.Count > 0)
+    //    {
+    //        GameData.Instance.savedCards.AddRange(preservedWorkbenchCards);
+    //    }
+    //}
 
     void SavePlanterOutput(Transform outputAnchor, string planterID)
     {

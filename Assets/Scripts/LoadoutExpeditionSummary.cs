@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class LoadoutExpeditionSummary : MonoBehaviour
 {
@@ -55,8 +56,11 @@ public class LoadoutExpeditionSummary : MonoBehaviour
         if (headerText)
             headerText.text = "EXPEDITION SUMMARY";
 
-        // --- DESTINATION (placeholder until map exists) ---
-        if (destinationText)
+        // --- DESTINATION ---
+        if (loadoutScreen.selectedRegion != null)
+            destinationText.text =
+                $"Destination: {loadoutScreen.selectedRegion.displayName}";
+        else
             destinationText.text = "Destination: Not selected";
 
         // --- SEASON ---
@@ -99,65 +103,123 @@ public class LoadoutExpeditionSummary : MonoBehaviour
 
     void UpdatePotentialFinds()
     {
-        var tools = loadoutScreen.SelectedTools;
+        var region = loadoutScreen.selectedRegion;
 
-        if (tools == null || tools.Count == 0)
+        if (region == null)
         {
-            potentialText.text = "None — bring tools to improve yield";
+            potentialText.text = "Select a destination";
             potentialImage.sprite = defaultPotentialSprite;
             return;
         }
 
-        // Simple example logic:
-        // In a real system this comes from destination + season + tool tags
+        if (region.possibleFinds == null ||
+            region.possibleFinds.Count == 0)
+        {
+            potentialText.text = "Nothing notable found here";
+            potentialImage.sprite = defaultPotentialSprite;
+            return;
+        }
 
         System.Text.StringBuilder sb = new();
 
-        foreach (var tool in tools)
+        foreach (var find in region.possibleFinds)
         {
-            string line = "";
+            if (find.resource == null)
+                continue;
 
-            // Example: infer from tool name
-            if (tool.displayName.Contains("Pickaxe"))
-                line += "Pickaxe: essential for metals and minerals eg. quartz, sandstone. ";
+            sb.Append("• ");
+            sb.Append(find.resource.cardName);
 
-            else if (tool.displayName.Contains("Net"))
-                line += "Net: improved chance/yield of small creatures eg. spider, toad. ";
+            // Tool requirement display
+            if (find.requiredTool != null)
+            {
+                bool hasTool =
+                    loadoutScreen.SelectedTools.Contains(find.requiredTool);
 
-            else if (tool.displayName.Contains("Trap"))
-                line += "Trap: improved chance/yield of larger creatures eg. mouse, bat.";
+                sb.Append(hasTool
+                    ? " (tool ready)"
+                    : $" (requires {find.requiredTool.displayName})");
+            }
 
-            else if (tool.displayName.Contains("Shears"))
-                line += "Shears: improved chance/yield of small botanicals eg. reeds, foxglove.";
+            if (!string.IsNullOrWhiteSpace(find.description))
+            {
+                sb.Append(" — ");
+                sb.Append(find.description);
+            }
 
-            else if (tool.displayName.Contains("Saw"))
-                line += "Saw: essential for larger botanicals eg. tree branches.";
-
-            else if (tool.displayName.Contains("Snare"))
-                line += "Snare: essential for small animals eg. rabbit, crow.";
-
-            else if (tool.displayName.Contains("Knife"))
-                line += "Knife: improved chance/yield of spreading botanicals eg. moss, coral.";
-
-            else if (tool.displayName.Contains("Bucket"))
-                line += "Bucket: essential for waters eg. spring, sea.";
-
-            else if (tool.displayName.Contains("Spade"))
-                line += "Spade: improved chance/yield of elements eg. dirt, clay.";
-
-            else if (tool.displayName.Contains("Silk pin"))
-                line += "Silk pin: improved chance/yield of threads eg. spider silk, copper thread.";
-
-            sb.AppendLine("• " + line);
+            sb.AppendLine();
         }
 
         potentialText.text = sb.ToString().TrimEnd();
 
-        // Use first tool icon as visual hint
-        potentialImage.sprite = tools[0].icon
-            ? tools[0].icon
+        potentialImage.sprite =
+            region.possibleFinds[0].resource.Icon
+            ? region.possibleFinds[0].resource.Icon
             : defaultPotentialSprite;
     }
+
+    //REPLACED
+    //void UpdatePotentialFinds()
+    //{
+    //    var tools = loadoutScreen.SelectedTools;
+
+    //    if (tools == null || tools.Count == 0)
+    //    {
+    //        potentialText.text = "None — bring tools to improve yield";
+    //        potentialImage.sprite = defaultPotentialSprite;
+    //        return;
+    //    }
+
+    //    // Simple example logic:
+    //    // In a real system this comes from destination + season + tool tags
+
+    //    System.Text.StringBuilder sb = new();
+
+    //    foreach (var tool in tools)
+    //    {
+    //        string line = "";
+
+    //        // Example: infer from tool name
+    //        if (tool.displayName.Contains("Pickaxe"))
+    //            line += "Pickaxe: essential for metals and minerals eg. quartz, sandstone. ";
+
+    //        else if (tool.displayName.Contains("Net"))
+    //            line += "Net: improved chance/yield of small creatures eg. spider, toad. ";
+
+    //        else if (tool.displayName.Contains("Trap"))
+    //            line += "Trap: improved chance/yield of larger creatures eg. mouse, bat.";
+
+    //        else if (tool.displayName.Contains("Shears"))
+    //            line += "Shears: improved chance/yield of small botanicals eg. reeds, foxglove.";
+
+    //        else if (tool.displayName.Contains("Saw"))
+    //            line += "Saw: essential for larger botanicals eg. tree branches.";
+
+    //        else if (tool.displayName.Contains("Snare"))
+    //            line += "Snare: essential for small animals eg. rabbit, crow.";
+
+    //        else if (tool.displayName.Contains("Knife"))
+    //            line += "Knife: improved chance/yield of spreading botanicals eg. moss, coral.";
+
+    //        else if (tool.displayName.Contains("Bucket"))
+    //            line += "Bucket: essential for waters eg. spring, sea.";
+
+    //        else if (tool.displayName.Contains("Spade"))
+    //            line += "Spade: improved chance/yield of elements eg. dirt, clay.";
+
+    //        else if (tool.displayName.Contains("Silk pin"))
+    //            line += "Silk pin: improved chance/yield of threads eg. spider silk, copper thread.";
+
+    //        sb.AppendLine("• " + line);
+    //    }
+
+    //    potentialText.text = sb.ToString().TrimEnd();
+
+    //    // Use first tool icon as visual hint
+    //    potentialImage.sprite = tools[0].icon
+    //        ? tools[0].icon
+    //        : defaultPotentialSprite;
+    //}
 
     // ---------------------------------------------------------
     // CAPACITY SUMMARY
