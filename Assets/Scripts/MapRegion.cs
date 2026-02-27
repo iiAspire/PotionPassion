@@ -11,6 +11,6 @@ public class MapRegion : MonoBehaviour
             return;
 
         loadoutScreen.SelectRegion(regionData);
-        Debug.Log($"Target region: {regionData.displayName}");
+        Debug.Log($"Target region: {regionData.locationName}");
     }
 }

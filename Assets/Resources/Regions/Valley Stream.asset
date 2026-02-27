@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Valley Stream
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 2001
+  locationType: Valley
+  locationName: Stream
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: bfb376f2d9d1e494c8286fddb77144dd, type: 2}
+    chance: 0.7
+    requiredTool: {fileID: 11400000, guid: ecbff554d5f39604d9967b23abdde870, type: 2}
+    toolEssential: 1
+    winter: 0.3
+    spring: 0.5
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: 561c9def629ca57499b3e74c0b16d770, type: 2}
+    chance: 0.5
+    requiredTool: {fileID: 11400000, guid: 394e622314d3e7e4e848e03a16d11ffa, type: 2}
+    toolEssential: 1
+    winter: 0
+    spring: 0.5
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 683aac2905e0d144b8de0db81f9f22bd, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 1
+    winter: 0.3
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: ddac5f3c74037f7468948933382d32a7, type: 2}
+    chance: 0.7
+    requiredTool: {fileID: 11400000, guid: 49efcbf791ce56441aae6566e83734cd, type: 2}
+    toolEssential: 0
+    winter: 0
+    spring: 0
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 1b0c41a5b5d60e74586b1558a7cb59fa, type: 2}
+    chance: 1
+    requiredTool: {fileID: 0}
+    toolEssential: 0
+    winter: 0
+    spring: 1
+    summer: 1
+    autumn: 0
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 82a86b16d80a132448bdccfa2cdc87c9, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 8282dd1a07729be43aa75d443fbd7280, type: 2}
+    toolEssential: 1
+    winter: 0
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  edges:
+  - destination: {fileID: 11400000}
+    travelTime: 0
+  - destination: {fileID: 11400000, guid: 698f24460874b3c4bbc7c4fa4ada8043, type: 2}
+    travelTime: 15
+  - destination: {fileID: 11400000, guid: d957439d1fab776479be6133f9f24cb9, type: 2}
+    travelTime: 30
+  - destination: {fileID: 11400000, guid: 9557efc0cd5a6a2449f5e3422f0251ef, type: 2}
+    travelTime: 45
+  - destination: {fileID: 11400000, guid: 91acf0edd88448b4bb745e14dd6926a7, type: 2}
+    travelTime: 60
+  - destination: {fileID: 11400000, guid: 2294bf720eba3134bb7853ee57993e7a, type: 2}
+    travelTime: 90
+  - destination: {fileID: 11400000, guid: 43af6b77189ab454c8623d9d851e6907, type: 2}
+    travelTime: 120

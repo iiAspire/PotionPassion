@@ -19,3 +19,5 @@ MonoBehaviour:
   restrictedStorage: 1
   allowedCarries:
   - {fileID: 11400000, guid: 0a75811aae66f704a931688302ebe581, type: 2}
+  travelMultiplier: 1
+  travelCapMinutes: 30

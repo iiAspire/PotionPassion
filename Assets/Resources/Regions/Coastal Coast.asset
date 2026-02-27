@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Coastal Coast
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 4001
+  locationType: Coastal
+  locationName: Coast
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: 26a963b1c26be674cbc648c12f74c6dc, type: 2}
+    chance: 0.1
+    requiredTool: {fileID: 11400000, guid: 49efcbf791ce56441aae6566e83734cd, type: 2}
+    toolEssential: 1
+    winter: 0.5
+    spring: 0.7
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: b64bf8eff9ca89043b411aee28ba6bae, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 8282dd1a07729be43aa75d443fbd7280, type: 2}
+    toolEssential: 1
+    winter: 1
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  edges:
+  - destination: {fileID: 11400000}
+    travelTime: 0
+  - destination: {fileID: 11400000, guid: 1b5e0e436b5876a4eac1b16c7ce686ad, type: 2}
+    travelTime: 15
+  - destination: {fileID: 11400000, guid: 8211f86b9affcb94f9efdcf0fbb5898a, type: 2}
+    travelTime: 30
+  - destination: {fileID: 11400000, guid: f1455d304c8c2af4abecd123af6ef740, type: 2}
+    travelTime: 45
+  - destination: {fileID: 11400000, guid: ca0c1cf5abbc8d749a8d98397cccc5e4, type: 2}
+    travelTime: 60

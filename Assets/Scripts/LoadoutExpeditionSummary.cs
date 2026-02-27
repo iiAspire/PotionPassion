@@ -10,8 +10,9 @@ public class LoadoutExpeditionSummary : MonoBehaviour
 
     [Header("Header")]
     [SerializeField] TMP_Text headerText;
+    [SerializeField] TMP_Text findsHeaderText;
 
-    [Header("Destination / Season (placeholder)")]
+    [Header("Destination / Season")]
     [SerializeField] TMP_Text destinationText;
     [SerializeField] TMP_Text seasonText;
     [SerializeField] TMP_Text distanceText;
@@ -25,6 +26,9 @@ public class LoadoutExpeditionSummary : MonoBehaviour
 
     [Header("Placeholder Sprites")]
     [SerializeField] Sprite defaultPotentialSprite;
+
+    [Header("Controls")]
+    [SerializeField] Button confirmButton;
 
     // ---------------------------------------------------------
 
@@ -56,10 +60,14 @@ public class LoadoutExpeditionSummary : MonoBehaviour
         if (headerText)
             headerText.text = "EXPEDITION SUMMARY";
 
+        // --- FINDS HEADER ---
+        if (findsHeaderText)
+            findsHeaderText.text = "POTENTIAL FINDS";
+
         // --- DESTINATION ---
         if (loadoutScreen.selectedRegion != null)
             destinationText.text =
-                $"Destination: {loadoutScreen.selectedRegion.displayName}";
+                $"Destination: {loadoutScreen.selectedRegion.locationType} — {loadoutScreen.selectedRegion.locationName}";
         else
             destinationText.text = "Destination: Not selected";
 
@@ -72,6 +80,23 @@ public class LoadoutExpeditionSummary : MonoBehaviour
             else
                 seasonText.text = "Season: Unknown";
         }
+
+        // --- CONFIRM BUTTON ---
+if (confirmButton)
+{
+    bool can = loadoutScreen.CanConfirmExpedition;
+
+    // keep clickable
+    confirmButton.interactable = true;
+
+    // but make it LOOK disabled
+    var cg = confirmButton.GetComponent<CanvasGroup>();
+    if (cg == null) cg = confirmButton.gameObject.AddComponent<CanvasGroup>();
+
+    cg.alpha = can ? 1f : 0.45f;          // dim when blocked
+    cg.blocksRaycasts = true;            // still clickable
+    cg.interactable = true;              // still clickable
+}
 
         // --- POTENTIAL FINDS (based on tools) ---
         UpdatePotentialFinds();
@@ -87,18 +112,17 @@ public class LoadoutExpeditionSummary : MonoBehaviour
 
     void UpdateDistance()
     {
-        var carry = loadoutScreen.selectedCarry;
-
-        if (carry == null)
+        if (loadoutScreen.selectedCarry == null)
         {
-            distanceText.text = "Distance: —";
+            distanceText.text = "Travel time: —";
             return;
         }
 
-        float d = loadoutScreen.MaxTravelDistance;
+        float max = loadoutScreen.MaxTravelTime;
+        float t = loadoutScreen.TravelTimeToSelectedRegion;
 
         distanceText.text =
-            $"Maximum travel distance: {d:0.#}";
+            $"Travel time: {t:0} min / max: {max:0} min";
     }
 
     void UpdatePotentialFinds()
@@ -136,15 +160,24 @@ public class LoadoutExpeditionSummary : MonoBehaviour
                 bool hasTool =
                     loadoutScreen.SelectedTools.Contains(find.requiredTool);
 
-                sb.Append(hasTool
-                    ? " (tool ready)"
-                    : $" (requires {find.requiredTool.displayName})");
+                if (find.toolEssential)
+                {
+                    sb.Append(hasTool
+                        ? $" (tool ready ({find.requiredTool.displayName}))"
+                        : $" (requires {find.requiredTool.displayName})");
+                }
+                else
+                {
+                    sb.Append(hasTool
+                        ? $" (chance/time taken improved ({find.requiredTool.displayName}))"
+                        : $" (easier with {find.requiredTool.displayName})");
+                }
             }
 
-            if (!string.IsNullOrWhiteSpace(find.description))
+            if (!string.IsNullOrWhiteSpace(find.notes))
             {
                 sb.Append(" — ");
-                sb.Append(find.description);
+                sb.Append(find.notes);
             }
 
             sb.AppendLine();

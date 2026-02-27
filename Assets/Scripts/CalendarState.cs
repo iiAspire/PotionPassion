@@ -102,11 +102,26 @@ public class CalendarState
         // Default 4-season names
         switch (CurrentSeasonIndex)
         {
-            case 0: return "Late Winter";
+            case 0: return "Winter";
             case 1: return "Spring";
             case 2: return "Summer";
             case 3: return "Autumn";
             default: return "Unknown";
+        }
+    }
+
+    public Season CurrentSeason
+    {
+        get
+        {
+            return CurrentSeasonIndex switch
+            {
+                0 => Season.Winter,
+                1 => Season.Spring,
+                2 => Season.Summer,
+                3 => Season.Autumn,
+                _ => Season.Winter
+            };
         }
     }
 }

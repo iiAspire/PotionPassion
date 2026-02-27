@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Woodland Forest
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 1006
+  locationType: Woodland
+  locationName: Forest
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: 3593133c580db384cb107b86e8f942a1, type: 2}
+    chance: 0.5
+    requiredTool: {fileID: 11400000, guid: 49efcbf791ce56441aae6566e83734cd, type: 2}
+    toolEssential: 0
+    winter: 0
+    spring: 0
+    summer: 0
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 9709eaca57a740147a8379acf48e4857, type: 2}
+    chance: 0.5
+    requiredTool: {fileID: 11400000, guid: 49efcbf791ce56441aae6566e83734cd, type: 2}
+    toolEssential: 0
+    winter: 0
+    spring: 0
+    summer: 0
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 94ff08cbcc27ac146bd78cb419d0bbf6, type: 2}
+    chance: 0.1
+    requiredTool: {fileID: 11400000, guid: e06f3e2683bb6de4c82b0a0c69ccbbd2, type: 2}
+    toolEssential: 1
+    winter: 0.5
+    spring: 0.7
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: 3cb82b1178b3c5d4db62ebba9e02b5b7, type: 2}
+    chance: 0.7
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 0
+    winter: 0.5
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  edges: []

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Plain Forest
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 3006
+  locationType: Plain
+  locationName: Forest
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: 94fa8cc524a43f442afa8fd29d1a0e22, type: 2}
+    chance: 0.3
+    requiredTool: {fileID: 11400000, guid: e06f3e2683bb6de4c82b0a0c69ccbbd2, type: 2}
+    toolEssential: 1
+    winter: 0.5
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: 778ef1c44b9e10043baa4bb8323c2d5a, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 0
+    winter: 0.3
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: d88c5335cd8797c42a96bb354d8f5273, type: 2}
+    chance: 0.1
+    requiredTool: {fileID: 11400000, guid: e06f3e2683bb6de4c82b0a0c69ccbbd2, type: 2}
+    toolEssential: 1
+    winter: 0.5
+    spring: 0.7
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: d0fbdc73efd60f54cbbe91f540186eed, type: 2}
+    chance: 0.1
+    requiredTool: {fileID: 11400000, guid: e06f3e2683bb6de4c82b0a0c69ccbbd2, type: 2}
+    toolEssential: 1
+    winter: 1
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  edges: []

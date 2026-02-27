@@ -16,3 +16,7 @@ MonoBehaviour:
   icon: {fileID: 714579205350333555, guid: 3694b3e70ecd40a40a3404d795d9df0c, type: 3}
   requiresHand: 1
   canBeStored: 1
+  restrictedStorage: 0
+  allowedCarries: []
+  travelMultiplier: 1
+  travelCapMinutes: 0

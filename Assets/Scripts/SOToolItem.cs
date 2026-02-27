@@ -19,4 +19,8 @@ public class SOToolItem : ScriptableObject
 
     [Tooltip("Carry items that allow storage when restricted")]
     public List<SOCarryItem> allowedCarries;
+
+    public float travelMultiplier = 1f;
+    public float travelCapMinutes = 0f; // 0 = no cap
+    public float harvestMinutes = 0f;
 }

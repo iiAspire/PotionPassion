@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Plain Meadow
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 3004
+  locationType: Plain
+  locationName: Meadow
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: a676231ceb4f3224894cc710b6dd1b30, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 1d25bef84d1cfb34fa69bf2e93d47ce1, type: 2}
+    toolEssential: 0
+    winter: 1
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 1b0c41a5b5d60e74586b1558a7cb59fa, type: 2}
+    chance: 1
+    requiredTool: {fileID: 0}
+    toolEssential: 0
+    winter: 0
+    spring: 1
+    summer: 1
+    autumn: 0
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 3cb82b1178b3c5d4db62ebba9e02b5b7, type: 2}
+    chance: 0.7
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 0
+    winter: 0.5
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  edges: []

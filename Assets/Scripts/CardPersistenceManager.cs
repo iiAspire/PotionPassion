@@ -854,4 +854,53 @@ public class CardPersistenceManager : MonoBehaviour
 
         return stack;
     }
+
+    public void GrantToPlayerInventory(CardData template, int amount)
+    {
+        if (template == null || template.cardPrefab == null)
+        {
+            Debug.LogWarning("GrantToPlayerInventory: template missing/prefab missing.");
+            return;
+        }
+
+        if (playerInventoryParent == null || playerInventoryParent.gameObject == null)
+        {
+            Debug.LogError("GrantToPlayerInventory: playerInventoryParent not bound in this scene.");
+            return;
+        }
+
+        for (int i = 0; i < Mathf.Max(1, amount); i++)
+        {
+            SpawnRuntimeCard(template, playerInventoryParent);
+        }
+
+        // Persist immediately so you don't lose rewards on scene change.
+        SaveAllCards();
+    }
+
+    // Local helper (copy of your RandomCardSpawner logic)
+    private void SpawnRuntimeCard(CardData template, Transform parent)
+    {
+        CardData runtime = ScriptableObject.CreateInstance<CardData>();
+        runtime.CopyFrom(template);
+        runtime.cardName = template.cardName;
+        runtime.baseName = template.baseName;
+
+        runtime.ApplyDefaultColor();
+        runtime.processedType = ProcessedType.None;
+        runtime.processedIcon = null;
+
+        runtime.ApplyPartIcon();
+        runtime.ApplyQuantityIcon();
+
+        GameObject cardObj = Instantiate(template.cardPrefab, parent);
+        CardComponent comp = cardObj.GetComponent<CardComponent>();
+        if (comp != null)
+        {
+            if (string.IsNullOrEmpty(comp.runtimeID))
+                comp.runtimeID = System.Guid.NewGuid().ToString();
+
+            comp.SetCardData(runtime);
+        }
+    }
 }

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public static class WorldState
 {
-    public static Vector2 playerMapPosition = Vector2.zero;
+    public static int CurrentNodeID = 1001;
 }

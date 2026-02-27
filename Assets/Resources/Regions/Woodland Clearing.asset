@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543da86624ee9cf42b9e07f76533c95e, type: 3}
+  m_Name: Woodland Clearing
+  m_EditorClassIdentifier: Assembly-CSharp::SORegion
+  nodeID: 1001
+  locationType: Woodland
+  locationName: Clearing
+  description: 
+  possibleFinds:
+  - resource: {fileID: 11400000, guid: 778ef1c44b9e10043baa4bb8323c2d5a, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 0
+    winter: 0.3
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 683aac2905e0d144b8de0db81f9f22bd, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 43a305e6475dd0b49808151157185c52, type: 2}
+    toolEssential: 1
+    winter: 0.3
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: d274991f0cc6f2d4cb7f73b7236ba3d4, type: 2}
+    chance: 0.5
+    requiredTool: {fileID: 11400000, guid: 394e622314d3e7e4e848e03a16d11ffa, type: 2}
+    toolEssential: 1
+    winter: 0
+    spring: 0.5
+    summer: 1
+    autumn: 1
+    harvestMinutes: 60
+    notes: 
+  - resource: {fileID: 11400000, guid: 54642fced6aa4634cbe79a0ce4d548a0, type: 2}
+    chance: 0.7
+    requiredTool: {fileID: 0}
+    toolEssential: 0
+    winter: 0.3
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
+  - resource: {fileID: 11400000, guid: 1c0e7a0f71c375b46b936c680c3b5ed6, type: 2}
+    chance: 0.5
+    requiredTool: {fileID: 11400000, guid: 394e622314d3e7e4e848e03a16d11ffa, type: 2}
+    toolEssential: 1
+    winter: 0
+    spring: 0.5
+    summer: 1
+    autumn: 0.5
+    harvestMinutes: 15
+    notes: 
+  edges:
+  - destination: {fileID: 11400000}
+    travelTime: 0
+  - destination: {fileID: 11400000, guid: 35b21f7f848693843b6dc17fd29d6353, type: 2}
+    travelTime: 15
+  - destination: {fileID: 11400000, guid: 2716fbd8e6231a6449078f95a2dd9d1c, type: 2}
+    travelTime: 30
+  - destination: {fileID: 11400000, guid: 0ab9b0f91c8456d4996d60cc5a23c9a0, type: 2}
+    travelTime: 45
+  - destination: {fileID: 11400000, guid: aadb42bc60e006b46bb4c66232723f65, type: 2}
+    travelTime: 60
+  - destination: {fileID: 11400000, guid: 0339c2c3690175541aad65ef15677f60, type: 2}
+    travelTime: 90
+  - destination: {fileID: 11400000, guid: 8641627f43a80ff4bbfb3a6c69c77f60, type: 2}
+    travelTime: 120
