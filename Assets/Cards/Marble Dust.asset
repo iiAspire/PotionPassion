@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Marble Dust
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Marble Dust
-  baseName: Marble
+  baseName: Marble Dust
   Icon: {fileID: -220115653730760585, guid: f01a4ab5a2e01d648bf60c4837de9a64, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes: []
+  canBeSold: 0

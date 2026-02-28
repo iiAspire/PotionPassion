@@ -25,13 +25,13 @@ public class DebugRecipeInjector : MonoBehaviour
             {
                 "Corn",
                 "Chia",
-                "Sandstone"
+                "Sandstone Dust"
             },
             ResultCard = testCard
         };
 
         recipeDatabase.AddCombo(testCombo);
 
-        Debug.Log("🧪 Deterministic Test Spell injected (Corn + Chia + Sandstone)");
+        Debug.Log("🧪 Deterministic Test Spell injected (Corn + Chia + Sandstone Dust)");
     }
 }

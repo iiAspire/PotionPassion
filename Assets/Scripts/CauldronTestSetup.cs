@@ -33,7 +33,7 @@ public class CauldronTestSetup : MonoBehaviour
         SpellCombo testCombo = new SpellCombo
         {
             SpellName = "TestSpell",
-            Ingredients = new List<string> { "Corn", "Chia", "Sandstone" },
+            Ingredients = new List<string> { "Corn", "Chia", "Sandstone Dust" },
             ResultCard = testCard
         };
 

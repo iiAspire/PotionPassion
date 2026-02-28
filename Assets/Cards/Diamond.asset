@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Diamond
   baseName: Diamond
   Icon: {fileID: 140246509362101663, guid: 49016d5832f14eb46af6ac82bf9d636b, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes:
   - foldout: 0
     tool: 4
@@ -53,3 +53,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: e3826daf32f7ac54999979acd97eab9e, type: 3}
       quantity: 1
       note: 
+  canBeSold: 1

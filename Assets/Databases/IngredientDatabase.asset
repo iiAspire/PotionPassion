@@ -17,12 +17,8 @@ MonoBehaviour:
   - Spring Water
   - Sea Water
   - Well Water
-  - Infused Water
-  - Blessed Water
-  - Angelic Water
   - Lunar Water
-  - Dark Water
-  - Light Water
+  - Blessed Water
   Craftings:
   - Unknown Crafting
   - Straw
@@ -102,78 +98,24 @@ MonoBehaviour:
     - Chips
     - Lump
     - Hunk
-  - MetalName: Gold
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Silver
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Copper
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Brass
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Bronze
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Zinc
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Aluminium
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Platinum
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Titanium
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Lead
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Tin
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MetalName: Iron
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
+  - MetalName: Brass Dust
+    Parts: []
+  - MetalName: Bronze Dust
+    Parts: []
+  - MetalName: Zinc Dust
+    Parts: []
+  - MetalName: Aluminium Dust
+    Parts: []
+  - MetalName: Platinum Dust
+    Parts: []
+  - MetalName: Titanium Dust
+    Parts: []
+  - MetalName: Lead Dust
+    Parts: []
+  - MetalName: Tin Dust
+    Parts: []
+  - MetalName: Iron Dust
+    Parts: []
   AnimalIngredients:
   - AnimalName: Toad
     Parts:
@@ -281,80 +223,47 @@ MonoBehaviour:
     - Tail
     - Fur
   MineralIngredients:
-  - MineralName: Dirt
-    Parts:
-    - Crossroad
-    - Graveyard
-    - Footprint
-    - Farm
+  - MineralName: Farmyard Dirt
+    Parts: []
   - MineralName: Coral
     Parts:
     - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MineralName: Sandstone
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
+  - MineralName: Sandstone Dust
+    Parts: []
   - MineralName: Quartz
     Parts:
     - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MineralName: Granite
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MineralName: Marble
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MineralName: Limestone
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
-  - MineralName: Lodestone
-    Parts:
-    - Lump
-    - Hunk
+  - MineralName: Granite Dust
+    Parts: []
+  - MineralName: Marble Dust
+    Parts: []
+  - MineralName: Limestone Dust
+    Parts: []
+  - MineralName: Lodestone Dust
+    Parts: []
   - MineralName: Sapphire
     Parts:
     - Dust
-    - Chips
   - MineralName: Diamond
     Parts:
     - Dust
-    - Chips
   - MineralName: Ruby
     Parts:
     - Dust
-    - Chips
-  - MineralName: Haematite
-    Parts:
-    - Dust
-    - Chips
-    - Lump
-    - Hunk
+  - MineralName: Haematite Dust
+    Parts: []
   - MineralName: Emerald
     Parts:
     - Dust
-    - Chips
   - MineralName: Amethyst
     Parts:
     - Dust
-    - Chips
-    - Lump
-    - Hunk
+  - MineralName: Footprint Dirt
+    Parts: []
+  - MineralName: Graveyard Dirt
+    Parts: []
+  - MineralName: Crossroad Dirt
+    Parts: []
   BotanicalIngredients:
   - BotanicalName: Unknown Wood
     Parts:
@@ -506,11 +415,6 @@ MonoBehaviour:
   - BotanicalName: Chia
     Parts:
     - Seed
-    - Oil
-  - BotanicalName: Labdanum
-    Parts:
-    - Petal
-    - Leaf
     - Oil
   - BotanicalName: Pleated Ink Cap
     Parts:

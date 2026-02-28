@@ -47,4 +47,14 @@ MonoBehaviour:
     autumn: 1
     harvestMinutes: 60
     notes: 
+  - resource: {fileID: 11400000, guid: 5615f6fbbe4e5524b846e9b4a42ec3e6, type: 2}
+    chance: 1
+    requiredTool: {fileID: 11400000, guid: 1d25bef84d1cfb34fa69bf2e93d47ce1, type: 2}
+    toolEssential: 0
+    winter: 1
+    spring: 1
+    summer: 1
+    autumn: 1
+    harvestMinutes: 15
+    notes: 
   edges: []

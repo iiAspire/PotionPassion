@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Sandstone Dust
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Sandstone Dust
-  baseName: Sandstone
+  baseName: Sandstone Dust
   Icon: {fileID: 1579551378548610417, guid: b127591b8330cc44cbdd3458e90afdf4, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes: []
+  canBeSold: 0

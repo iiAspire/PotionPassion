@@ -160,14 +160,17 @@ public class CardPersistenceManager : MonoBehaviour
         if (GameData.Instance == null)
             return;
 
-        var existing = GameData.Instance.savedCards;
+        // Prevent saving during scene transition before parents bind
+        if (!canSave)
+            return;
 
-        // Keep previous data for containers not present in this scene
+        // ---------- Preserve data for containers NOT present in this scene ----------
+
         List<SavedCardState> preserved = new List<SavedCardState>();
 
         bool HasParent(Transform t) => t != null && t.gameObject != null;
 
-        foreach (var s in existing)
+        foreach (var s in GameData.Instance.savedCards)
         {
             switch (s.container)
             {
@@ -191,6 +194,16 @@ public class CardPersistenceManager : MonoBehaviour
                     if (!HasParent(saleInventoryParent)) preserved.Add(s);
                     break;
 
+                case CardContainer.PlanterOutput:
+                    // preserve if no planters in this scene
+                    if (FindObjectsOfType<PlanterSlot>().Length == 0)
+                        preserved.Add(s);
+                    break;
+
+                case CardContainer.Workbench:
+                    preserved.Add(s); // always preserved here
+                    break;
+
                 default:
                     preserved.Add(s);
                     break;
@@ -199,7 +212,8 @@ public class CardPersistenceManager : MonoBehaviour
 
         GameData.Instance.savedCards.Clear();
 
-        // Save what exists in THIS scene
+        // ---------- Save cards from parents that exist ----------
+
         if (HasParent(playerInventoryParent))
             SaveFromParent(playerInventoryParent, CardContainer.PlayerInventory);
 
@@ -215,7 +229,65 @@ public class CardPersistenceManager : MonoBehaviour
         if (HasParent(saleInventoryParent))
             SaveFromParent(saleInventoryParent, CardContainer.SaleInventory);
 
-        // Restore preserved data
+        // ---------- Save planter outputs + states ----------
+
+        var plantersInScene = FindObjectsOfType<PlanterSlot>();
+
+        if (plantersInScene.Length > 0)
+        {
+            foreach (var planter in plantersInScene)
+                SavePlanterOutput(planter.outputAnchor, planter.planterID);
+
+            GameData.Instance.savedPlanters.Clear();
+
+            foreach (var planter in plantersInScene)
+            {
+                if (!planter.IsActive)
+                    continue;
+
+                GameData.Instance.savedPlanters.Add(new SavedPlanterState
+                {
+                    planterID = planter.planterID,
+                    plantedCardName = planter.CurrentSeedName,
+                    remainingGrowTime = planter.RemainingTime,
+                    isActive = true,
+                    savedAtGameMinutes = TimeManager.TotalGameMinutes
+                });
+            }
+        }
+
+        // ---------- Save cauldron brewing state ----------
+
+        var cauldron = FindObjectOfType<CauldronWorkbench>();
+
+        if (cauldron != null)
+        {
+            if (cauldron.IsBrewing)
+            {
+                GameData.Instance.savedCauldron = new SavedCauldronBrew
+                {
+                    isBrewing = true,
+                    spellName = cauldron.ActiveSpellName,
+                    finishAtGameMinutes = cauldron.FinishAtGameMinutes,
+                    fireWasOn = cauldron.FireWasOn,
+                    totalBrewTime = cauldron.TotalBrewTime
+                };
+            }
+            else
+            {
+                GameData.Instance.savedCauldron = null;
+            }
+        }
+        // If cauldron not present → leave existing savedCauldron untouched
+
+        // ---------- Save drying rack ----------
+
+        var rack = FindObjectOfType<DryingRackTimer>();
+        if (rack != null)
+            rack.Save();
+
+        // ---------- Restore preserved cards ----------
+
         GameData.Instance.savedCards.AddRange(preserved);
     }
 
@@ -357,6 +429,31 @@ public class CardPersistenceManager : MonoBehaviour
     //        GameData.Instance.savedCards.AddRange(preservedWorkbenchCards);
     //    }
     //}
+
+    void SavePlanters()
+    {
+        var plantersInScene = FindObjectsOfType<PlanterSlot>();
+
+        if (plantersInScene.Length == 0)
+            return;
+
+        GameData.Instance.savedPlanters.Clear();
+
+        foreach (var planter in plantersInScene)
+        {
+            if (!planter.IsActive)
+                continue;
+
+            GameData.Instance.savedPlanters.Add(new SavedPlanterState
+            {
+                planterID = planter.planterID,
+                plantedCardName = planter.CurrentSeedName,
+                remainingGrowTime = planter.RemainingTime,
+                isActive = true,
+                savedAtGameMinutes = TimeManager.TotalGameMinutes
+            });
+        }
+    }
 
     void SavePlanterOutput(Transform outputAnchor, string planterID)
     {

@@ -53,8 +53,6 @@ MonoBehaviour:
   - key: 8
     icon: {fileID: 21300000, guid: 0444d31f14457f346b517cd60ffbe6e7, type: 3}
   partIcons:
-  - key: 1
-    icon: {fileID: 21300000, guid: 9c820bd05f4b6dc4caee8794961142c3, type: 3}
   - key: 2
     icon: {fileID: 21300000, guid: 011dc1e35bd62ea40ad5b5d22f72c9fb, type: 3}
   - key: 3
@@ -119,6 +117,8 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: e3826daf32f7ac54999979acd97eab9e, type: 3}
   - key: 33
     icon: {fileID: 21300000, guid: e3826daf32f7ac54999979acd97eab9e, type: 3}
+  - key: 1
+    icon: {fileID: 21300000, guid: 9c820bd05f4b6dc4caee8794961142c3, type: 3}
   quantityIcons:
   - key: 1
     icon: {fileID: -5465646382484160345, guid: 9223cd75c8f99974495467b7cdb93753, type: 3}

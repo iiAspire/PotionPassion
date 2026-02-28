@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Moss
   baseName: Moss
-  Icon: {fileID: 0}
+  Icon: {fileID: 1094580214399371362, guid: a77c5d5d8c687fc419537a06e2b7ab46, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes:
   - foldout: 0
     tool: 1
@@ -81,3 +81,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

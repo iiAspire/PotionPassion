@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Giant Puffball Cap
   baseName: Giant Puffball
-  Icon: {fileID: -4044480418912946000, guid: 8ff32eb144939e9429fd5ab9a421734d, type: 3}
+  Icon: {fileID: -4044480418912946000, guid: 0374a019829104446bf41d5ae2a5ab6b, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes:
   - foldout: 0
     tool: 2
@@ -57,3 +57,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

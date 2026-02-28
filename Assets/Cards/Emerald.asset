@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Emerald
   baseName: Emerald
   Icon: {fileID: 8663028985111519216, guid: 3ee745f4087d2df4aa3fd1e76527ddab, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes:
   - foldout: 0
     tool: 4
@@ -53,3 +53,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: e3826daf32f7ac54999979acd97eab9e, type: 3}
       quantity: 1
       note: 
+  canBeSold: 1

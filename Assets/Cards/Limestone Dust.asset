@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Limestone Dust
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Limestone Dust
-  baseName: Limestone
+  baseName: Limestone Dust
   Icon: {fileID: 336421467897917122, guid: e18acadc282cc2d41b77df5bfeac8cf5, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 0}
   processingRecipes: []
+  canBeSold: 0
