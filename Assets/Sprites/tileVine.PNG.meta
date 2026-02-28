@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 23c4464f4fecc5a458d4423884aeb3f4
+guid: e3f845c7c408d8945a383a0e208a2e91
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4070370390695691284
-    second: tileBrass_0
-  - first:
-      213: 2016345091391969089
-    second: tileBrass_1
+      213: 1314513278436507812
+    second: tileVine_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileBrass_0
+      name: tileVine_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 46
-        width: 6
-        height: 7
+        x: 34
+        y: 11
+        width: 399
+        height: 435
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4144fa9fd4cdc7830800000000000000
-      internalID: 4070370390695691284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileBrass_1
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 4
-        width: 119
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14755057d2f7bfb10800000000000000
-      internalID: 2016345091391969089
+      spriteID: 4a00eb5bcd61e3210800000000000000
+      internalID: 1314513278436507812
       vertices: []
       indices: 
       edges: []
@@ -176,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tileBrass_0: 4070370390695691284
-      tileBrass_1: 2016345091391969089
+      tileVine_0: 1314513278436507812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

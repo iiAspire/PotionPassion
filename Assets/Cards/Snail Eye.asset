@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11605aec2b016e746bb49793d2732d74, type: 3}
   m_Name: Snail Eye
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Snail Oil
+  cardName: Snail Eye
   baseName: Snail
   Icon: {fileID: -4793973417620168645, guid: 849f375b71db1a145af82b73c053dbcc, type: 3}
   cauldronContentsSprite: {fileID: 0}
@@ -24,7 +24,7 @@ MonoBehaviour:
   itemType: 1
   processedType: 0
   partType: 0
-  partIcon: {fileID: 0}
+  partIcon: {fileID: 21300000, guid: 011dc1e35bd62ea40ad5b5d22f72c9fb, type: 3}
   quantityType: 0
   quantityIcon: {fileID: 0}
   Toxin: 0

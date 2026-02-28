@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11605aec2b016e746bb49793d2732d74, type: 3}
-  m_Name: Brass Dust
+  m_Name: Reed
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Brass Dust
-  baseName: Brass Dust
-  Icon: {fileID: 21300000, guid: 23c4464f4fecc5a458d4423884aeb3f4, type: 3}
+  cardName: Reed
+  baseName: Reed
+  Icon: {fileID: 6068055374571183166, guid: 5c27766cf96b13143b2824d82091b21f, type: 3}
   cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
-  cardColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
+  cardColor: {r: 0.9, g: 0.5, b: 0.1, a: 1}
   description: 
   cardPrefab: {fileID: 5039315531124794835, guid: eab833ad463727a42a50662a8e3d3e97, type: 3}
   processedIcon: {fileID: 0}
-  itemType: 4
+  itemType: 10
   processedType: 0
   partType: 0
-  partIcon: {fileID: 21300000, guid: e3826daf32f7ac54999979acd97eab9e, type: 3}
+  partIcon: {fileID: 0}
   quantityType: 0
   quantityIcon: {fileID: 0}
   Toxin: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   Umami: 0
   Edible: 0
   Incinerates: 0
-  Smoulders: 0
+  Smoulders: 1
   shelfVisuals: {fileID: 0}
   processingRecipes: []
-  canBeSold: 1
+  canBeSold: 0

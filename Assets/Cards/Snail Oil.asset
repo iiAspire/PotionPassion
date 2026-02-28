@@ -24,7 +24,7 @@ MonoBehaviour:
   itemType: 1
   processedType: 0
   partType: 0
-  partIcon: {fileID: 0}
+  partIcon: {fileID: 21300000, guid: 9c820bd05f4b6dc4caee8794961142c3, type: 3}
   quantityType: 0
   quantityIcon: {fileID: 0}
   Toxin: 0

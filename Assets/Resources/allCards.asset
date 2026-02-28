@@ -310,4 +310,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37cf3eb929ad9a842b0cff259a699e58, type: 2}
   - {fileID: 11400000, guid: 12d8c6c2e2eb18541a20dd5656f5dd14, type: 2}
   - {fileID: 11400000, guid: 5615f6fbbe4e5524b846e9b4a42ec3e6, type: 2}
+  - {fileID: 11400000, guid: 170f7cc66a70505449fc2154323b2da2, type: 2}
+  - {fileID: 11400000, guid: a2ebcad0b3b81a449a6f091e4431abc8, type: 2}
+  - {fileID: 11400000, guid: d823b7490bb190647874382c6b75c471, type: 2}
+  - {fileID: 11400000, guid: 187f199ff3b1478499804cbdc7266b60, type: 2}
+  - {fileID: 11400000, guid: ceb107957f13ec64ea9d3edaae10e09f, type: 2}
+  - {fileID: 11400000, guid: 16c4a85d398df17479e63f1e10a10251, type: 2}
   cardStackPrefab: {fileID: 0}
