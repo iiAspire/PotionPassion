@@ -10,7 +10,8 @@ public enum CardContainer
     CauldronOutput,
     PlanterOutput,
     Workbench,
-    SaleInventory
+    SaleInventory,
+    Storeroom
 }
 
 [Serializable]
@@ -27,6 +28,9 @@ public class SavedCardState
     public string stackKey;       // unique key for the stack within its container
     public string planterID;
     public string workbenchTool;
+    public bool storedInStoreroom;
+    public int storeroomShelfIndex;
+    public int storeroomOrderInShelf;
 
     // Core types
     public ItemType itemType;

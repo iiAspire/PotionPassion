@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Hawthorn Leaf
   baseName: Hawthorn
   Icon: {fileID: -5387686555336622569, guid: 50d00c90eba590948abd93a6e1010a60, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 86aa1372debe5104c908a0bd024e36f3, type: 2}
   processingRecipes: []
+  canBeSold: 0

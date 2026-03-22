@@ -14,6 +14,7 @@ public class CardPersistenceManager : MonoBehaviour
     public Transform recipeHoldingParent;    // the tray near the cauldron
     public Transform cauldronOutputParent;   // where brew result sits
     public Transform saleInventoryParent;
+    public Transform storeroomParent;
 
     [Header("Lookup")]
     public CardManager cardManager;
@@ -228,6 +229,9 @@ public class CardPersistenceManager : MonoBehaviour
 
         if (HasParent(saleInventoryParent))
             SaveFromParent(saleInventoryParent, CardContainer.SaleInventory);
+
+        if (HasParent(storeroomParent))
+            SaveFromParent(storeroomParent, CardContainer.Storeroom);
 
         // ---------- Save planter outputs + states ----------
 
@@ -513,6 +517,20 @@ public class CardPersistenceManager : MonoBehaviour
 
             Transform t = card.transform;
 
+            int storeroomShelfIndex = -1;
+
+            if (container == CardContainer.Storeroom)
+            {
+                for (int i = 0; i < storeroomParent.childCount; i++)
+                {
+                    if (card.transform.IsChildOf(storeroomParent.GetChild(i)))
+                    {
+                        storeroomShelfIndex = i;
+                        break;
+                    }
+                }
+            }
+
             CardData data = card.CardData;
 
             // 🔽 NEW: figure out if this card is part of a CardStack (for PlayerInventory)
@@ -568,6 +586,10 @@ public class CardPersistenceManager : MonoBehaviour
 
                 container = container,
                 orderInParent = order++,
+
+                storedInStoreroom = card.storedInStoreroom,
+                storeroomShelfIndex = card.storeroomShelfIndex,
+                storeroomOrderInShelf = card.storeroomOrderInShelf,
 
                 // 🔽 NEW: stack data
                 isStacked = isStacked,
@@ -819,6 +841,7 @@ public class CardPersistenceManager : MonoBehaviour
             if (child.GetComponent<CardComponent>() != null ||
                 child.GetComponent<CardStack>() != null)
             {
+                Debug.Log("Destroying child: " + child.name);
                 Destroy(child.gameObject);
             }
             // Anything else (timer UI, contents image, bubble FX etc.)
@@ -850,6 +873,8 @@ public class CardPersistenceManager : MonoBehaviour
                 return saleInventoryParent;
             case CardContainer.Workbench:
                 return null;
+            case CardContainer.Storeroom:
+                return storeroomParent;
         }
         return null;
     }
@@ -929,7 +954,15 @@ public class CardPersistenceManager : MonoBehaviour
         }
 
         comp.runtimeID = state.runtimeID;
+        comp.storedInStoreroom = state.storedInStoreroom;
+        comp.storeroomShelfIndex = state.storeroomShelfIndex;
+        comp.storeroomOrderInShelf = state.storeroomOrderInShelf;
         comp.SetCardData(runtime, true);
+
+        if (comp.storedInStoreroom)
+        {
+            comp.gameObject.SetActive(false);
+        }
 
         // 🔽 NEW: if we're spawning into a stack, register it
         if (targetStack != null)

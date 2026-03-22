@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Cherry Blossom Petal
   baseName: Cherry Blossom
   Icon: {fileID: -3755747844382420093, guid: 40e3625726b7b9d4990a7d7f96b9f147, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 86aa1372debe5104c908a0bd024e36f3, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 0
@@ -57,3 +57,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: d4fc0facf1772fc409cc16eb6c5e1bc8, type: 3}
       quantity: 1
       note: 
+  canBeSold: 0

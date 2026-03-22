@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Newt
   baseName: Newt
   Icon: {fileID: -6019451915490556634, guid: 76180eb4ab687854db2a1a30d98e5915, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e999bac007ce860479390caae28bb5d8, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 2
@@ -73,3 +73,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 9b7afa97fe210a147a93161c718e2b89, type: 3}
       quantity: 1
       note: 
+  canBeSold: 0

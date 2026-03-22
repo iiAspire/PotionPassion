@@ -31,15 +31,15 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Protection
     Ingredients:
-    - Angels Bonnet Stem
-    - Rat Skin
-    - Lunar Water
-    - Sapphire Dust
+    - Death Cap Cap
+    - Rabbit Tail
+    - Blessed Water
+    - Haematite Dust
     SpellLevel: 0
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Rain
+    Element: Fire
     Tool: 
     ResultCard: {fileID: 11400000, guid: 86c378c7ee0e53e4d9cbec299ce5af54, type: 2}
     ResultSprite: {fileID: 0}
@@ -48,10 +48,10 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Success
     Ingredients:
-    - Newt Tail
-    - Sea Water
-    - Lodestone Dust
-    - Copper Thread
+    - Snail Shell
+    - Well Water
+    - Diamond Dust
+    - Wool
     SpellLevel: 0
     Intimate: 
     Spiritual: Soul
@@ -65,12 +65,12 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Insomnia
     Ingredients:
-    - Iron Dust
-    - Hawthorn Bark
-    - Crow Tail
-    - Blessed Water
+    - Titanium Dust
+    - Angels Bonnet Gills
+    - Cat Skin
+    - Sea Water
     SpellLevel: 0
-    Intimate: Saliva
+    Intimate: Phlegm
     Spiritual: 
     Astrological: 
     Element: 
@@ -82,13 +82,13 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Happy Home
     Ingredients:
-    - Platinum Dust
-    - Toad Leg
-    - Spring Water
-    - Vine
+    - Aluminium Dust
+    - Crow Leg
+    - Lunar Water
+    - String
     SpellLevel: 0
     Intimate: 
-    Spiritual: Mind
+    Spiritual: Aura
     Astrological: 
     Element: 
     Tool: 
@@ -99,12 +99,12 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Health
     Ingredients:
-    - Yellow Morel Stem
-    - Worm Oil
-    - Well Water
-    - Graveyard Dirt
+    - Bamboo Leaf
+    - Toad Oil
+    - Spring Water
+    - Granite Dust
     SpellLevel: 0
-    Intimate: Sweat
+    Intimate: Skin
     Spiritual: 
     Astrological: 
     Element: 
@@ -116,14 +116,14 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Luck
     Ingredients:
-    - Nightshade Petal
-    - Granite Dust
-    - Spider Silk
+    - Shaggy Ink Cap Gills
+    - Marble Dust
+    - Reed
     SpellLevel: 0
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Wind
+    Element: Fire
     Tool: 
     ResultCard: {fileID: 11400000, guid: 8676ad525ad816548963b8effaeb5aea, type: 2}
     ResultSprite: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Locator
     Ingredients:
-    - Zinc Dust
-    - Bamboo Bark
-    - Reed
+    - Tin Dust
+    - Hawthorn Branch
+    - Gold Thread
     SpellLevel: 0
-    Intimate: Sweat
+    Intimate: Saliva
     Spiritual: 
     Astrological: 
     Element: 
@@ -148,16 +148,16 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Cleansing
     Ingredients:
-    - Oak Woodchips
-    - Birch Shavings
-    - Rat Leg
+    - Birch Bark
+    - Sunflower Leaf
+    - Worm Blood
     - Lunar Water
-    - Granite Dust
+    - Lodestone Dust
     SpellLevel: 1
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Wind
+    Element: Water
     Tool: Candle
     ResultCard: {fileID: 11400000, guid: c5bfc8ef89e44bb42bf7563322e6317d, type: 2}
     ResultSprite: {fileID: 0}
@@ -166,14 +166,14 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Justice
     Ingredients:
-    - Crow Beak
-    - Fly Oil
-    - Spring Water
-    - Ruby Dust
-    - Straw
+    - Toad Oil
+    - Cat Blood
+    - Blessed Water
+    - Graveyard Dirt
+    - Vine
     SpellLevel: 1
     Intimate: 
-    Spiritual: Spirit
+    Spiritual: Ether
     Astrological: 
     Element: 
     Tool: Paper
@@ -184,13 +184,13 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Divination
     Ingredients:
-    - Bronze Dust
-    - Sesame Seed
-    - Pleated Ink Cap Cap
-    - Mouse Tooth
-    - Blessed Water
+    - Iron Dust
+    - Common Puffball Wart
+    - Pine Woodchips
+    - Snail Blood
+    - Sea Water
     SpellLevel: 1
-    Intimate: Saliva
+    Intimate: Skin
     Spiritual: 
     Astrological: 
     Element: 
@@ -202,11 +202,11 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Persuasion
     Ingredients:
-    - Tin Dust
-    - Cat Leg
-    - Beetle Wing
-    - Sea Water
-    - Silver Thread
+    - Brass Dust
+    - Mouse Oil
+    - Newt Tail
+    - Well Water
+    - Wool
     SpellLevel: 1
     Intimate: 
     Spiritual: Spirit
@@ -220,13 +220,13 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Healing
     Ingredients:
-    - Beech Bark
-    - Snail Eye
-    - Bat Talon
-    - Well Water
-    - String
+    - Nightshade Petal
+    - Rat Blood
+    - Fly Wing
+    - Spring Water
+    - Reed
     SpellLevel: 1
-    Intimate: Sweat
+    Intimate: Oils
     Spiritual: 
     Astrological: 
     Element: 
@@ -238,15 +238,15 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Banishing
     Ingredients:
-    - Bullwort Head
-    - Hawthorn Leaf
+    - Vervain Petal
+    - Angels Bonnet Gills
     - Marble Dust
-    - Gold Thread
+    - Silver Thread
     SpellLevel: 1
     Intimate: 
     Spiritual: 
     Astrological: 
-    Element: Water
+    Element: Wax
     Tool: Doll
     ResultCard: {fileID: 11400000, guid: eccdba81dd08bcc4f916464418d4ffbe, type: 2}
     ResultSprite: {fileID: 0}
@@ -255,12 +255,12 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Weather
     Ingredients:
-    - Aluminium Dust
-    - Cherry Blossom Nectar
-    - Yellow Cap Gills
-    - Reed
+    - Bronze Dust
+    - Musk Mallow Petal
+    - moss
+    - Copper Thread
     SpellLevel: 1
-    Intimate: Blood
+    Intimate: Sweat
     Spiritual: 
     Astrological: 
     Element: 
@@ -272,16 +272,16 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Necromancy
     Ingredients:
-    - Cherry Blossom Woodchips
-    - Daisy Pollen
-    - Newt Tail
+    - Shaggy Ink Cap Gills
+    - Pine Bark
     - Toad Leg
-    - Well Water
-    - Sandstone Dust
+    - Newt Oil
+    - Sea Water
+    - Crossroad Dirt
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Earth
+    Astrological: Mars
     Element: 
     Tool: Pentacle
     ResultCard: {fileID: 11400000, guid: 8ac5d22aeea3d404091f37eb688388f2, type: 2}
@@ -291,12 +291,12 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Flying
     Ingredients:
-    - Snail Eye
-    - Beetle Leg
-    - Sea Water
-    - Crossroad Dirt
-    - Wool
-    - Silver Thread
+    - Mouse Eye
+    - Bat Blood
+    - Lunar Water
+    - Diamond Dust
+    - Gold Thread
+    - Vine
     SpellLevel: 2
     Intimate: 
     Spiritual: 
@@ -311,15 +311,15 @@ MonoBehaviour:
   - SpellName: Love
     Ingredients:
     - Titanium Dust
-    - Foxglove Petal
-    - Fly Agaric Gills
-    - Crow Beak
-    - Cat Oil
-    - Blessed Water
+    - Rose Nectar
+    - Giant Puffball Cap
+    - Crow Talon
+    - Fly Eye
+    - Well Water
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Pluto
+    Astrological: Earth
     Element: 
     Tool: Pendant
     ResultCard: {fileID: 11400000, guid: a85e444624dde4e4d858ec111bc99e10, type: 2}
@@ -329,16 +329,16 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Psychic Power
     Ingredients:
-    - Tin Dust
-    - Mouse Leg
-    - Rat Blood
+    - Aluminium Dust
+    - Cat Fur
+    - Rat Leg
     - Spring Water
-    - Reed
-    - Gold Thread
+    - Straw
+    - Spider Silk
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Neptune
+    Astrological: Saturn
     Element: 
     Tool: Mirror
     ResultCard: {fileID: 11400000, guid: 6dd01123d9cd3324db4c68f67d143075, type: 2}
@@ -348,16 +348,16 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Spirit Summoning
     Ingredients:
-    - Vervain Petal
-    - moss
-    - Bat Leg
-    - Fly Oil
-    - Lunar Water
-    - Copper Thread
+    - Musk Mallow Pollen
+    - Cherry Blossom Petal
+    - Snail Blood
+    - Worm Blood
+    - Blessed Water
+    - Silver Thread
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mars
+    Astrological: Neptune
     Element: 
     Tool: Book
     ResultCard: {fileID: 11400000, guid: 4887fcef371489d4d8a6d94469c7a525, type: 2}
@@ -367,15 +367,15 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Youth
     Ingredients:
-    - Pleated Ink Cap Gills
-    - Hawthorn Woodchips
-    - Haematite Dust
-    - Straw
-    - String
+    - Common Puffball Wart
+    - Black Morel Stem
+    - Lodestone Dust
+    - Wool
+    - Copper Thread
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Mars
+    Astrological: Uranus
     Element: 
     Tool: Amulet
     ResultCard: {fileID: 11400000, guid: 488123624fe0605408f9c3354cd49541, type: 2}
@@ -385,15 +385,15 @@ MonoBehaviour:
     ResultType: 5
   - SpellName: Fertility
     Ingredients:
-    - Lead Dust
-    - Yellow Cap Cap
-    - Bullwort Stem
-    - Spider Silk
-    - Vine
+    - Platinum Dust
+    - Nightshade Petal
+    - grass
+    - Reed
+    - String
     SpellLevel: 2
     Intimate: 
     Spiritual: 
-    Astrological: Sun
+    Astrological: Neptune
     Element: 
     Tool: Bell
     ResultCard: {fileID: 11400000, guid: 575f0501616060c4fadaa48b3cb8219d, type: 2}

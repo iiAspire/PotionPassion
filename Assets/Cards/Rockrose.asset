@@ -39,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 255ac0711acdccd4587d18e9262537f5, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 2
@@ -58,3 +57,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 51857a42e5544c54caccaca7b1b743ac, type: 3}
       quantity: 4
       note: 
+  canBeSold: 0

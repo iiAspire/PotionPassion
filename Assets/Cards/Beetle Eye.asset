@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Beetle Eye
   baseName: Beetle
   Icon: {fileID: -4738757419558046292, guid: c39a35dbb2d8063419ff3a2b9329de62, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: a22e9e0fb01b76b4194be59822a47394, type: 2}
   processingRecipes: []
+  canBeSold: 0

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ShopShelfManager : MonoBehaviour
 {
+    public static ShopShelfManager Instance { get; private set; }
+
     [Header("References")]
     [SerializeField] private Transform saleInventoryRoot;
     [SerializeField] private Transform shelvesRoot;
@@ -12,9 +14,71 @@ public class ShopShelfManager : MonoBehaviour
 
     [SerializeField] private GameObject shelfItemPrefab;
 
+    [Header("Shop Hours")]
+    [SerializeField] private float closeHour = 18f;
+    
+    public bool IsShopOpen { get; private set; }
+    private bool closedForToday;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
+        if (CustomerScheduler.Instance.ShopIsOpen)
+        {
+            OpenShop();
+        }
+        else
+        {
+            CloseShop();
+        }
+
         StartCoroutine(WaitAndPopulate());
+    }
+
+    private void Update()
+    {
+        if (TimeManager.Instance == null)
+            return;
+
+        float time = TimeManager.Instance.Calendar.timeOfDay;
+
+        // Reset the daily close flag after midnight / early morning
+        if (time < 1f)
+            closedForToday = false;
+
+        if (IsShopOpen && !closedForToday && time >= closeHour)
+        {
+            CloseShop();
+            closedForToday = true;
+
+            if (CardClickLog.Instance != null)
+                CardClickLog.Instance.Log("The shop is now closed.");
+        }
+    }
+
+    public void OpenShop()
+    {
+        if (IsShopOpen)
+            return;
+
+        IsShopOpen = true;
+        //PopulateShelves();
+        CustomerScheduler.Instance?.SetShopOpen(true);
+    }
+
+    public void CloseShop()
+    {
+        if (!IsShopOpen)
+            return;
+
+        IsShopOpen = false;
+        //ClearShelves();
+        CustomerScheduler.Instance?.SetShopOpen(false);
+        ShopCustomerController.Instance?.CustomerServed();
     }
 
     private void CacheShelfGrids()
@@ -84,7 +148,7 @@ public class ShopShelfManager : MonoBehaviour
             rt.localRotation = Quaternion.identity;
 
             ShelfItemView view = viewGO.GetComponent<ShelfItemView>();
-            view.Bind(card);
+            view.Bind(card, null);
 
             // Move to next shelf (round-robin)
             shelfIndex = (shelfIndex + 1) % shelfGridRoots.Count;

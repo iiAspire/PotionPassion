@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Pine Needle
   baseName: Pine
   Icon: {fileID: 112688338590282090, guid: 3c8244aae68d24b449ea6dde7efa9c45, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 1f695cbc714a21c44adfe73c758ee57d, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 1
@@ -57,3 +57,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

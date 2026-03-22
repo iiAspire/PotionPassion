@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Beech Shavings
   baseName: Beech
   Icon: {fileID: 4095985770769632543, guid: 41fac0bd1998fda49b6776d607c12e82, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e7cdd59922cfc504a878ed59498c44b2, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 0
@@ -49,3 +49,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

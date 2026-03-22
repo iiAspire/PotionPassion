@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Cherry Blossom Nectar
   baseName: Cherry Blossom
   Icon: {fileID: -3755747844382420093, guid: 40e3625726b7b9d4990a7d7f96b9f147, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: aa92f202c700eff4bb93c3f4a7e516cf, type: 2}
   processingRecipes: []
+  canBeSold: 0

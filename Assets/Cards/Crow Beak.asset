@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Crow Beak
   baseName: Crow
   Icon: {fileID: -5204401916478889640, guid: 55c7dbf80192208429ba8987a57257a2, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 1f695cbc714a21c44adfe73c758ee57d, type: 2}
   processingRecipes: []
+  canBeSold: 0

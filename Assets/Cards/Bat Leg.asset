@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Bat Leg
   baseName: Bat
   Icon: {fileID: -4555425846676302905, guid: 4b6560912d696ce41b5ac653caa40197, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e999bac007ce860479390caae28bb5d8, type: 2}
   processingRecipes: []
+  canBeSold: 0

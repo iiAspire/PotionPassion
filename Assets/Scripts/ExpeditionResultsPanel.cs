@@ -24,6 +24,8 @@ public class ExpeditionResultsPanel : MonoBehaviour
 
     public void Render(ExpeditionResult r)
     {
+        result = r;
+
         if (r == null)
         {
             if (headerText) headerText.text = "RESULTS";
@@ -103,15 +105,27 @@ public class ExpeditionResultsPanel : MonoBehaviour
             return;
         }
 
+        int totalCards = 0;
+
         foreach (var g in result.gains)
         {
             // Add to actual player inventory (spawns runtime cards + saves)
             pm.GrantToPlayerInventory(g.card, g.amount);
+            totalCards += g.amount;
         }
+
+        // Add time taken to game clock
+        float hours = result.totalTimeTaken / 60f;
+        TimeManager.Instance.AddGameHours(hours);
+
+        // Show message
+        if (CardClickLog.Instance != null)
+            CardClickLog.Instance.Log($"{totalCards} item{(totalCards == 1 ? "" : "s")} added to your inventory.");
+
 
         ExpeditionState.LastResult = null;
 
         // Close panel or change scene:
-        // SceneLoadManager.Instance.LoadRoom("ShopScene");
+        SceneLoadManager.Instance.LoadRoom("ShopScene");
     }
 }

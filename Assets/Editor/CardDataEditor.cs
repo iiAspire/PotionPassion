@@ -192,39 +192,15 @@ public class CardDataEditor : Editor
         }
 
         EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Shelf Visuals (Spell Outputs)", EditorStyles.boldLabel);
 
-        CardData card = (CardData)target;
-
-        // This is the real rule:
-        bool usesSpellOutputPrefab =
-            card.cardPrefab != null &&
-            card.cardPrefab.GetComponent<SpellOutput>() != null;
+        EditorGUILayout.LabelField("Shelf Visuals", EditorStyles.boldLabel);
 
         EditorGUILayout.BeginVertical("box");
 
-        if (!usesSpellOutputPrefab)
-        {
-            EditorGUILayout.HelpBox(
-                "Shelf visuals are only used by cards that instantiate as SpellOutput (sellable brews).",
-                UnityEditor.MessageType.Info
-            );
-        }
-
-        GUI.enabled = usesSpellOutputPrefab;
         EditorGUILayout.PropertyField(
             shelfVisualsProp,
             new GUIContent("Shelf Visual Data")
         );
-        GUI.enabled = true;
-
-        if (usesSpellOutputPrefab && shelfVisualsProp.objectReferenceValue == null)
-        {
-            EditorGUILayout.HelpBox(
-                "This SpellOutput card will appear on shop shelves but has no shelf visuals assigned.",
-                UnityEditor.MessageType.Warning
-            );
-        }
 
         EditorGUILayout.EndVertical();
 

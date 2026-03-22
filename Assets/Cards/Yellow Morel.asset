@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Yellow Morel
   baseName: Yellow Morel
   Icon: {fileID: 5692612218653921787, guid: f90417efccb39ca41b83850c272038b2, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 255ac0711acdccd4587d18e9262537f5, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 1
@@ -89,3 +89,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public static class ExpeditionSimulator
 {
@@ -73,10 +74,10 @@ public static class ExpeditionSimulator
 
             if (Random.value <= chance)
             {
-                int amount = 1;
-                if (boostsYield) amount += 1;
+                if (result.gains.Any(g => g.card == f.resource))
+                    continue;
 
-                AddOrStack(result.gains, f.resource, amount, BuildNote(f, hasTool, boostsYield));
+                AddOrStack(result.gains, f.resource, 1, BuildNote(f, hasTool, boostsYield));
 
                 // ✅ Time cost is per successful action
                 result.harvestTimeTaken += Mathf.Max(0f, f.harvestMinutes);

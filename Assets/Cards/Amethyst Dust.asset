@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Amethyst Dust
   baseName: Amethyst
   Icon: {fileID: -1565001491564177378, guid: a8577dcab5b5f894aaa134a534fb1832, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.5, b: 0.9, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e7cdd59922cfc504a878ed59498c44b2, type: 2}
   processingRecipes: []
+  canBeSold: 0

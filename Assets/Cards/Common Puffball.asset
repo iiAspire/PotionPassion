@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Common Puffball
   baseName: Common Puffball
   Icon: {fileID: 7419475059570853355, guid: e9f265a1c60831d4c8bc29a464001387, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 1
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 255ac0711acdccd4587d18e9262537f5, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 1
@@ -93,3 +93,4 @@ MonoBehaviour:
     needsFire: 0
     processingTimeWithFire: 0
     visualOutputs: []
+  canBeSold: 0

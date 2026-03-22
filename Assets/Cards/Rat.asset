@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Rat
   baseName: Rat
   Icon: {fileID: -4769710900592757262, guid: 1b724a305a6f9574985562d58530b886, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e999bac007ce860479390caae28bb5d8, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 2
@@ -85,3 +85,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 8726bd7b5b5457a4db5fdd9ed06d873c, type: 3}
       quantity: 2
       note: 
+  canBeSold: 0

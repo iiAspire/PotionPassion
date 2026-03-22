@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Rat Tooth
   baseName: Rat
   Icon: {fileID: -4769710900592757262, guid: 1b724a305a6f9574985562d58530b886, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: 1f695cbc714a21c44adfe73c758ee57d, type: 2}
   processingRecipes: []
+  canBeSold: 0

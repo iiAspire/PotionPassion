@@ -46,7 +46,7 @@ public class RandomCardSpawner : MonoBehaviour
     {
         yield return null;
 
-        string[] testCards = { "Sandstone Dust", "Chia", "Corn", "Chia Seed", "Rose" };
+        string[] testCards = { "Sandstone Dust", "Chia", "Corn", "Chia Seed", "Rose", };
 
         foreach (string cardName in testCards)
         {

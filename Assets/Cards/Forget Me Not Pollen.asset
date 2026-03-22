@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Forget Me Not Pollen
   baseName: Forget Me Not
   Icon: {fileID: 811251719011284738, guid: c3d2d7c273964e64a84ac17745011067, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.3, g: 0.8, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 1
   Smoulders: 0
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e7cdd59922cfc504a878ed59498c44b2, type: 2}
   processingRecipes: []
+  canBeSold: 0

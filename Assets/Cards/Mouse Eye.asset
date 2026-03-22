@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Mouse Eye
   baseName: Mouse
   Icon: {fileID: 3585429261624623676, guid: 777cbde3c78a8c344af0a3bdd1a01219, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,6 +39,6 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: a22e9e0fb01b76b4194be59822a47394, type: 2}
   processingRecipes: []
+  canBeSold: 0

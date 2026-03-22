@@ -250,4 +250,9 @@ public class CardData : ScriptableObject
             quantityIcon = CardIconManager.Instance.GetIconForQuantity(typeToUse);
         }
     }
+
+    public bool HasShelfVisual()
+    {
+        return shelfVisuals != null && shelfVisuals.containerSprite != null;
+    }
 }

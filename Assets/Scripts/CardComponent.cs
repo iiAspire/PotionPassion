@@ -44,6 +44,9 @@ public partial class CardComponent : MonoBehaviour
     public string runtimeID;
     public string RuntimeID => runtimeID;
     private static bool iconsInitialized = false;
+    public bool storedInStoreroom = false;
+    public int storeroomShelfIndex = -1;
+    public int storeroomOrderInShelf = -1;
 
     private static void InitIcons()
     {
@@ -54,6 +57,11 @@ public partial class CardComponent : MonoBehaviour
 
         if (iconManager == null)
             Debug.LogError("CardIconManager asset not found in Resources!");
+    }
+
+    public void RefreshVisibility()
+    {
+        gameObject.SetActive(!storedInStoreroom);
     }
 
     private void Awake()

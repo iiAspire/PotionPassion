@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Beetle
   baseName: Beetle
   Icon: {fileID: -4738757419558046292, guid: c39a35dbb2d8063419ff3a2b9329de62, type: 3}
+  cauldronContentsSprite: {fileID: 0}
   typeIcon: {fileID: 0}
   cardColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
   description: 
@@ -38,8 +39,7 @@ MonoBehaviour:
   Edible: 0
   Incinerates: 0
   Smoulders: 1
-  topHalfSprite: {fileID: 0}
-  bottomHalfSprite: {fileID: 0}
+  shelfVisuals: {fileID: 11400000, guid: e999bac007ce860479390caae28bb5d8, type: 2}
   processingRecipes:
   - foldout: 0
     tool: 2
@@ -73,3 +73,4 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 14245049c74a5974dbfd04f1d0b34a01, type: 3}
       quantity: 2
       note: 
+  canBeSold: 0
